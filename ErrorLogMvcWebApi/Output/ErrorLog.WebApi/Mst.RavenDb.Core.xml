@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mst.RavenDb.Core</name>
+    </assembly>
+    <members>
+        <member name="P:Mst.RavenDb.Core.RavenDbBaseRepository`1.Session">
+            <summary>
+            gets IDocumentSession
+            </summary>
+        </member>
+        <member name="P:Mst.RavenDb.Core.RavenDbDocumentStore.DbServerUrl">
+            <summary>
+            gets Db Server Url
+            </summary>
+        </member>
+        <member name="P:Mst.RavenDb.Core.RavenDbDocumentStore.DefaultDatabaseName">
+            <summary>
+            gets Default Database Name
+            </summary>
+        </member>
+    </members>
+</doc>
