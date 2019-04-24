@@ -80,6 +80,10 @@
       <Project>{09AD6782-8A5F-4D17-9E3F-41E8C6D57D18}</Project>
       <Name>ErrorLog.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Mongo.Models\ErrorLog.Mongo.Models.csproj">
+      <Project>{E7C230D7-B6CD-423D-9D70-69821820E909}</Project>
+      <Name>ErrorLog.Mongo.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Mst.MongoDb.Core\Mst.MongoDb.Core.csproj">
       <Project>{3FD62797-3A70-4A27-92E7-ED27FDD48A60}</Project>
       <Name>Mst.MongoDb.Core</Name>

@@ -3,6 +3,7 @@
     using Core.Constants;
     using ErrorLog.Business.Core.Interfaces;
     using ErrorLog.Models;
+    using Mongo.Models;
     using MongoDB.Driver;
     using System;
     using System.Collections.Generic;
@@ -29,20 +30,20 @@
             if (log == null)
                 return CoreConstants.NullLogResponse;
 
-            if (string.IsNullOrWhiteSpace(log.LogId))
+            if (string.IsNullOrWhiteSpace(log.Id))
                 return CoreConstants.EmptyLogIdResponse;
 
             var emptystring = Guid.Empty.ToString();
 
-            if (log.LogId == emptystring)
+            if (log.Id == emptystring)
                 return CoreConstants.EmptyGuidLogIdResponse;
 
             emptystring = emptystring.Replace('-', '\0');
 
-            if (log.LogId == emptystring)
+            if (log.Id == emptystring)
                 return CoreConstants.EmptyGuidLogIdResponse;
 
-            var deleteResult = this.Collection.DeleteOne(q => q.LogId == log.LogId);
+            var deleteResult = this.Collection.DeleteOne(q => q.Id == log.Id);
 
             return (int)deleteResult.DeletedCount;
         }
@@ -66,7 +67,25 @@
             }
 
             var logModel = this.Collection
-                .Find(q => q.LogId == oid)
+                .Find(q => q.Id == oid)
+                .ToList()
+                .Select(q => new ErrorLogModel
+                {
+                    Id = q.Id,
+                    ClassName = q.ClassName,
+                    CreatedOn = q.CreatedOn,
+                    CreatedOnTimestamp = q.CreatedOnTimestamp,
+                    ExceptionData = q.ExceptionData,
+                    LogTime = q.LogTime,
+                    LogTimeUnixTimestamp = q.LogTimeUnixTimestamp,
+                    Message = q.Message,
+                    MethodName = q.MethodName,
+                    RequestAddres = q.RequestAddres,
+                    ResponseAddress = q.ResponseAddress,
+                    ResponseMachineName = q.ResponseMachineName,
+                    StackTrace = q.StackTrace,
+                    UserId = q.UserId
+                })
                 .FirstOrDefault();
 
             return logModel;
@@ -98,7 +117,24 @@
             var docs = this.Collection
                 .Find(q =>
             (q.LogTimeUnixTimestamp >= start || start == 0) && (q.LogTimeUnixTimestamp <= end || end == 0))
-            .ToEnumerable() ?? new ErrorLogModel[] { }.AsEnumerable();
+            .ToEnumerable()
+            .Select(q => new ErrorLogModel
+            {
+                Id = q.Id,
+                ClassName = q.ClassName,
+                CreatedOn = q.CreatedOn,
+                CreatedOnTimestamp = q.CreatedOnTimestamp,
+                ExceptionData = q.ExceptionData,
+                LogTime = q.LogTime,
+                LogTimeUnixTimestamp = q.LogTimeUnixTimestamp,
+                Message = q.Message,
+                MethodName = q.MethodName,
+                RequestAddres = q.RequestAddres,
+                ResponseAddress = q.ResponseAddress,
+                ResponseMachineName = q.ResponseMachineName,
+                StackTrace = q.StackTrace,
+                UserId = q.UserId
+            });
 
             return docs;
         }
@@ -123,14 +159,14 @@
 #endif
             }
 
-            var logId = log?.LogId ?? string.Empty;
+            var logId = log?.Id ?? string.Empty;
             var emptyGuid = Guid.Empty.ToString();
 
             if (string.IsNullOrWhiteSpace(logId)
                 || logId == emptyGuid
                 || logId == emptyGuid.Replace('-', '\0'))
             {
-                log.LogId = Guid.NewGuid().ToString();
+                log.Id = Guid.NewGuid().ToString();
             }
 
             if (!log.LogTime.HasValue)
@@ -141,8 +177,26 @@
 
             log.CreatedOn = DateTime.Now;
             log.CreatedOnTimestamp = log.CreatedOn.Ticks;
-            this.Collection.InsertOne(log);
-            return log.LogId;
+            var logModel = new ErrorLogModelMongo
+            {
+                Id = log.Id,
+                ClassName = log.ClassName,
+                CreatedOn = log.CreatedOn,
+                CreatedOnTimestamp = log.CreatedOnTimestamp,
+                ExceptionData = log.ExceptionData,
+                LogTime = log.LogTime,
+                LogTimeUnixTimestamp = log.LogTimeUnixTimestamp,
+                Message = log.Message,
+                MethodName = log.MethodName,
+                RequestAddres = log.RequestAddres,
+                ResponseAddress = log.ResponseAddress,
+                ResponseMachineName = log.ResponseMachineName,
+                StackTrace = log.StackTrace,
+                UserId = log.UserId
+            };
+
+            this.Collection.InsertOne(logModel);
+            return log.Id;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -159,21 +213,39 @@
             if (log == null)
                 return CoreConstants.NullLogResponse;
 
-            if (string.IsNullOrWhiteSpace(log.LogId))
+            if (string.IsNullOrWhiteSpace(log.Id))
                 return CoreConstants.EmptyLogIdResponse;
 
             var emptystring = Guid.Empty.ToString();
 
-            if (log.LogId == emptystring)
+            if (log.Id == emptystring)
                 return CoreConstants.EmptyGuidLogIdResponse;
 
             emptystring = emptystring.Replace('-', '\0');
 
-            if (log.LogId == emptystring)
+            if (log.Id == emptystring)
                 return CoreConstants.EmptyGuidLogIdResponse;
 
-            var filter = Builders<ErrorLogModel>.Filter.Eq(s => s.LogId, log.LogId);
-            var replaceOneResult = this.Collection.ReplaceOne(filter, log);
+            var logModel = new ErrorLogModelMongo
+            {
+                Id = log.Id,
+                ClassName = log.ClassName,
+                CreatedOn = log.CreatedOn,
+                CreatedOnTimestamp = log.CreatedOnTimestamp,
+                ExceptionData = log.ExceptionData,
+                LogTime = log.LogTime,
+                LogTimeUnixTimestamp = log.LogTimeUnixTimestamp,
+                Message = log.Message,
+                MethodName = log.MethodName,
+                RequestAddres = log.RequestAddres,
+                ResponseAddress = log.ResponseAddress,
+                ResponseMachineName = log.ResponseMachineName,
+                StackTrace = log.StackTrace,
+                UserId = log.UserId
+            };
+
+            var filter = Builders<ErrorLogModelMongo>.Filter.Eq(s => s.Id, logModel.Id);
+            var replaceOneResult = this.Collection.ReplaceOne(filter, logModel);
 
             return (int)replaceOneResult.ModifiedCount;
         }

@@ -11,7 +11,7 @@
     public class ErrorLogModel
     {
         [DataMember]
-        public string LogId
+        public string Id
         { get; set; }
 
         [DataMember]

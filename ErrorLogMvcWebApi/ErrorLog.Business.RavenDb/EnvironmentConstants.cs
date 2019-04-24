@@ -16,6 +16,6 @@
         /// <summary>
         /// Name of the database.
         /// </summary>
-        public const string DbName = "MstRavenSampleDb";
+        public const string DbName = "ErrorLogSampleRavenDb";
     }
 }

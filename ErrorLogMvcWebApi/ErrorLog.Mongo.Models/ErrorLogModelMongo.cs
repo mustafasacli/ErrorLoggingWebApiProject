@@ -1,12 +1,13 @@
-﻿using System;
-
-namespace ErrorLog.Mongo.Models
+﻿namespace ErrorLog.Mongo.Models
 {
+    using MongoDB.Bson;
+    using MongoDB.Bson.Serialization.Attributes;
+    using System;
+
     public class ErrorLogModelMongo
     {
-
-        //[BsonId]
-        public string LogId
+        [BsonId]
+        public string Id
         { get; set; }
 
         public string RequestAddres
@@ -36,12 +37,14 @@ namespace ErrorLog.Mongo.Models
         public string ExceptionData
         { get; set; }
 
+        [BsonDateTimeOptions(Representation = BsonType.Document)]
         public DateTime? LogTime
         { get; set; }
 
         public long? LogTimeUnixTimestamp
         { get; set; }
 
+        [BsonDateTimeOptions(Representation = BsonType.Document)]
         public DateTime CreatedOn
         { get; set; }
 

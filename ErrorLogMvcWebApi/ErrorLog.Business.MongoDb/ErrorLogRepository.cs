@@ -1,6 +1,6 @@
 ﻿namespace ErrorLog.Business.MongoDb
 {
-    using ErrorLog.Models;
+    using Mongo.Models;
     using Mst.MongoDb.Core;
     using System.Configuration;
 
@@ -9,7 +9,7 @@
     ///
     /// <remarks>   Msacli, 24.04.2019. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    public class ErrorLogRepository : MongoDbBaseRepository<ErrorLogModel>
+    public class ErrorLogRepository : MongoDbBaseRepository<ErrorLogModelMongo>
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Default constructor. </summary>

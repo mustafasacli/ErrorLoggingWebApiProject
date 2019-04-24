@@ -11,21 +11,26 @@
             
              <typeparam name="TObject">  Type of the object. </typeparam>
         </member>
+        <member name="F:Mst.RavenDb.Core.RavenDbBaseRepository`1.logger">
+            <summary>   The logger. </summary>
+        </member>
+        <member name="F:Mst.RavenDb.Core.RavenDbBaseRepository`1.session">
+            <summary>   The session. </summary>
+        </member>
         <member name="M:Mst.RavenDb.Core.RavenDbBaseRepository`1.#ctor(System.String,System.String)">
              <summary>   Specialised constructor for use only by derived class. </summary>
             
              <remarks>   Msacli, 24.04.2019. </remarks>
             
-             <exception cref="T:System.ArgumentNullException">    Thrown when one or more required arguments are
-                                                         null. </exception>
+             <exception cref="T:System.ArgumentNullException"> Thrown when one or more required arguments are null. </exception>
             
              <param name="defaultDatabaseName">  The default database name. </param>
              <param name="dbServerUrl">          URL of the database server. </param>
         </member>
         <member name="P:Mst.RavenDb.Core.RavenDbBaseRepository`1.Session">
-            <summary>
-            gets IDocumentSession
-            </summary>
+             <summary>   gets IDocumentSession. </summary>
+            
+             <value> The session. </value>
         </member>
         <member name="M:Mst.RavenDb.Core.RavenDbBaseRepository`1.GetDocuments">
              <summary>   Gets the documents. </summary>
@@ -42,6 +47,15 @@
              <param name="oid">  The oid. </param>
             
              <returns>   The document. </returns>
+        </member>
+        <member name="M:Mst.RavenDb.Core.RavenDbBaseRepository`1.GetDocuments(System.Collections.Generic.IEnumerable{System.String})">
+             <summary>   Gets the documents. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 24.04.2019. </remarks>
+            
+             <param name="ids">  The İdentifiers. </param>
+            
+             <returns>   The documents. </returns>
         </member>
         <member name="M:Mst.RavenDb.Core.RavenDbBaseRepository`1.AddDocument(`0,System.Boolean)">
              <summary>   Adds a document to 'autoSave'. </summary>
@@ -70,7 +84,7 @@
         <member name="M:Mst.RavenDb.Core.RavenDbBaseRepository`1.DeleteDocument(System.String,System.Boolean)">
              <summary>   Deletes the document. </summary>
             
-             <remarks>   Msacli, 24.04.2019. </remarks>
+             <remarks>   Mustafa SAÇLI, 24.04.2019. </remarks>
             
              <param name="oid">      The oid. </param>
              <param name="autoSave"> (Optional) True to automatically save. </param>

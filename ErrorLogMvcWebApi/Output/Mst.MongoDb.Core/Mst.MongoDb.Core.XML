@@ -11,6 +11,11 @@
             
              <typeparam name="T">    Generic type parameter. </typeparam>
         </member>
+        <member name="M:Mst.MongoDb.Core.MongoDbBaseRepository`1.#cctor">
+             <summary>   Static constructor. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 24.04.2019. </remarks>
+        </member>
         <member name="M:Mst.MongoDb.Core.MongoDbBaseRepository`1.#ctor(System.String,System.String)">
              <summary>   Specialised constructor for use only by derived class. </summary>
             

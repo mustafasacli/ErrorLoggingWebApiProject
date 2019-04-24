@@ -39,17 +39,17 @@
             if (log == null)
                 return CoreConstants.NullLogResponse;
 
-            if (string.IsNullOrWhiteSpace(log.LogId))
+            if (string.IsNullOrWhiteSpace(log.Id))
                 return CoreConstants.EmptyLogIdResponse;
 
             var emptystring = Guid.Empty.ToString();
 
-            if (log.LogId == emptystring)
+            if (log.Id == emptystring)
                 return CoreConstants.EmptyGuidLogIdResponse;
 
             emptystring = emptystring.Replace('-', '\0');
 
-            if (log.LogId == emptystring)
+            if (log.Id == emptystring)
                 return CoreConstants.EmptyGuidLogIdResponse;
 
             DeleteDocument(log);
@@ -63,7 +63,7 @@
         ///
         /// <param name="oid">  The oid. </param>
         ///
-        /// <returns>   The by ıd. </returns>
+        /// <returns>   The by id. </returns>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         public ErrorLogModel GetById(string oid)
         {
@@ -119,11 +119,11 @@
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         public string Save(ErrorLogModel log)
         {
-            if (string.IsNullOrWhiteSpace(log.LogId)
-                || log.LogId == Guid.Empty.ToString()
-                || log.LogId == Guid.Empty.ToString().Replace('-', '\0'))
+            if (string.IsNullOrWhiteSpace(log.Id)
+                || log.Id == Guid.Empty.ToString()
+                || log.Id == Guid.Empty.ToString().Replace('-', '\0'))
             {
-                log.LogId = Guid.NewGuid().ToString();
+                log.Id = Guid.NewGuid().ToString();
             }
 
             if (!log.LogTime.HasValue)
@@ -136,7 +136,7 @@
             log.CreatedOnTimestamp = log.CreatedOn.Ticks;
             AddDocument(log);
 
-            return log.LogId;
+            return log.Id;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -153,17 +153,17 @@
             if (log == null)
                 return CoreConstants.NullLogResponse;
 
-            if (string.IsNullOrWhiteSpace(log.LogId))
+            if (string.IsNullOrWhiteSpace(log.Id))
                 return CoreConstants.EmptyLogIdResponse;
 
             var emptystring = Guid.Empty.ToString();
 
-            if (log.LogId == emptystring)
+            if (log.Id == emptystring)
                 return CoreConstants.EmptyGuidLogIdResponse;
 
             emptystring = emptystring.Replace('-', '\0');
 
-            if (log.LogId == emptystring)
+            if (log.Id == emptystring)
                 return CoreConstants.EmptyGuidLogIdResponse;
 
             UpdateDocument(log);

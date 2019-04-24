@@ -45,7 +45,7 @@
             
              <param name="oid">  The oid. </param>
             
-             <returns>   The by ıd. </returns>
+             <returns>   The by id. </returns>
         </member>
         <member name="M:ErrorLog.Business.RavenDb.ErrorLogRavenDbBusiness.GetLogs(System.Nullable{System.Int64},System.Nullable{System.Int64})">
              <summary>   Gets the logs in this collection. </summary>

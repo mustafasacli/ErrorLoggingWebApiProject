@@ -1,5 +1,7 @@
 ﻿namespace Mst.MongoDb.Core
 {
+    using MongoDB.Bson.Serialization;
+    using MongoDB.Bson.Serialization.Serializers;
     using MongoDB.Driver;
     using System;
 
@@ -12,6 +14,16 @@
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     public abstract class MongoDbBaseRepository<T> : IDisposable where T : class
     {
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Static constructor. </summary>
+        ///
+        /// <remarks>   Mustafa SAÇLI, 24.04.2019. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        static MongoDbBaseRepository()
+        {
+            BsonSerializer.RegisterSerializer(DateTimeSerializer.UtcInstance);
+        }
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Specialised constructor for use only by derived class. </summary>
         ///
@@ -29,6 +41,8 @@
 
             if (string.IsNullOrWhiteSpace(connectionString))
                 throw new ArgumentNullException(nameof(connectionString));
+
+
 
             var client = new MongoClient(connectionString);
             this.Collection = client.GetDatabase(databaseName).GetCollection<T>(typeof(T).Name.ToLowerInvariant());

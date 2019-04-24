@@ -1,4 +1,10 @@
-﻿namespace Mst.RavenDb.Core
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	RavenDbBaseRepository.cs
+//
+// summary:	Implements the raven database repository class
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace Mst.RavenDb.Core
 {
     using Raven.Abstractions.Logging;
     using Raven.Client;
@@ -17,9 +23,11 @@
      : RavenDbDocumentStore,
          IDisposable
     {
+        /// <summary>   The logger. </summary>
         private static readonly ILog logger =
             LogManager.GetLogger(typeof(RavenDbBaseRepository<TObject>));
 
+        /// <summary>   The session. </summary>
         private IDocumentSession session;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -27,8 +35,7 @@
         ///
         /// <remarks>   Msacli, 24.04.2019. </remarks>
         ///
-        /// <exception cref="ArgumentNullException">    Thrown when one or more required arguments are
-        ///                                             null. </exception>
+        /// <exception cref="ArgumentNullException"> Thrown when one or more required arguments are null. </exception>
         ///
         /// <param name="defaultDatabaseName">  The default database name. </param>
         /// <param name="dbServerUrl">          URL of the database server. </param>
@@ -43,9 +50,11 @@
                 throw new ArgumentNullException(nameof(dbServerUrl));
         }
 
-        /// <summary>
-        /// gets IDocumentSession
-        /// </summary>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   gets IDocumentSession. </summary>
+        ///
+        /// <value> The session. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         public IDocumentSession Session
         {
             get
@@ -85,6 +94,15 @@
             return Session.Load<TObject>(oid);
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets the documents. </summary>
+        ///
+        /// <remarks>   Mustafa SAÇLI, 24.04.2019. </remarks>
+        ///
+        /// <param name="ids">  The İdentifiers. </param>
+        ///
+        /// <returns>   The documents. </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         public virtual IQueryable<TObject> GetDocuments(IEnumerable<string> ids)
         {
             return Session.Load<TObject>(ids).AsQueryable();
@@ -162,7 +180,7 @@
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Deletes the document. </summary>
         ///
-        /// <remarks>   Msacli, 24.04.2019. </remarks>
+        /// <remarks>   Mustafa SAÇLI, 24.04.2019. </remarks>
         ///
         /// <param name="oid">      The oid. </param>
         /// <param name="autoSave"> (Optional) True to automatically save. </param>
