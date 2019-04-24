@@ -45,10 +45,7 @@
 
             try
             {
-                if (string.IsNullOrWhiteSpace(oid))
-                {
-                    result = logBusiness.GetById(oid);
-                }
+                result = logBusiness.GetById(oid);
             }
             catch (Exception e)
             {
