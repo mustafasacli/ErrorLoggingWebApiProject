@@ -7,19 +7,19 @@
     using SimpleInjector;
     using System;
 
-    /// using System.Net.Http;
-
     internal class Program
     {
-        private static Container container;
+        public static Container container;
 
         private static void Main(string[] args)
         {
-            string baseAddress = "http://127.0.0.1:9090/";
+            string baseAddress = "http://127.0.0.1:9091/";
 
             // Start OWIN host
+            Console.WriteLine(string.Format("OWIN will be started with {0} adress.", baseAddress));
             using (WebApp.Start<Startup>(url: baseAddress))
             {
+                Console.WriteLine("OWIN has started.");
                 // Create HttpCient and make a request to api/values
                 ////HttpClient client = new HttpClient();
 

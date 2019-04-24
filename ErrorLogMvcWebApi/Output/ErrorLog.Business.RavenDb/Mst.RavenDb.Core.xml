@@ -4,10 +4,104 @@
         <name>Mst.RavenDb.Core</name>
     </assembly>
     <members>
+        <member name="T:Mst.RavenDb.Core.RavenDbBaseRepository`1">
+             <summary>   A raven database repository. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <typeparam name="TObject">  Type of the object. </typeparam>
+        </member>
+        <member name="M:Mst.RavenDb.Core.RavenDbBaseRepository`1.#ctor(System.String,System.String)">
+             <summary>   Specialised constructor for use only by derived class. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <exception cref="T:System.ArgumentNullException">    Thrown when one or more required arguments are
+                                                         null. </exception>
+            
+             <param name="defaultDatabaseName">  The default database name. </param>
+             <param name="dbServerUrl">          URL of the database server. </param>
+        </member>
         <member name="P:Mst.RavenDb.Core.RavenDbBaseRepository`1.Session">
             <summary>
             gets IDocumentSession
             </summary>
+        </member>
+        <member name="M:Mst.RavenDb.Core.RavenDbBaseRepository`1.GetDocuments">
+             <summary>   Gets the documents. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <returns>   The documents. </returns>
+        </member>
+        <member name="M:Mst.RavenDb.Core.RavenDbBaseRepository`1.GetDocument(System.String)">
+             <summary>   Gets a document with given oid. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <param name="oid">  The oid. </param>
+            
+             <returns>   The document. </returns>
+        </member>
+        <member name="M:Mst.RavenDb.Core.RavenDbBaseRepository`1.AddDocument(`0,System.Boolean)">
+             <summary>   Adds a document to 'autoSave'. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <param name="entity">   The entity. </param>
+             <param name="autoSave"> (Optional) True to automatically save. </param>
+        </member>
+        <member name="M:Mst.RavenDb.Core.RavenDbBaseRepository`1.UpdateDocument(`0,System.Boolean)">
+             <summary>   Updates the document. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <param name="entity">   The entity. </param>
+             <param name="autoSave"> (Optional) True to automatically save. </param>
+        </member>
+        <member name="M:Mst.RavenDb.Core.RavenDbBaseRepository`1.DeleteDocument(`0,System.Boolean)">
+             <summary>   Deletes the document. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <param name="entity">   The entity. </param>
+             <param name="autoSave"> (Optional) True to automatically save. </param>
+        </member>
+        <member name="M:Mst.RavenDb.Core.RavenDbBaseRepository`1.DeleteDocument(System.String,System.Boolean)">
+             <summary>   Deletes the document. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <param name="oid">      The oid. </param>
+             <param name="autoSave"> (Optional) True to automatically save. </param>
+        </member>
+        <member name="M:Mst.RavenDb.Core.RavenDbBaseRepository`1.Dispose">
+             <summary>
+             Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged
+             resources.
+             </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+        </member>
+        <member name="M:Mst.RavenDb.Core.RavenDbBaseRepository`1.SaveChanges">
+             <summary>   Saves the changes. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+        </member>
+        <member name="T:Mst.RavenDb.Core.RavenDbDocumentStore">
+             <summary>   A raven database document store. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+        </member>
+        <member name="M:Mst.RavenDb.Core.RavenDbDocumentStore.#ctor(System.String,System.String)">
+             <summary>   Constructor. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <exception cref="T:System.ArgumentNullException">    Thrown when one or more required arguments are null. </exception>
+            
+             <param name="defaultDatabaseName">  Gets Default Database Name. </param>
+             <param name="dbServerUrl">          Gets Db Server Url. </param>
         </member>
         <member name="P:Mst.RavenDb.Core.RavenDbDocumentStore.DbServerUrl">
             <summary>
@@ -18,6 +112,11 @@
             <summary>
             gets Default Database Name
             </summary>
+        </member>
+        <member name="P:Mst.RavenDb.Core.RavenDbDocumentStore.DocumentStore">
+             <summary>   Gets the document store. </summary>
+            
+             <value> The document store. </value>
         </member>
     </members>
 </doc>

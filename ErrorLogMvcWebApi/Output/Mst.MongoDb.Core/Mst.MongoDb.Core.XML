@@ -4,5 +4,35 @@
         <name>Mst.MongoDb.Core</name>
     </assembly>
     <members>
+        <member name="T:Mst.MongoDb.Core.MongoDbBaseRepository`1">
+             <summary>   A mongo database repository. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+        </member>
+        <member name="M:Mst.MongoDb.Core.MongoDbBaseRepository`1.#ctor(System.String,System.String)">
+             <summary>   Specialised constructor for use only by derived class. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <exception cref="T:System.ArgumentNullException">    Thrown when one or more required arguments are null. </exception>
+            
+             <param name="databaseName">     Name of the database. </param>
+             <param name="connectionString"> The connection string. </param>
+        </member>
+        <member name="P:Mst.MongoDb.Core.MongoDbBaseRepository`1.Collection">
+             <summary>   Gets the collection. </summary>
+            
+             <value> The collection. </value>
+        </member>
+        <member name="M:Mst.MongoDb.Core.MongoDbBaseRepository`1.Dispose">
+             <summary>
+             Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged
+             resources.
+             </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+        </member>
     </members>
 </doc>

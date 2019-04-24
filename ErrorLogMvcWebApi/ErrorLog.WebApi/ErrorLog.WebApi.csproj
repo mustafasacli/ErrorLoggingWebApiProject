@@ -53,6 +53,10 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SimpleFileLogging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3473942f32152fab, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleFileLogging.dll.1.0.0\lib\net451\SimpleFileLogging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SimpleInjector, Version=4.5.1.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.4.5.1\lib\net45\SimpleInjector.dll</HintPath>
       <Private>True</Private>
@@ -88,6 +92,7 @@
     <Compile Include="AppValues.cs" />
     <Compile Include="BaseApiController.cs" />
     <Compile Include="LogController.cs" />
+    <Compile Include="OwinIoC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />

@@ -1,1 +1,0 @@
-C:\Depo\Mst\Git_Projects\ErrorLoggingWebApiProject\ErrorLogMvcWebApi\Output\ErrorLog.WebApi\ErrorLog.WebApi.exe.config

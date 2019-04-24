@@ -4,11 +4,26 @@
     using Raven.Client.Document;
     using System;
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A raven database document store. </summary>
+    ///
+    /// <remarks>   Msacli, 24.04.2019. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
     public class RavenDbDocumentStore
     {
         private static object lockObj = new object();
         private IDocumentStore docStore = null;
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Constructor. </summary>
+        ///
+        /// <remarks>   Msacli, 24.04.2019. </remarks>
+        ///
+        /// <exception cref="ArgumentNullException">    Thrown when one or more required arguments are null. </exception>
+        ///
+        /// <param name="defaultDatabaseName">  Gets Default Database Name. </param>
+        /// <param name="dbServerUrl">          Gets Db Server Url. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         public RavenDbDocumentStore(string defaultDatabaseName, string dbServerUrl)
         {
             if (string.IsNullOrWhiteSpace(defaultDatabaseName))
@@ -33,6 +48,11 @@
         public string DefaultDatabaseName
         { get; private set; }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets the document store. </summary>
+        ///
+        /// <value> The document store. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         public IDocumentStore DocumentStore
         {
             get

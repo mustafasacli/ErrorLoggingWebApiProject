@@ -2,6 +2,7 @@
 {
     using ErrorLog.Business.Core.Interfaces;
     using ErrorLog.Models;
+    using SimpleFileLogging;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -12,9 +13,9 @@
     {
         private IErrorLogBusiness logBusiness;
 
-        public LogController(IErrorLogBusiness logBusiness)
+        public LogController()//IErrorLogBusiness logBusiness)
         {
-            this.logBusiness = logBusiness;
+            this.logBusiness = OwinIoC.Instance.Container.GetInstance<IErrorLogBusiness>();//logBusiness;
         }
 
         [ResponseType(typeof(string))]
@@ -29,6 +30,7 @@
             }
             catch (Exception e)
             {
+                SimpleFileLogger.LogError(e);
                 result = "err";
             }
 
@@ -50,6 +52,7 @@
             }
             catch (Exception e)
             {
+                SimpleFileLogger.LogError(e);
             }
 
             result = result ?? new ErrorLogModel { };
@@ -69,6 +72,7 @@
             }
             catch (Exception e)
             {
+                SimpleFileLogger.LogError(e);
             }
 
             result = result ?? new ErrorLogModel[] { }.AsEnumerable();

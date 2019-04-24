@@ -1,16 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Net.Sockets;
-using System.Web;
-using System.Web.Http;
-
-namespace ErrorLog.WebApi
+﻿namespace ErrorLog.WebApi
 {
+    using Microsoft.Owin;
+    using SimpleFileLogging;
+    using System;
+    using System.Collections.Generic;
+    using System.Net;
+    using System.Net.Sockets;
+    using System.Web;
+    using System.Web.Http;
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A controller for handling base apis. </summary>
+    ///
+    /// <remarks>   Msacli, 24.04.2019. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
     public abstract class BaseApiController : ApiController
     {
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets the activity id. </summary>
+        ///
+        /// <value> The activity İdentifier. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         protected Guid ActivityId { get { return AppValues.ActivityId; } }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets the request address. </summary>
+        ///
+        /// <value> The request address. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         protected string RequestAddress
         {
             get
@@ -21,12 +38,20 @@ namespace ErrorLog.WebApi
                 {
                     s = GetIPFromServerVariables();
                 }
-                catch (Exception e) { }
+                catch (Exception e)
+                {
+                    SimpleFileLogger.LogError(e);
+                }
 
                 return s;
             }
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets the name of the request machine. </summary>
+        ///
+        /// <value> The name of the request machine. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         protected string RequestMachineName
         {
             get
@@ -45,13 +70,18 @@ namespace ErrorLog.WebApi
                 }
                 catch (Exception e)
                 {
-
+                    SimpleFileLogger.LogError(e);
                 }
 
                 return s;
             }
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets the response address. </summary>
+        ///
+        /// <value> The response address. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         protected string ResponseAddress
         {
             get
@@ -62,12 +92,22 @@ namespace ErrorLog.WebApi
                 {
                     s = GetIPFromDNS();
                 }
-                catch (Exception e) { }
+                catch (Exception e)
+                {
+                    SimpleFileLogger.LogError(e);
+                }
 
                 return s;
             }
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets ip from DNS. </summary>
+        ///
+        /// <remarks>   Msacli, 24.04.2019. </remarks>
+        ///
+        /// <returns>   The ip from DNS. </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         private string GetIPFromDNS()
         {
             string ipAdress = string.Empty;
@@ -84,13 +124,21 @@ namespace ErrorLog.WebApi
                     }
                 }
             }
-            catch
+            catch (Exception e)
             {
+                SimpleFileLogger.LogError(e);
             }
 
             return ipAdress;
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets ip from server variables. </summary>
+        ///
+        /// <remarks>   Msacli, 24.04.2019. </remarks>
+        ///
+        /// <returns>   The ip from server variables. </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         private string GetIPFromServerVariables()
         {
             string ip = string.Empty;
@@ -98,7 +146,7 @@ namespace ErrorLog.WebApi
             try
             {
                 HttpContext context = HttpContext.Current;
-                string ipAdress = context.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+                string ipAdress = context?.Request?.ServerVariables["HTTP_X_FORWARDED_FOR"];
                 if (!string.IsNullOrEmpty(ipAdress))
                 {
                     string[] ipAdresses = ipAdress.Split(',');
@@ -107,18 +155,48 @@ namespace ErrorLog.WebApi
                         ip = ipAdresses[0];
                     }
                 }
+
                 if (string.IsNullOrEmpty(ip))
                 {
-                    ip = context.Request.ServerVariables["REMOTE_ADDR"];
+                    ip = context?.Request?.ServerVariables["REMOTE_ADDR"];
+                }
+
+                if (string.IsNullOrEmpty(ip))
+                {
+                    /// ip = ((HttpContextBase)Request.Properties["MS_HttpContext"]).Request.UserHostAddress;
+                    ip = GetClientIp();
                 }
             }
             catch (Exception e)
             {
+                SimpleFileLogger.LogError(e);
             }
 
-            return ip;
+            return ip ?? string.Empty;
         }
 
+        private string GetClientIp()
+        {
+            if (Request.Properties.ContainsKey("MS_HttpContext"))
+            {
+                return ((HttpContext)Request.Properties["MS_HttpContext"]).Request.UserHostAddress;
+            }
+            else if (Request.Properties.ContainsKey("MS_OwinContext"))
+            {
+                /// return ((HttpContext)Request.Properties["MS_OwinContext"]).Request.UserHostAddress;
+                return (Request.Properties["MS_OwinContext"] as OwinContext)?.Request?.RemoteIpAddress;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets the name of the user. </summary>
+        ///
+        /// <value> The name of the user. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         protected string GetUserName
         {
             get
@@ -136,12 +214,14 @@ namespace ErrorLog.WebApi
                 //base.ControllerContext.RequestContext.Principal.Identity.;
                 try
                 {
-                    s = RequestContext.Principal.Identity.Name;
+                    s = RequestContext?.Principal?.Identity?.Name;
+
                     if (string.IsNullOrWhiteSpace(s))
-                        s = base.ControllerContext.RequestContext.Principal.Identity.Name;
+                        s = base.ControllerContext?.RequestContext?.Principal?.Identity?.Name;
                 }
                 catch (Exception ex)
                 {
+                    SimpleFileLogger.LogError(ex);
                     try
                     {
                         //var i = this.Logger?.Error(ex, this.RequestAddress, this.ResponseAddress, Environment.MachineName);
@@ -151,10 +231,19 @@ namespace ErrorLog.WebApi
                     catch { }
                 }
 
-                return s;
+                return s ?? string.Empty;
             }
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Logs a debug. </summary>
+        ///
+        /// <remarks>   Msacli, 24.04.2019. </remarks>
+        ///
+        /// <param name="className">    Name of the class. </param>
+        /// <param name="methodName">   Name of the method. </param>
+        /// <param name="message">      The message. </param>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         protected void LogDebug(string className, string methodName, string message)
         {
             try
@@ -165,16 +254,26 @@ namespace ErrorLog.WebApi
             }
             catch (Exception ex)
             {
+                SimpleFileLogger.LogError(ex);
                 try
                 {
-                    //    var i = this.Logger?.Error(ex, this.RequestAddress, this.ResponseAddress, Environment.MachineName);
+                    // var i = this.Logger?.Error(ex, this.RequestAddress, this.ResponseAddress, Environment.MachineName);
 
-                    //    this.FileLogger?.Log(ex);
+                    // this.FileLogger?.Log(ex);
                 }
                 catch { }
             }
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets the info arrays in this collection. </summary>
+        ///
+        /// <remarks>   Msacli, 24.04.2019. </remarks>
+        ///
+        /// <returns>
+        /// An enumerator that allows foreach to be used to process the info arrays in this collection.
+        /// </returns>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         protected IEnumerable<string> GetInfoArray()
         {
             yield return $"RequestAddress : {this.RequestAddress}";

@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimpleFileLogging</name>
+    </assembly>
+    <members>
+        <member name="T:SimpleFileLogging.SimpleFileLogger">
+            <summary>
+            Simple Logger for file logging.
+            </summary>
+            <summary>
+            Simple Logger for file logging.
+            </summary>
+            <summary>
+            Simple Logger for file logging.
+            </summary>
+            <summary>
+            Simple Logger for file logging.
+            </summary>
+        </member>
+        <member name="M:SimpleFileLogging.SimpleFileLogger.GetLogFileName(SimpleFileLogging.SimpleLogType)">
+            <summary>
+            Gets Log File Name
+            </summary>
+            <param name="logType">Log Type</param>
+            <returns>returns Log File Name</returns>
+        </member>
+        <member name="M:SimpleFileLogging.SimpleFileLogger.LogError(System.Exception)">
+            <summary>
+            Logs exception details to error log file.
+            </summary>
+            <param name="e">Exception to log</param>
+        </member>
+        <member name="M:SimpleFileLogging.SimpleFileLogger.LogError(System.String[])">
+            <summary>
+            Log Messages to error log files.
+            </summary>
+            <param name="messages">Messages to log</param>
+        </member>
+        <member name="M:SimpleFileLogging.SimpleFileLogger.Info(System.String[])">
+            <summary>
+            Logs info to info log file.
+            </summary>
+            <param name="messages">Messages to log</param>
+        </member>
+        <member name="M:SimpleFileLogging.SimpleFileLogger.Info(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Logs info dictionary to log file.
+            </summary>
+            <param name="dictionary">Dictionary for logging</param>
+        </member>
+        <member name="M:SimpleFileLogging.SimpleFileLogger.Debug(System.String[])">
+            <summary>
+            Logs debug info to debug log file.
+            </summary>
+            <param name="messages">Messages to log</param>
+        </member>
+        <member name="M:SimpleFileLogging.SimpleFileLogger.Debug(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Logs debug info dictionary to debug log file.
+            </summary>
+            <param name="dictionary">Dictionary for logging</param>
+        </member>
+        <member name="T:SimpleFileLogging.SimpleFileLogOptions">
+            <summary>
+            Defining Logging Options 
+            </summary>
+        </member>
+        <member name="P:SimpleFileLogging.SimpleFileLogOptions.EnableMethodGrouping">
+            <summary>
+            Enables Method Grouping
+            if it is true AssemblyFolder\ClassName\MethodName\Error-Info-Debug\logfile.
+            else AssemblyFolder\Error-Info-Debug\ClassName\MethodName\logfile.
+            </summary>
+        </member>
+        <member name="T:SimpleFileLogging.SimpleLogType">
+            <summary>
+            Defines Log Type
+            </summary>
+        </member>
+        <member name="F:SimpleFileLogging.SimpleLogType.Error">
+            <summary>
+            Logging for error
+            </summary>
+        </member>
+        <member name="F:SimpleFileLogging.SimpleLogType.Info">
+            <summary>
+            Logging for info
+            </summary>
+        </member>
+        <member name="F:SimpleFileLogging.SimpleLogType.Debug">
+            <summary>
+            Logging for debug
+            </summary>
+        </member>
+    </members>
+</doc>
