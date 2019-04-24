@@ -15,16 +15,6 @@
     public abstract class MongoDbBaseRepository<T> : IDisposable where T : class
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Static constructor. </summary>
-        ///
-        /// <remarks>   Mustafa SAÇLI, 24.04.2019. </remarks>
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        static MongoDbBaseRepository()
-        {
-            BsonSerializer.RegisterSerializer(DateTimeSerializer.UtcInstance);
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Specialised constructor for use only by derived class. </summary>
         ///
         /// <remarks>   Msacli, 24.04.2019. </remarks>
