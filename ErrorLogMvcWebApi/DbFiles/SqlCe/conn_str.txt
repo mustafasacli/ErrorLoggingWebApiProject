@@ -1,0 +1,1 @@
+Data Source=C:\Depo\Mst\Git_Projects\ErrorLoggingWebApiProject\ErrorLogMvcWebApi\DbFiles\SqlCe\ErrorLogDb_2019_04_25.sdf;Max Database Size=4091

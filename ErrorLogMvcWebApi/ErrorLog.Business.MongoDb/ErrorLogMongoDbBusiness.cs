@@ -74,7 +74,7 @@
                     Id = q.Id,
                     ClassName = q.ClassName,
                     CreatedOn = q.CreatedOn,
-                    CreatedOnTimestamp = q.CreatedOnTimestamp,
+                    CreatedOnUnixTimestamp = q.CreatedOnTimestamp,
                     ExceptionData = q.ExceptionData,
                     LogTime = q.LogTime,
                     LogTimeUnixTimestamp = q.LogTimeUnixTimestamp,
@@ -123,7 +123,7 @@
                 Id = q.Id,
                 ClassName = q.ClassName,
                 CreatedOn = q.CreatedOn,
-                CreatedOnTimestamp = q.CreatedOnTimestamp,
+                CreatedOnUnixTimestamp = q.CreatedOnTimestamp,
                 ExceptionData = q.ExceptionData,
                 LogTime = q.LogTime,
                 LogTimeUnixTimestamp = q.LogTimeUnixTimestamp,
@@ -176,13 +176,13 @@
             }
 
             log.CreatedOn = DateTime.Now;
-            log.CreatedOnTimestamp = log.CreatedOn.Ticks;
+            log.CreatedOnUnixTimestamp = log.CreatedOn.Ticks;
             var logModel = new ErrorLogModelMongo
             {
                 Id = log.Id,
                 ClassName = log.ClassName,
                 CreatedOn = log.CreatedOn,
-                CreatedOnTimestamp = log.CreatedOnTimestamp,
+                CreatedOnTimestamp = log.CreatedOnUnixTimestamp,
                 ExceptionData = log.ExceptionData,
                 LogTime = log.LogTime,
                 LogTimeUnixTimestamp = log.LogTimeUnixTimestamp,
@@ -231,7 +231,7 @@
                 Id = log.Id,
                 ClassName = log.ClassName,
                 CreatedOn = log.CreatedOn,
-                CreatedOnTimestamp = log.CreatedOnTimestamp,
+                CreatedOnTimestamp = log.CreatedOnUnixTimestamp,
                 ExceptionData = log.ExceptionData,
                 LogTime = log.LogTime,
                 LogTimeUnixTimestamp = log.LogTimeUnixTimestamp,

@@ -133,7 +133,7 @@
             }
 
             log.CreatedOn = DateTime.Now;
-            log.CreatedOnTimestamp = log.CreatedOn.Ticks;
+            log.CreatedOnUnixTimestamp = log.CreatedOn.Ticks;
             AddDocument(log);
 
             return log.Id;

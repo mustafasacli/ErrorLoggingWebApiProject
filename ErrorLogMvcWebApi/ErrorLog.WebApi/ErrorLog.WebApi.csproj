@@ -114,6 +114,14 @@
       <Project>{75DE0407-C9D7-4180-AF41-761D4187A8A1}</Project>
       <Name>ErrorLog.Business.RavenDb</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.Sql.Core\ErrorLog.Business.Sql.Core.csproj">
+      <Project>{3EA6DBA7-2376-4B32-9BD3-45C8E3AB46BE}</Project>
+      <Name>ErrorLog.Business.Sql.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.SqlCE\ErrorLog.Business.SqlCE.csproj">
+      <Project>{5e4e833f-8d6f-4e32-9da8-5e5970c195d7}</Project>
+      <Name>ErrorLog.Business.SqlCE</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ErrorLog.Business\ErrorLog.Business.csproj">
       <Project>{0E8265C5-AD52-4F59-AAD5-0E58C3BD9ACF}</Project>
       <Name>ErrorLog.Business</Name>

@@ -63,7 +63,7 @@
         { get; set; }
 
         [DataMember]
-        public long CreatedOnTimestamp
+        public long CreatedOnUnixTimestamp
         { get; set; }
     }
 }

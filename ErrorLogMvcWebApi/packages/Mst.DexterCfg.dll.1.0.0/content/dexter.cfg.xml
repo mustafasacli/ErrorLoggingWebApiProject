@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<dexter.configuration>
+  <dexter-settings writeEventLog="0" writeErrorLog="1">
+    <setting key="conn-key">main</setting>
+    <setting key="conn-string-key">connStringSqlCache</setting>
+    <setting key="connTypeName">oracle</setting>
+    <setting key="connStringName">connStringOraMngd</setting>
+
+    <setting key="connStringSqlCache">Data Source=.\SQLEXPRESS;Initial Catalog=SimpleCacheServerTestDb;Integrated Security=SSPI;</setting>
+    <setting key="connStringSql">data source=.\SQLEXPRESS;initial catalog=FileStoreDbTest;integrated security=True;</setting>
+    <setting key="connStringMySql">data source=127.0.0.1;initial catalog=FileStoreDbTest;user id=root;password=***;</setting>
+    <setting key="connStringPgSql">server=127.0.0.1;Database=postgres;user id=postgres;password=***;</setting>
+    <setting key="connStringOraMngd">
+      Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=127.0.0.1)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=XE)));User Id=HR;Password=***;
+    </setting>   
+  </dexter-settings>
+  <dexter.configs writeEventLog="0" writeErrorLog="1">
+    <dexter>
+      <add name="mysql"
+           typename="MySql.Data.MySqlClient.MySqlConnection"
+           namespace="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d"
+           dialect="MySql"/>
+       
+       <add name="oracle" 
+       typename="Devart.Data.Oracle.OracleConnection" 
+       namespace="Devart.Data.Oracle, Version=9.6.696.0, Culture=neutral, PublicKeyToken=09af7300eec23701" 
+       dialect="Oracle"/>
+       
+      <!--
+      <add name="mysql" 
+      typename="MySql.Data.MySqlClient.MySqlConnection" 
+      namespace="MySql.Data, Version=6.10.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" 
+      dialect="MySql" />
+      -->
+      <!--
+      <add name="sqlite" 
+      typename="System.Data.SQLite.SQLiteConnection" 
+      namespace="System.Data.SQLite, Version=1.0.66.1, Culture=neutral, PublicKeyToken=db937bc2d44ff139" 
+      dialect="SQLite" />
+      -->
+      <!--
+      <add name="firebird" 
+      typename="FirebirdSql.Data.FirebirdClient.FbConnection" 
+      namespace="FirebirdSql.Data.FirebirdClient, Version=2.7.7.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c" 
+      dialect="Firebird" />
+      -->
+      <!--
+      <add name="db2" 
+      typename="IBM.Data.DB2.DB2Connection" 
+      namespace="IBM.Data.DB2, Version=9.7.4.4, Culture=neutral, PublicKeyToken=7c307b91aa13d208" 
+      dialect="DB2" />
+      -->
+      <!--
+      <add name="informix" 
+      typename="IBM.Data.Informix.IfxConnection" 
+      namespace="IBM.Data.Informix, Version=9.7.4.4, Culture=neutral, PublicKeyToken=7c307b91aa13d208" 
+      dialect="Informix" />
+      -->
+      <!--
+      <add name="mysql" 
+      typename="MySql.Data.MySqlClient.MySqlConnection" 
+      namespace="MySql.Data, Version=6.1.2.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" 
+      dialect="MySql" />
+      -->
+      <!--
+      <add name="oracle" 
+      typename="Oracle.DataAccess.Client.OracleConnection" 
+      namespace="Oracle.DataAccess, Version=4.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342" 
+      dialect="Oracle" />
+      -->
+      <!--
+      <add name="oracle" 
+      typename="Oracle.ManagedDataAccess.Client.OracleConnection" 
+      namespace="Oracle.ManagedDataAccess, Version=4.112.3.50, Culture=neutral, PublicKeyToken=89b483f429c47342" 
+      dialect="Oracle" />
+      -->
+      <!--
+      <add name="npgsql" 
+      typename="Npgsql.NpgsqlConnection" 
+      namespace="Npgsql, Version=2.1.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7" 
+      dialect="Npgsql" />
+      -->
+      <!--
+      <add name="vistadb" 
+      typename="VistaDB.Provider.VistaDBConnection" 
+      namespace="VistaDB.5.NET40, Version=5.0.0.0, Culture=neutral, PublicKeyToken=dfc935afe2125461" 
+      dialect="VistaDB" />
+      -->
+      <!--
+      <add name="sql" 
+      typename="System.Data.SqlClient.SqlConnection" 
+      namespace="System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" 
+      dialect="Sql" />
+      -->
+      <!--
+      <add name="oledb" 
+      typename="System.Data.OleDb.OleDbConnection" 
+      namespace="System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" 
+      dialect="OleDb" />
+      -->
+      <!--
+      <add name="odbc" 
+      typename="System.Data.Odbc.OdbcConnection" 
+      namespace="System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" 
+      dialect="Odbc" />
+      -->
+      <!--
+      <add name="entity"
+      typename="System.Data.Entity.Core.EntityClient.EntityConnection" 
+      namespace="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" 
+      dialect="Entity" />
+      -->
+      <!--
+    \Net.Drivers\DB2 And Informix\netf40_32\IBM.Data.DB2.dll
+      <add name="db2" 
+      typename="IBM.Data.DB2.DB2Connection" 
+      namespace="IBM.Data.DB2, Version=9.7.4.4, Culture=neutral, PublicKeyToken=7c307b91aa13d208" 
+      dialect="DB2" />
+      -->
+      <!--
+    \Net.Drivers\DB2 And Informix\netf40_32\IBM.Data.Informix.dll
+      <add name="ifx" 
+      typename="IBM.Data.Informix.IfxConnection" 
+      namespace="IBM.Data.Informix, Version=9.7.4.4, Culture=neutral, PublicKeyToken=7c307b91aa13d208" 
+      dialect="Ifx" />
+      -->
+      <!--
+    \Net.Drivers\Firebird\FirebirdSql.Data.FirebirdClient.dll
+      <add name="fb" 
+      typename="FirebirdSql.Data.FirebirdClient.FbConnection" 
+      namespace="FirebirdSql.Data.FirebirdClient, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c" 
+      dialect="Fb" />
+      -->
+      <!--
+    \Net.Drivers\SqlBase\Gupta.SQLBase.Data.dll
+      <add name="sqlbase" 
+      typename="Gupta.SQLBase.Data.SQLBaseConnection" 
+      namespace="Gupta.SQLBase.Data, Version=11.7.2.9610, Culture=neutral, PublicKeyToken=ff2507ba9fe9b3ac" 
+      dialect="SQLBase" />
+    <add name="sqlbase" 
+    typename="Unify.SQLBase.Data.SQLBaseConnection" 
+    namespace="Gupta.SQLBase.Data, Version=11.7.2.9610, Culture=neutral, PublicKeyToken=ff2507ba9fe9b3ac" 
+    dialect="SQLBase" />
+      -->
+      <!--
+    \Net.Drivers\SqlServerCe\System.Data.SqlServerCe.dll
+      <add name="sqlce" 
+      typename="System.Data.SqlServerCe.SqlCeConnection" 
+      namespace="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" 
+      dialect="SqlCe" />
+      \Net.Drivers\SqlServerCe\System.Data.SqlServerCe_2.dll
+    <add name="sqlce" 
+    typename="System.Data.SqlServerCe.SqlCeConnection" 
+    namespace="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" 
+    dialect="SqlCe" />
+      -->
+      <!--
+    \Net.Drivers\Synergy\Synergex.Data.SynergyDBMSClient.dll
+      <add name="sde" 
+      typename="Synergex.Data.SynergyDBMSClient.SdeConnection" 
+      namespace="Synergex.Data.SynergyDBMSClient, Version=4.0.0.0, Culture=neutral, PublicKeyToken=114c5dbb1312a8bc" 
+      dialect="Sde" />
+      -->
+      <!--
+    \Net.Drivers\VistaDB\VistaDB.4.dll
+      <add name="vistadb" 
+      typename="VistaDB.Provider.VistaDBConnection" 
+      namespace="VistaDB.4, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ca42a1ee8d2e42d3" 
+      dialect="VistaDB" />
+      \Net.Drivers\VistaDB\VistaDB.5.NET40.dll
+    <add name="vistadb" 
+    typename="VistaDB.Provider.VistaDBConnection" 
+    namespace="VistaDB.5.NET40, Version=5.0.0.0, Culture=neutral, PublicKeyToken=dfc935afe2125461" 
+    dialect="VistaDB" />
+    -->
+      <!--
+      C:\Program Files (x86)\Devart\dotConnect\MySQL\Devart.Data.MySql.dll
+      <add name="mysql" 
+      typename="Devart.Data.MySql.MySqlConnection" 
+      namespace="Devart.Data.MySql, Version=8.10.1061.0, Culture=neutral, PublicKeyToken=09af7300eec23701" 
+      dialect="MySql" />
+
+      -->
+      <!--
+
+      -->
+    </dexter>
+  </dexter.configs>
+</dexter.configuration>
