@@ -44,6 +44,7 @@ namespace ErrorLog.Business.Sql.Core
         protected virtual IDbConnection GetConnection()
         {
             var connection = DxConnectionFactory.Instance.GetConnection(this.ConnectionName);
+            connection.ConnectionString = this.ConnectionString;
             return connection;
         }
 

@@ -280,9 +280,9 @@ namespace ErrorLog.Business.Sql
 
                             connection.Execute(
                                 @"INSERT INTO ErrorLog
-                                        (Id, RequestAddres, ResponseAddress, ResponseMachineName, UserId, ClassName, MethodName, Message, StackTrace, ExceptionData, LogTime, LogTimeUnixTimestamp, CreatedOnUnixTimestamp)
+                                        (Id, RequestAddres, ResponseAddress, ResponseMachineName, UserId, ClassName, MethodName, Message, StackTrace, ExceptionData, LogTime, LogTimeUnixTimestamp, CreatedOn, CreatedOnUnixTimestamp)
                                         VALUES
-                                        (@Id, @RequestAddres, @ResponseAddress, @ResponseMachineName, @UserId, @ClassName, @MethodName, @Message, @StackTrace, @ExceptionData, @LogTime, @LogTimeUnixTimestamp, @CreatedOnUnixTimestamp)",
+                                        (@Id, @RequestAddres, @ResponseAddress, @ResponseMachineName, @UserId, @ClassName, @MethodName, @Message, @StackTrace, @ExceptionData, @LogTime, @LogTimeUnixTimestamp, @CreatedOn, @CreatedOnUnixTimestamp)",
                             transaction: transaction, inputParameters: dictionary);
 
                             transaction.Commit();
@@ -370,6 +370,7 @@ namespace ErrorLog.Business.Sql
                                         ExceptionData = @ExceptionData,
                                         LogTime = @LogTime,
                                         LogTimeUnixTimestamp = @LogTimeUnixTimestamp,
+                                        CreatedOn = @CreatedOn,
                                         CreatedOnUnixTimestamp = @CreatedOnUnixTimestamp
                                         WHERE Id = @Id",
                                  transaction: transaction, inputParameters: dictionary);
