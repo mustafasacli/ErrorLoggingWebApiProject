@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mst.Dexter.Extensions</name>
+    </assembly>
+    <members>
+        <member name="T:Mst.Dexter.Extensions.DataExtensions">
+            <summary>
+            Description of DataExtensions.
+            </summary>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.DataExtensions.ToList``1(System.Data.DataTable,System.Boolean)">
+            <summary>
+            This method returns A List of T object.
+            </summary>
+            <typeparam name="T">T object type</typeparam>
+            <param name="datatable">Datatble object</param>
+            <param name="accordingToColumn">if it is true, returns a List with DataTable Columns else returns a List with PropertyInfo of Object.</param>
+            <returns>Returns A List of T object.</returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.DataExtensions.GetColumnsOfDataTable(System.Data.DataTable,System.String[])">
+            <summary>
+            Returns a DataTable with Selected column names.
+            </summary>
+            <param name="dt">DataTable object</param>
+            <param name="columnList"> column names array </param>
+            <returns>Returns a DataTable with Selected column names.</returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.DataExtensions.GetColumnsOfDataTable(System.Data.DataTable,System.Int32[])">
+            <summary>
+            Returns a DataTable with Selected column numbers.
+            </summary>
+            <param name="dt">DataTable object</param>
+            <param name="columnList">column numbers array</param>
+            <returns>Returns a DataTable with Selected column numbers.</returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.DataExtensions.GetObjectWithSelectedColumn(System.Data.DataTable,System.String,System.Object,System.String)">
+            <summary>
+            Returns a object with given parameters.
+            </summary>
+            <param name="dt">DataTable object</param>
+            <param name="refColumn">Name of Reference Column</param>
+            <param name="refValue">Value of Reference Column</param>
+            <param name="destinationColumn">Name of Destination Column</param>
+            <returns>Returns a object at destination column which contains reference value at reference column. Otherwise return null.</returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.DataReaderAsyncExtensions.GetDynamicResultSetAsync(System.Data.IDataReader,System.Boolean)">
+            <summary>
+            Bind IDataReader content to ExpandoObject list.
+            </summary>
+            <param name="reader"></param>
+            <param name="closeAtFinal"></param>
+            <returns>Returns ExpandoObject object list.</returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.DataReaderExtensions.GetDynamicResultSet(System.Data.IDataReader,System.Boolean)">
+            <summary>
+            Bind IDataReader content to ExpandoObject list.
+            </summary>
+            <param name="reader"></param>
+            <param name="closeAtFinal"></param>
+            <returns>Returns ExpandoObject object list.</returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.DxDbCommandHelper.SetCommandParameters(System.Data.IDbCommand,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            creates parameters and sets their values of IDbCommand.
+            </summary>
+            <param name="command"></param>
+            <param name="inputParameters"></param>
+            <param name="outputParameters"></param>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.DxDbCommandHelper.GetOutParametersOfCommand(System.Data.IDbCommand)">
+            <summary>
+            Get Output Values of IDbCommand
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.TypeExtensions.IsSimpleType(System.Type)">
+            <summary>
+            Determine whether a type is simple (String, Decimal, DateTime, etc)
+            or complex (i.e. custom class with public properties and methods).
+            source code: https://gist.github.com/jonathanconway/3330614
+            </summary>
+            <see cref="!:http://stackoverflow.com/questions/2442534/how-to-test-if-type-is-primitive"/>
+        </member>
+    </members>
+</doc>

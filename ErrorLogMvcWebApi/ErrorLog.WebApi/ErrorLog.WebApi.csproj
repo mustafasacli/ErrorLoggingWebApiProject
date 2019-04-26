@@ -122,6 +122,14 @@
       <Project>{5e4e833f-8d6f-4e32-9da8-5e5970c195d7}</Project>
       <Name>ErrorLog.Business.SqlCE</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.SQLite\ErrorLog.Business.SQLite.csproj">
+      <Project>{C789EA79-75F1-4CC5-95D1-E741CD06B191}</Project>
+      <Name>ErrorLog.Business.SQLite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.Sql\ErrorLog.Business.Sql.csproj">
+      <Project>{87FC0801-587A-4DDF-A60C-357505F16761}</Project>
+      <Name>ErrorLog.Business.Sql</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ErrorLog.Business\ErrorLog.Business.csproj">
       <Project>{0E8265C5-AD52-4F59-AAD5-0E58C3BD9ACF}</Project>
       <Name>ErrorLog.Business</Name>

@@ -3,7 +3,9 @@
     using Business.Core.Interfaces;
     using Business.MongoDb;
     using Business.RavenDb;
+    using Business.Sql;
     using Business.SqlCE;
+    using Business.SQLite;
     using SimpleInjector;
     using System;
 
@@ -66,7 +68,15 @@
                     break;
 
                 case 3:
+                    container.Register<IErrorLogBusiness, ErrorLogSqlBusiness>(Lifestyle.Singleton);
+                    break;
+
+                case 4:
                     container.Register<IErrorLogBusiness, ErrorLogSqlCeBusiness>(Lifestyle.Singleton);
+                    break;
+
+                case 5:
+                    container.Register<IErrorLogBusiness, ErrorLogSQLiteBusiness>(Lifestyle.Singleton);
                     break;
 
                 default:

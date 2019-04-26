@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ErrorLog.Business.Sql</name>
+    </assembly>
+    <members>
+        <member name="T:ErrorLog.Business.Sql.ErrorLogSqlBusiness">
+             <summary>   An error log SQL business. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 26.04.2019. </remarks>
+        </member>
+        <member name="M:ErrorLog.Business.Sql.ErrorLogSqlBusiness.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 26.04.2019. </remarks>
+        </member>
+        <member name="M:ErrorLog.Business.Sql.ErrorLogSqlBusiness.Delete(ErrorLog.Models.ErrorLogModel)">
+             <summary>   Deletes the given log. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 26.04.2019. </remarks>
+            
+             <param name="log">  The log to save. </param>
+            
+             <returns>   An int. </returns>
+        </member>
+        <member name="M:ErrorLog.Business.Sql.ErrorLogSqlBusiness.GetById(System.String)">
+             <summary>   Gets by id. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 26.04.2019. </remarks>
+            
+             <param name="oid">  The oid. </param>
+            
+             <returns>   The by ıd. </returns>
+        </member>
+        <member name="M:ErrorLog.Business.Sql.ErrorLogSqlBusiness.GetLogs(System.Nullable{System.Int64},System.Nullable{System.Int64})">
+             <summary>   Gets the logs in this collection. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 26.04.2019. </remarks>
+            
+             <param name="startTimestamp">   The start timestamp. </param>
+             <param name="endTimestamp">     The end timestamp. </param>
+            
+             <returns>
+             An enumerator that allows foreach to be used to process the logs in this collection.
+             </returns>
+        </member>
+        <member name="M:ErrorLog.Business.Sql.ErrorLogSqlBusiness.Save(ErrorLog.Models.ErrorLogModel)">
+             <summary>   Saves the given log. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 26.04.2019. </remarks>
+            
+             <param name="log">  The log to save. </param>
+            
+             <returns>   A string. </returns>
+        </member>
+        <member name="M:ErrorLog.Business.Sql.ErrorLogSqlBusiness.Update(ErrorLog.Models.ErrorLogModel)">
+             <summary>   Updates the given log. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 26.04.2019. </remarks>
+            
+             <param name="log">  The log to save. </param>
+            
+             <returns>   An int. </returns>
+        </member>
+        <member name="M:ErrorLog.Business.Sql.ErrorLogSqlBusiness.Dispose">
+             <summary>
+             Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged
+             resources.
+             </summary>
+            
+             <remarks>   Mustafa SAÇLI, 26.04.2019. </remarks>
+        </member>
+    </members>
+</doc>

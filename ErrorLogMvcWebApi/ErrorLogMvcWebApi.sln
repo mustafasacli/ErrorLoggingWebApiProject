@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLog.Business.Sql.Core"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLog.Business.SQLite", "ErrorLog.Business.SQLite\ErrorLog.Business.SQLite.csproj", "{C789EA79-75F1-4CC5-95D1-E741CD06B191}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLog.Business.Sql", "ErrorLog.Business.Sql\ErrorLog.Business.Sql.csproj", "{87FC0801-587A-4DDF-A60C-357505F16761}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{C789EA79-75F1-4CC5-95D1-E741CD06B191}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C789EA79-75F1-4CC5-95D1-E741CD06B191}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C789EA79-75F1-4CC5-95D1-E741CD06B191}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87FC0801-587A-4DDF-A60C-357505F16761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87FC0801-587A-4DDF-A60C-357505F16761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87FC0801-587A-4DDF-A60C-357505F16761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87FC0801-587A-4DDF-A60C-357505F16761}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
