@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ErrorLog.Business.Core</name>
+    </assembly>
+    <members>
+        <member name="T:ErrorLog.Business.Core.Constants.CoreConstants">
+             <summary>   A core constants. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+        </member>
+        <member name="F:ErrorLog.Business.Core.Constants.CoreConstants.NullLogResponse">
+            <summary>
+            The null log response.
+            </summary>
+        </member>
+        <member name="F:ErrorLog.Business.Core.Constants.CoreConstants.EmptyLogIdResponse">
+            <summary>
+            The empty log ıd response.
+            </summary>
+        </member>
+        <member name="F:ErrorLog.Business.Core.Constants.CoreConstants.EmptyGuidLogIdResponse">
+            <summary>
+            The empty unique identifier log ıd response.
+            </summary>
+        </member>
+        <member name="T:ErrorLog.Business.Core.Interfaces.IErrorLogBusiness">
+             <summary>   İnterface for error log business. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+        </member>
+        <member name="M:ErrorLog.Business.Core.Interfaces.IErrorLogBusiness.Save(ErrorLog.Models.ErrorLogModel)">
+             <summary>   Saves the given log. </summary>
+            
+             <param name="log">  The log to save. </param>
+            
+             <returns>   A string. </returns>
+        </member>
+        <member name="M:ErrorLog.Business.Core.Interfaces.IErrorLogBusiness.Update(ErrorLog.Models.ErrorLogModel)">
+             <summary>   Updates the given log. </summary>
+            
+             <param name="log">  The log to save. </param>
+            
+             <returns>   An int. </returns>
+        </member>
+        <member name="M:ErrorLog.Business.Core.Interfaces.IErrorLogBusiness.Delete(ErrorLog.Models.ErrorLogModel)">
+             <summary>   Deletes the given log. </summary>
+            
+             <param name="log">  The log to save. </param>
+            
+             <returns>   An int. </returns>
+        </member>
+        <member name="M:ErrorLog.Business.Core.Interfaces.IErrorLogBusiness.GetById(System.String)">
+             <summary>   Gets by id. </summary>
+            
+             <param name="oid">  The oid. </param>
+            
+             <returns>   The by ıd. </returns>
+        </member>
+        <member name="M:ErrorLog.Business.Core.Interfaces.IErrorLogBusiness.GetLogs(System.Nullable{System.Int64},System.Nullable{System.Int64})">
+             <summary>   Gets the logs in this collection. </summary>
+            
+             <param name="startTimestamp">   The start timestamp. </param>
+             <param name="endTimestamp">     The end timestamp. </param>
+            
+             <returns>
+             An enumerator that allows foreach to be used to process the logs in this collection.
+             </returns>
+        </member>
+    </members>
+</doc>

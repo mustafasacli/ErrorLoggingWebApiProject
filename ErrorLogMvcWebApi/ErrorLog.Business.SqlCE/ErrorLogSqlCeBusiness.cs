@@ -29,7 +29,7 @@ namespace ErrorLog.Business.SqlCE
         /// <remarks>   Mustafa SAÇLI, 26.04.2019. </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         public ErrorLogSqlCeBusiness()
-            : base("sqlce", ConfigurationManager.ConnectionStrings["sqlce"].ConnectionString)
+            : base("sqlite", ConfigurationManager.ConnectionStrings["sqlite"].ConnectionString)
         {
         }
 
@@ -249,11 +249,57 @@ namespace ErrorLog.Business.SqlCE
             log.CreatedOn = DateTime.Now;
             log.CreatedOnUnixTimestamp = log.CreatedOn.Ticks;
 
-            ///
             /// Insert Logic here.
-            /// 
 
-            throw new NotImplementedException();
+            var result = string.Empty;
+
+            using (var connection = GetConnection())
+            {
+                try
+                {
+                    using (var transaction = connection.OpenAndBeginTransaction())
+                    {
+                        try
+                        {
+                            var dictionary = new Dictionary<string, object>();
+                            dictionary.Add("@Id", log.Id);
+                            dictionary.Add("@RequestAddres", log.RequestAddres);
+                            dictionary.Add("@ResponseAddress", log.ResponseAddress);
+                            dictionary.Add("@ResponseMachineName", log.ResponseMachineName);
+                            dictionary.Add("@UserId", log.UserId);
+                            dictionary.Add("@ClassName", log.ClassName);
+                            dictionary.Add("@MethodName", log.MethodName);
+                            dictionary.Add("@Message", log.Message);
+                            dictionary.Add("@StackTrace", log.StackTrace);
+                            dictionary.Add("@ExceptionData", log.ExceptionData);
+                            dictionary.Add("@LogTime", log.LogTime);
+                            dictionary.Add("@LogTimeUnixTimestamp", log.LogTimeUnixTimestamp);
+                            dictionary.Add("@CreatedOn", log.CreatedOn);
+                            dictionary.Add("@CreatedOnUnixTimestamp", log.CreatedOnUnixTimestamp);
+
+                            connection.Execute(
+                                @"INSERT INTO ErrorLog
+                                        (Id, RequestAddres, ResponseAddress, ResponseMachineName, UserId, ClassName, MethodName, Message, StackTrace, ExceptionData, LogTime, LogTimeUnixTimestamp, CreatedOnUnixTimestamp)
+                                        VALUES
+                                        (@Id, @RequestAddres, @ResponseAddress, @ResponseMachineName, @UserId, @ClassName, @MethodName, @Message, @StackTrace, @ExceptionData, @LogTime, @LogTimeUnixTimestamp, @CreatedOnUnixTimestamp)",
+                            transaction: transaction, inputParameters: dictionary);
+
+                            transaction.Commit();
+                        }
+                        catch (Exception)
+                        {
+                            transaction.Rollback();
+                            throw;
+                        }
+                    }
+                }
+                finally
+                {
+                    connection.CloseIfNot();
+                }
+            }
+            result = log.Id;
+            return result;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -283,11 +329,66 @@ namespace ErrorLog.Business.SqlCE
             if (log.Id == emptystring)
                 return CoreConstants.EmptyGuidLogIdResponse;
 
-            ///
-            /// Update Logic here.
-            /// 
+            var result = -1;
 
-            throw new NotImplementedException();
+            using (var connection = GetConnection())
+            {
+                try
+                {
+                    using (var transaction = connection.OpenAndBeginTransaction())
+                    {
+                        try
+                        {
+                            var dictionary = new Dictionary<string, object>();
+                            dictionary.Add("@RequestAddres", log.RequestAddres);
+                            dictionary.Add("@ResponseAddress", log.ResponseAddress);
+                            dictionary.Add("@ResponseMachineName", log.ResponseMachineName);
+                            dictionary.Add("@UserId", log.UserId);
+                            dictionary.Add("@ClassName", log.ClassName);
+                            dictionary.Add("@MethodName", log.MethodName);
+                            dictionary.Add("@Message", log.Message);
+                            dictionary.Add("@StackTrace", log.StackTrace);
+                            dictionary.Add("@ExceptionData", log.ExceptionData);
+                            dictionary.Add("@LogTime", log.LogTime);
+                            dictionary.Add("@LogTimeUnixTimestamp", log.LogTimeUnixTimestamp);
+                            dictionary.Add("@CreatedOn", log.CreatedOn);
+                            dictionary.Add("@CreatedOnUnixTimestamp", log.CreatedOnUnixTimestamp);
+                            dictionary.Add("@Id", log.Id);
+
+                            result =
+                                 connection.Execute(
+                                     @"UPDATE ErrorLog SET
+                                        RequestAddres = @RequestAddres,
+                                        ResponseAddress = @ResponseAddress,
+                                        ResponseMachineName = @ResponseMachineName,
+                                        UserId = @UserId,
+                                        ClassName = @ClassName,
+                                        MethodName = @MethodName,
+                                        Message = @Message,
+                                        StackTrace = @StackTrace,
+                                        ExceptionData = @ExceptionData,
+                                        LogTime = @LogTime,
+                                        LogTimeUnixTimestamp = @LogTimeUnixTimestamp,
+                                        CreatedOnUnixTimestamp = @CreatedOnUnixTimestamp
+                                        WHERE Id = @Id",
+                                 transaction: transaction, inputParameters: dictionary);
+
+                            transaction.Commit();
+                        }
+                        catch (Exception)
+                        {
+                            transaction.Rollback();
+                            throw;
+                        }
+                    }
+                }
+                finally
+                {
+                    connection.CloseIfNot();
+                }
+            }
+
+            return result;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
