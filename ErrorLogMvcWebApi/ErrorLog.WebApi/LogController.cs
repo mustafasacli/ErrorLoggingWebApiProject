@@ -3,6 +3,7 @@
     using ErrorLog.Business.Core.Interfaces;
     using ErrorLog.Models;
     using SimpleFileLogging;
+    using SimpleFileLogging.Logging;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -30,7 +31,7 @@
             }
             catch (Exception e)
             {
-                SimpleFileLogger.LogError(e);
+                MLogger.LogError(e);
                 result = "err";
             }
 
@@ -49,7 +50,7 @@
             }
             catch (Exception e)
             {
-                SimpleFileLogger.LogError(e);
+                MLogger.LogError(e);
             }
 
             result = result ?? new ErrorLogModel { };
@@ -69,7 +70,7 @@
             }
             catch (Exception e)
             {
-                SimpleFileLogger.LogError(e);
+                MLogger.LogError(e);
             }
 
             result = result ?? new ErrorLogModel[] { }.AsEnumerable();

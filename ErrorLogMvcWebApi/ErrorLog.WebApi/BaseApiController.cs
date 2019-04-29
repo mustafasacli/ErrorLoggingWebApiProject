@@ -2,6 +2,7 @@
 {
     using Microsoft.Owin;
     using SimpleFileLogging;
+    using SimpleFileLogging.Logging;
     using System;
     using System.Collections.Generic;
     using System.Net;
@@ -40,7 +41,7 @@
                 }
                 catch (Exception e)
                 {
-                    SimpleFileLogger.LogError(e);
+                    MLogger.LogError(e);
                 }
 
                 return s;
@@ -70,7 +71,7 @@
                 }
                 catch (Exception e)
                 {
-                    SimpleFileLogger.LogError(e);
+                    MLogger.LogError(e);
                 }
 
                 return s;
@@ -94,7 +95,7 @@
                 }
                 catch (Exception e)
                 {
-                    SimpleFileLogger.LogError(e);
+                    MLogger.LogError(e);
                 }
 
                 return s;
@@ -126,7 +127,7 @@
             }
             catch (Exception e)
             {
-                SimpleFileLogger.LogError(e);
+                MLogger.LogError(e);
             }
 
             return ipAdress;
@@ -169,7 +170,7 @@
             }
             catch (Exception e)
             {
-                SimpleFileLogger.LogError(e);
+                MLogger.LogError(e);
             }
 
             return ip ?? string.Empty;
@@ -221,7 +222,7 @@
                 }
                 catch (Exception ex)
                 {
-                    SimpleFileLogger.LogError(ex);
+                    MLogger.LogError(ex);
                     try
                     {
                         //var i = this.Logger?.Error(ex, this.RequestAddress, this.ResponseAddress, Environment.MachineName);
@@ -254,7 +255,7 @@
             }
             catch (Exception ex)
             {
-                SimpleFileLogger.LogError(ex);
+                MLogger.LogError(ex);
                 try
                 {
                     // var i = this.Logger?.Error(ex, this.RequestAddress, this.ResponseAddress, Environment.MachineName);
