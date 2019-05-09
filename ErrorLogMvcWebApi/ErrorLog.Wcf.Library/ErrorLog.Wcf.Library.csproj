@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A6666C8C-6D75-40A0-B467-B9DA1C8E528D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ErrorLog.Wcf.Library</RootNamespace>
+    <AssemblyName>ErrorLog.Wcf.Library</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Output\ErrorLog.Wcf.Library\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SimpleFileLogging, Version=2.1.0.0, Culture=neutral, PublicKeyToken=3473942f32152fab, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleFileLogging.dll.2.1.0\lib\net451\SimpleFileLogging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=4.5.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.5.2\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppValues.cs" />
+    <Compile Include="ErrorLogService.cs" />
+    <Compile Include="IErrorLogService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WcfIoC.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ErrorLog.Business.Core\ErrorLog.Business.Core.csproj">
+      <Project>{46307983-9208-4752-9946-9E87B97C8698}</Project>
+      <Name>ErrorLog.Business.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.MongoDb\ErrorLog.Business.MongoDb.csproj">
+      <Project>{D2580C38-AF18-4919-90D1-0D3C60E9B4A7}</Project>
+      <Name>ErrorLog.Business.MongoDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.RavenDb\ErrorLog.Business.RavenDb.csproj">
+      <Project>{75DE0407-C9D7-4180-AF41-761D4187A8A1}</Project>
+      <Name>ErrorLog.Business.RavenDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.Sql.Core\ErrorLog.Business.Sql.Core.csproj">
+      <Project>{3EA6DBA7-2376-4B32-9BD3-45C8E3AB46BE}</Project>
+      <Name>ErrorLog.Business.Sql.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.SqlCE\ErrorLog.Business.SqlCE.csproj">
+      <Project>{5E4E833F-8D6F-4E32-9DA8-5E5970C195D7}</Project>
+      <Name>ErrorLog.Business.SqlCE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.SQLite\ErrorLog.Business.SQLite.csproj">
+      <Project>{C789EA79-75F1-4CC5-95D1-E741CD06B191}</Project>
+      <Name>ErrorLog.Business.SQLite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.Sql\ErrorLog.Business.Sql.csproj">
+      <Project>{87FC0801-587A-4DDF-A60C-357505F16761}</Project>
+      <Name>ErrorLog.Business.Sql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Models\ErrorLog.Models.csproj">
+      <Project>{09AD6782-8A5F-4D17-9E3F-41E8C6D57D18}</Project>
+      <Name>ErrorLog.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mst.MongoDb.Core\Mst.MongoDb.Core.csproj">
+      <Project>{3FD62797-3A70-4A27-92E7-ED27FDD48A60}</Project>
+      <Name>Mst.MongoDb.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mst.RavenDb.Core\Mst.RavenDb.Core.csproj">
+      <Project>{FC210490-7716-4736-97AD-EF32A36810B2}</Project>
+      <Name>Mst.RavenDb.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>rd /s /q "$(ProjectDir)obj\Debug"
+rd /s /q "$(ProjectDir)obj\Release"
+rd /s /q "$(ProjectDir)bin\Debug"
+rd /s /q "$(ProjectDir)bin\Release"
+rd /s /q "$(ProjectDir)bin\*"
+rd /s /q "$(ProjectDir)obj\*"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

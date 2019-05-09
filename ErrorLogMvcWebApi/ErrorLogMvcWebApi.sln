@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLog.Business.SQLite", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLog.Business.Sql", "ErrorLog.Business.Sql\ErrorLog.Business.Sql.csproj", "{87FC0801-587A-4DDF-A60C-357505F16761}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLog.Wcf.Library", "ErrorLog.Wcf.Library\ErrorLog.Wcf.Library.csproj", "{A6666C8C-6D75-40A0-B467-B9DA1C8E528D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{87FC0801-587A-4DDF-A60C-357505F16761}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87FC0801-587A-4DDF-A60C-357505F16761}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87FC0801-587A-4DDF-A60C-357505F16761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6666C8C-6D75-40A0-B467-B9DA1C8E528D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6666C8C-6D75-40A0-B467-B9DA1C8E528D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6666C8C-6D75-40A0-B467-B9DA1C8E528D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6666C8C-6D75-40A0-B467-B9DA1C8E528D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

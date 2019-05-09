@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ErrorLog.Business.RavenDb</name>
+    </assembly>
+    <members>
+        <member name="T:ErrorLog.Business.RavenDb.EnvironmentConstants">
+             <summary>   An environment constants. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+        </member>
+        <member name="F:ErrorLog.Business.RavenDb.EnvironmentConstants.DbServerUrl">
+            <summary>
+            URL of the database server.
+            </summary>
+        </member>
+        <member name="F:ErrorLog.Business.RavenDb.EnvironmentConstants.DbName">
+            <summary>
+            Name of the database.
+            </summary>
+        </member>
+        <member name="T:ErrorLog.Business.RavenDb.ErrorLogRavenDbBusiness">
+             <summary>   An error log raven database business. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+        </member>
+        <member name="M:ErrorLog.Business.RavenDb.ErrorLogRavenDbBusiness.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+        </member>
+        <member name="M:ErrorLog.Business.RavenDb.ErrorLogRavenDbBusiness.Delete(ErrorLog.Models.ErrorLogModel)">
+             <summary>   Deletes the given log. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <param name="log">  The log to save. </param>
+            
+             <returns>   An int. </returns>
+        </member>
+        <member name="M:ErrorLog.Business.RavenDb.ErrorLogRavenDbBusiness.GetById(System.String)">
+             <summary>   Gets by id. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <param name="oid">  The oid. </param>
+            
+             <returns>   The by id. </returns>
+        </member>
+        <member name="M:ErrorLog.Business.RavenDb.ErrorLogRavenDbBusiness.GetLogs(System.Nullable{System.Int64},System.Nullable{System.Int64})">
+             <summary>   Gets the logs in this collection. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <param name="startTimestamp">   The start timestamp. </param>
+             <param name="endTimestamp">     The end timestamp. </param>
+            
+             <returns>
+             An enumerator that allows foreach to be used to process the logs in this collection.
+             </returns>
+        </member>
+        <member name="M:ErrorLog.Business.RavenDb.ErrorLogRavenDbBusiness.Save(ErrorLog.Models.ErrorLogModel)">
+             <summary>   Saves the given log. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <param name="log">  The log to save. </param>
+            
+             <returns>   A string. </returns>
+        </member>
+        <member name="M:ErrorLog.Business.RavenDb.ErrorLogRavenDbBusiness.Update(ErrorLog.Models.ErrorLogModel)">
+             <summary>   Updates the given log. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <param name="log">  The log to save. </param>
+            
+             <returns>   An int. </returns>
+        </member>
+    </members>
+</doc>

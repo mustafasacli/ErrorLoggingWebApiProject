@@ -32,11 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Mst.Dexter.Extensions, Version=1.0.0.1, Culture=neutral, PublicKeyToken=3d7be7f033594697, processorArchitecture=MSIL">
-      <HintPath>..\packages\Mst.Dexter.Extensions.dll.1.0.0.1\lib\net451\Mst.Dexter.Extensions.dll</HintPath>
+    <Reference Include="Mst.Dexter.Extensions, Version=1.1.0.1, Culture=neutral, PublicKeyToken=3d7be7f033594697, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mst.Dexter.Extensions.dll.1.1.0.1\lib\net451\Mst.Dexter.Extensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
