@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ErrorLog.Business.Sql.Core</name>
+    </assembly>
+    <members>
+        <member name="T:ErrorLog.Business.Sql.Core.BaseSqlBusiness">
+             <summary>   A Base SQL business. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 25.04.2019. </remarks>
+        </member>
+        <member name="P:ErrorLog.Business.Sql.Core.BaseSqlBusiness.ConnectionName">
+             <summary>   Gets or sets the name of the connection. </summary>
+            
+             <value> The name of the connection. </value>
+        </member>
+        <member name="P:ErrorLog.Business.Sql.Core.BaseSqlBusiness.ConnectionString">
+             <summary>   Gets or sets the connection string. </summary>
+            
+             <value> The connection string. </value>
+        </member>
+        <member name="M:ErrorLog.Business.Sql.Core.BaseSqlBusiness.GetConnection">
+             <summary>   Gets the connection. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 25.04.2019. </remarks>
+            
+             <returns>   The connection. </returns>
+        </member>
+        <member name="M:ErrorLog.Business.Sql.Core.BaseSqlBusiness.#ctor(System.String,System.String)">
+             <summary>   Specialised constructor for use only by derived class. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 25.04.2019. </remarks>
+            
+             <exception cref="T:System.ArgumentNullException"> Thrown when one or more required arguments are null. </exception>
+            
+             <param name="connectionName">   The name of the connection. </param>
+             <param name="connectionString"> The connection string. </param>
+        </member>
+    </members>
+</doc>

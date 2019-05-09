@@ -1,0 +1,16 @@
+C:\Depo\Mst\Git_Projects\ErrorLoggingWebApiProject\ErrorLogMvcWebApi\ErrorLog.Business.LiteDb\bin\Debug\ErrorLog.Business.LiteDb.dll
+C:\Depo\Mst\Git_Projects\ErrorLoggingWebApiProject\ErrorLogMvcWebApi\ErrorLog.Business.LiteDb\bin\Debug\ErrorLog.Business.LiteDb.pdb
+C:\Depo\Mst\Git_Projects\ErrorLoggingWebApiProject\ErrorLogMvcWebApi\ErrorLog.Business.LiteDb\bin\Debug\ErrorLog.Business.Core.dll
+C:\Depo\Mst\Git_Projects\ErrorLoggingWebApiProject\ErrorLogMvcWebApi\ErrorLog.Business.LiteDb\bin\Debug\ErrorLog.Models.dll
+C:\Depo\Mst\Git_Projects\ErrorLoggingWebApiProject\ErrorLogMvcWebApi\ErrorLog.Business.LiteDb\bin\Debug\LiteDB.dll
+C:\Depo\Mst\Git_Projects\ErrorLoggingWebApiProject\ErrorLogMvcWebApi\ErrorLog.Business.LiteDb\bin\Debug\Mst.LiteDb.Core.dll
+C:\Depo\Mst\Git_Projects\ErrorLoggingWebApiProject\ErrorLogMvcWebApi\ErrorLog.Business.LiteDb\bin\Debug\ErrorLog.Business.Core.pdb
+C:\Depo\Mst\Git_Projects\ErrorLoggingWebApiProject\ErrorLogMvcWebApi\ErrorLog.Business.LiteDb\bin\Debug\ErrorLog.Business.Core.xml
+C:\Depo\Mst\Git_Projects\ErrorLoggingWebApiProject\ErrorLogMvcWebApi\ErrorLog.Business.LiteDb\bin\Debug\ErrorLog.Models.pdb
+C:\Depo\Mst\Git_Projects\ErrorLoggingWebApiProject\ErrorLogMvcWebApi\ErrorLog.Business.LiteDb\bin\Debug\ErrorLog.Models.xml
+C:\Depo\Mst\Git_Projects\ErrorLoggingWebApiProject\ErrorLogMvcWebApi\ErrorLog.Business.LiteDb\bin\Debug\Mst.LiteDb.Core.pdb
+C:\Depo\Mst\Git_Projects\ErrorLoggingWebApiProject\ErrorLogMvcWebApi\ErrorLog.Business.LiteDb\bin\Debug\Mst.LiteDb.Core.xml
+C:\Depo\Mst\Git_Projects\ErrorLoggingWebApiProject\ErrorLogMvcWebApi\ErrorLog.Business.LiteDb\bin\Debug\LiteDB.xml
+C:\Depo\Mst\Git_Projects\ErrorLoggingWebApiProject\ErrorLogMvcWebApi\ErrorLog.Business.LiteDb\obj\Debug\ErrorLog.Business.LiteDb.csprojResolveAssemblyReference.cache
+C:\Depo\Mst\Git_Projects\ErrorLoggingWebApiProject\ErrorLogMvcWebApi\ErrorLog.Business.LiteDb\obj\Debug\ErrorLog.Business.LiteDb.dll
+C:\Depo\Mst\Git_Projects\ErrorLoggingWebApiProject\ErrorLogMvcWebApi\ErrorLog.Business.LiteDb\obj\Debug\ErrorLog.Business.LiteDb.pdb

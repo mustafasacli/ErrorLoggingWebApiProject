@@ -16,12 +16,22 @@
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     public abstract class BaseApiController : ApiController
     {
+        private static Guid gd = Guid.Empty;
+
+        private static object lockObj = new object();
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        /// <summary>   Gets the activity id. </summary>
+        /// <summary>   Gets the activity ıd. </summary>
         ///
-        /// <value> The activity İdentifier. </value>
+        /// <value> The activity Identifier. </value>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        protected Guid ActivityId { get { return AppValues.ActivityId; } }
+        public static Guid ActivityId
+        {
+            get
+            {
+                return WebApiAppValues.ActivityId;
+            }
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets the request address. </summary>

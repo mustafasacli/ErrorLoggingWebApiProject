@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ErrorLog.Models</name>
+    </assembly>
+    <members>
+        <member name="T:ErrorLog.Models.ErrorLogModel">
+             <summary>   A data Model for the error log. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+        </member>
+    </members>
+</doc>

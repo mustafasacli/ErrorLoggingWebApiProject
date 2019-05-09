@@ -65,6 +65,10 @@
       <Project>{3EA6DBA7-2376-4B32-9BD3-45C8E3AB46BE}</Project>
       <Name>ErrorLog.Business.Sql.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.SqlDb\ErrorLog.Business.SqlDb.csproj">
+      <Project>{1D38DC9A-6299-4237-827F-144CF6816C3F}</Project>
+      <Name>ErrorLog.Business.SqlDb</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ErrorLog.Models\ErrorLog.Models.csproj">
       <Project>{09ad6782-8a5f-4d17-9e3f-41e8c6d57d18}</Project>
       <Name>ErrorLog.Models</Name>

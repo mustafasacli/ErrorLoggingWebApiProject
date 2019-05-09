@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mst.LiteDb.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Mst.LiteDb.Core.LiteDbBaseRepository`1">
+             <summary>   A lite database repository. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 9.05.2019. </remarks>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+        </member>
+        <member name="M:Mst.LiteDb.Core.LiteDbBaseRepository`1.#ctor(System.String,LiteDB.BsonMapper,LiteDB.Logger)">
+             <summary>   Specialised constructor for use only by derived class. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 9.05.2019. </remarks>
+            
+             <param name="connectionString"> The connection string. </param>
+        </member>
+        <member name="P:Mst.LiteDb.Core.LiteDbBaseRepository`1.Collection">
+             <summary>   Gets the collection. </summary>
+            
+             <value> The collection. </value>
+        </member>
+        <member name="M:Mst.LiteDb.Core.LiteDbBaseRepository`1.Dispose">
+             <summary>
+             Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged
+             resources.
+             </summary>
+            
+             <remarks>   Mustafa SAÇLI, 9.05.2019. </remarks>
+        </member>
+    </members>
+</doc>

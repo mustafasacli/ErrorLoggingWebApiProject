@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppValues.cs" />
+    <Compile Include="IocAppValues.cs" />
     <Compile Include="ErrorLogIoC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,6 +64,10 @@
     <ProjectReference Include="..\ErrorLog.Business.Core\ErrorLog.Business.Core.csproj">
       <Project>{46307983-9208-4752-9946-9e87b97c8698}</Project>
       <Name>ErrorLog.Business.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.LiteDb\ErrorLog.Business.LiteDb.csproj">
+      <Project>{5D973B3D-858C-4AFA-8B6D-227935F24ED7}</Project>
+      <Name>ErrorLog.Business.LiteDb</Name>
     </ProjectReference>
     <ProjectReference Include="..\ErrorLog.Business.MongoDb\ErrorLog.Business.MongoDb.csproj">
       <Project>{d2580c38-af18-4919-90d1-0d3c60e9b4a7}</Project>
@@ -80,6 +84,10 @@
     <ProjectReference Include="..\ErrorLog.Business.SqlCE\ErrorLog.Business.SqlCE.csproj">
       <Project>{5e4e833f-8d6f-4e32-9da8-5e5970c195d7}</Project>
       <Name>ErrorLog.Business.SqlCE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.SqlDb\ErrorLog.Business.SqlDb.csproj">
+      <Project>{1D38DC9A-6299-4237-827F-144CF6816C3F}</Project>
+      <Name>ErrorLog.Business.SqlDb</Name>
     </ProjectReference>
     <ProjectReference Include="..\ErrorLog.Business.SQLite\ErrorLog.Business.SQLite.csproj">
       <Project>{c789ea79-75f1-4cc5-95d1-e741cd06b191}</Project>
@@ -100,6 +108,10 @@
     <ProjectReference Include="..\ErrorLog.Mongo.Models\ErrorLog.Mongo.Models.csproj">
       <Project>{e7c230d7-b6cd-423d-9d70-69821820e909}</Project>
       <Name>ErrorLog.Mongo.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mst.LiteDb.Core\Mst.LiteDb.Core.csproj">
+      <Project>{8055E669-8AD5-4867-99E7-D9A95886BB68}</Project>
+      <Name>Mst.LiteDb.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Mst.MongoDb.Core\Mst.MongoDb.Core.csproj">
       <Project>{3fd62797-3a70-4a27-92e7-ed27fdd48a60}</Project>
