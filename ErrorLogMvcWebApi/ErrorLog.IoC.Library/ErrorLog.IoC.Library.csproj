@@ -97,6 +97,10 @@
       <Project>{87fc0801-587a-4ddf-a60c-357505f16761}</Project>
       <Name>ErrorLog.Business.Sql</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.VistaDb\ErrorLog.Business.VistaDb.csproj">
+      <Project>{789927D9-11B9-4A5C-B536-A7BC8158600E}</Project>
+      <Name>ErrorLog.Business.VistaDb</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ErrorLog.Business\ErrorLog.Business.csproj">
       <Project>{0e8265c5-ad52-4f59-aad5-0e58c3bd9acf}</Project>
       <Name>ErrorLog.Business</Name>

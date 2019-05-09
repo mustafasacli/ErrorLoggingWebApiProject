@@ -13,6 +13,7 @@ namespace ErrorLog.IoC.Library
     using Business.Sql;
     using Business.SqlCE;
     using Business.SQLite;
+    using Business.VistaDb;
     using SimpleInjector;
     using System;
 
@@ -111,6 +112,10 @@ namespace ErrorLog.IoC.Library
                     break;
 
                 case 6:
+                    container.Register<IErrorLogBusiness, ErrorLogVistaDbBusiness>(Lifestyle.Singleton);
+                    break;
+
+                case 7:
                     container.Register<IErrorLogBusiness, ErrorLogLiteDbBusiness>(Lifestyle.Singleton);
                     break;
 
