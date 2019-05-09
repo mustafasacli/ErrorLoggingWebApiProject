@@ -1,7 +1,5 @@
 ﻿namespace Mst.MongoDb.Core
 {
-    using MongoDB.Bson.Serialization;
-    using MongoDB.Bson.Serialization.Serializers;
     using MongoDB.Driver;
     using System;
 
@@ -31,8 +29,6 @@
 
             if (string.IsNullOrWhiteSpace(connectionString))
                 throw new ArgumentNullException(nameof(connectionString));
-
-
 
             var client = new MongoClient(connectionString);
             this.Collection = client.GetDatabase(databaseName).GetCollection<T>(typeof(T).Name.ToLowerInvariant());

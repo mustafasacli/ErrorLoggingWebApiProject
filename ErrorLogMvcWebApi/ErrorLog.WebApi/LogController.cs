@@ -2,6 +2,7 @@
 {
     using ErrorLog.Business.Core.Interfaces;
     using ErrorLog.Models;
+    using IoC.Library;
     using SimpleFileLogging;
     using System;
     using System.Collections.Generic;
@@ -15,7 +16,7 @@
 
         public LogController()//IErrorLogBusiness logBusiness)
         {
-            this.logBusiness = OwinIoC.Instance.Container.GetInstance<IErrorLogBusiness>();//logBusiness;
+            this.logBusiness = ErrorLogIoC.Instance.Container.GetInstance<IErrorLogBusiness>();//logBusiness;
         }
 
         [ResponseType(typeof(string))]

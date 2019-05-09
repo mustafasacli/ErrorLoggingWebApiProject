@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\Output\ErrorLog.Wcf.Library\ErrorLog.Wcf.Library.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +29,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>errorlog.wcf.library.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="SimpleFileLogging, Version=2.1.0.0, Culture=neutral, PublicKeyToken=3473942f32152fab, processorArchitecture=MSIL">
@@ -85,6 +92,10 @@
       <Project>{87FC0801-587A-4DDF-A60C-357505F16761}</Project>
       <Name>ErrorLog.Business.Sql</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.IoC.Library\ErrorLog.IoC.Library.csproj">
+      <Project>{0AC1F28D-4483-4A98-BCB2-806A4339D6AF}</Project>
+      <Name>ErrorLog.IoC.Library</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ErrorLog.Models\ErrorLog.Models.csproj">
       <Project>{09AD6782-8A5F-4D17-9E3F-41E8C6D57D18}</Project>
       <Name>ErrorLog.Models</Name>
@@ -99,6 +110,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="errorlog.wcf.library.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

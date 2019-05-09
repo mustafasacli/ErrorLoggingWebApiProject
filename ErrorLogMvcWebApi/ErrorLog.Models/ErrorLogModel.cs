@@ -8,6 +8,7 @@
     ///
     /// <remarks>   Msacli, 24.04.2019. </remarks>
     ////////////////////////////////////////////////////////////////////////////////////////////////////
+    [DataContract]
     public class ErrorLogModel
     {
         [DataMember]

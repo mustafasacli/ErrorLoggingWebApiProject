@@ -1,9 +1,11 @@
-﻿namespace ErrorLog.Wcf.Library
-{
-    //class WcfIoC
-    //{
-    //}
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// file:	WcfIoC.cs
+//
+// summary:	Implements the WCF ıo c class
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
+namespace ErrorLog.Wcf.Library
+{
     using Business.Core.Interfaces;
     using Business.MongoDb;
     using Business.RavenDb;
@@ -13,20 +15,41 @@
     using SimpleInjector;
     using System;
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   A WCF ıo c. </summary>
+    ///
+    /// <remarks>   Mustafa SAÇLI, 9.05.2019. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
     public class WcfIoC
     {
+        /// <summary>   The lock object. </summary>
         private static object lockObj = new object();
+
+        /// <summary>   The container. </summary>
         private Container container = null;
 
+        /// <summary>   The instance lazy. </summary>
         private static Lazy<WcfIoC> instanceLazy = new Lazy<WcfIoC>(() =>
         {
             return new WcfIoC();
         });
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>
+        /// Constructor that prevents a default instance of this class from being created.
+        /// </summary>
+        ///
+        /// <remarks>   Mustafa SAÇLI, 9.05.2019. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         private WcfIoC()
         {
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Gets the ınstance. </summary>
+        ///
+        /// <value> The instance. </value>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         public static WcfIoC Instance
         {
             get { return instanceLazy.Value; }
@@ -56,9 +79,13 @@
             }
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        /// <summary>   Bootstraps this object. </summary>
+        ///
+        /// <remarks>   Mustafa SAÇLI, 9.05.2019. </remarks>
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         private void Bootstrap()
         {
-            // Create the container as usual.
             container = new Container();
 
             switch (AppValues.DbMode)
@@ -87,7 +114,6 @@
                     break;
             }
 
-            // Optionally verify the container.
             container.Verify();
         }
     }

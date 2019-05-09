@@ -30,6 +30,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>errorlog.business.sql.core.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mst.Dexter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f9aae15b29e538d7, processorArchitecture=MSIL">
       <HintPath>..\packages\Mst.Dexter.dll.1.0.0\lib\net451\Mst.Dexter.dll</HintPath>
@@ -52,6 +58,7 @@
     <Content Include="dexter.cfg.xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="errorlog.business.sql.core.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

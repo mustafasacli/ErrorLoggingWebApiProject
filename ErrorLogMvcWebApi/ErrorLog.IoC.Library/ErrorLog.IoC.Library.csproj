@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0AC1F28D-4483-4A98-BCB2-806A4339D6AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ErrorLog.IoC.Library</RootNamespace>
+    <AssemblyName>ErrorLog.IoC.Library</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Output\ErrorLog.IoC.Library\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\Output\ErrorLog.IoC.Library\ErrorLog.IoC.Library.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>errorlog.ioc.library.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SimpleInjector, Version=4.5.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.5.2\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppValues.cs" />
+    <Compile Include="ErrorLogIoC.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="errorlog.ioc.library.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ErrorLog.Business.Core\ErrorLog.Business.Core.csproj">
+      <Project>{46307983-9208-4752-9946-9e87b97c8698}</Project>
+      <Name>ErrorLog.Business.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.MongoDb\ErrorLog.Business.MongoDb.csproj">
+      <Project>{d2580c38-af18-4919-90d1-0d3c60e9b4a7}</Project>
+      <Name>ErrorLog.Business.MongoDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.RavenDb\ErrorLog.Business.RavenDb.csproj">
+      <Project>{75de0407-c9d7-4180-af41-761d4187a8a1}</Project>
+      <Name>ErrorLog.Business.RavenDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.Sql.Core\ErrorLog.Business.Sql.Core.csproj">
+      <Project>{3ea6dba7-2376-4b32-9bd3-45c8e3ab46be}</Project>
+      <Name>ErrorLog.Business.Sql.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.SqlCE\ErrorLog.Business.SqlCE.csproj">
+      <Project>{5e4e833f-8d6f-4e32-9da8-5e5970c195d7}</Project>
+      <Name>ErrorLog.Business.SqlCE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.SQLite\ErrorLog.Business.SQLite.csproj">
+      <Project>{c789ea79-75f1-4cc5-95d1-e741cd06b191}</Project>
+      <Name>ErrorLog.Business.SQLite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.Sql\ErrorLog.Business.Sql.csproj">
+      <Project>{87fc0801-587a-4ddf-a60c-357505f16761}</Project>
+      <Name>ErrorLog.Business.Sql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business\ErrorLog.Business.csproj">
+      <Project>{0e8265c5-ad52-4f59-aad5-0e58c3bd9acf}</Project>
+      <Name>ErrorLog.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Models\ErrorLog.Models.csproj">
+      <Project>{09ad6782-8a5f-4d17-9e3f-41e8c6d57d18}</Project>
+      <Name>ErrorLog.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Mongo.Models\ErrorLog.Mongo.Models.csproj">
+      <Project>{e7c230d7-b6cd-423d-9d70-69821820e909}</Project>
+      <Name>ErrorLog.Mongo.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mst.MongoDb.Core\Mst.MongoDb.Core.csproj">
+      <Project>{3fd62797-3a70-4a27-92e7-ed27fdd48a60}</Project>
+      <Name>Mst.MongoDb.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mst.RavenDb.Core\Mst.RavenDb.Core.csproj">
+      <Project>{fc210490-7716-4736-97ad-ef32a36810b2}</Project>
+      <Name>Mst.RavenDb.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>rd /s /q "$(ProjectDir)obj\Debug"
+rd /s /q "$(ProjectDir)obj\Release"
+rd /s /q "$(ProjectDir)bin\Debug"
+rd /s /q "$(ProjectDir)bin\Release"
+rd /s /q "$(ProjectDir)bin\*"
+rd /s /q "$(ProjectDir)obj\*"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

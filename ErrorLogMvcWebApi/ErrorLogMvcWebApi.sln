@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLog.Business.Sql", "Er
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLog.Wcf.Library", "ErrorLog.Wcf.Library\ErrorLog.Wcf.Library.csproj", "{A6666C8C-6D75-40A0-B467-B9DA1C8E528D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLog.IoC.Library", "ErrorLog.IoC.Library\ErrorLog.IoC.Library.csproj", "{0AC1F28D-4483-4A98-BCB2-806A4339D6AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{A6666C8C-6D75-40A0-B467-B9DA1C8E528D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6666C8C-6D75-40A0-B467-B9DA1C8E528D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6666C8C-6D75-40A0-B467-B9DA1C8E528D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AC1F28D-4483-4A98-BCB2-806A4339D6AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AC1F28D-4483-4A98-BCB2-806A4339D6AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AC1F28D-4483-4A98-BCB2-806A4339D6AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AC1F28D-4483-4A98-BCB2-806A4339D6AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

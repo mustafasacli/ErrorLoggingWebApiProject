@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Mst.RavenDb.Core")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HP Inc.")]
+[assembly: AssemblyCompany("MSacli Inc.")]
 [assembly: AssemblyProduct("Mst.RavenDb.Core")]
-[assembly: AssemblyCopyright("Copyright © HP Inc. 2019")]
+[assembly: AssemblyCopyright("Copyright © MSacli Inc. 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

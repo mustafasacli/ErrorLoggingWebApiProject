@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ErrorLog.Wcf.Library</name>
+    </assembly>
+    <members>
+        <member name="T:ErrorLog.Wcf.Library.AppValues">
+             <summary>   An application values. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+        </member>
+        <member name="F:ErrorLog.Wcf.Library.AppValues.gd">
+            <summary>   The gd. </summary>
+        </member>
+        <member name="F:ErrorLog.Wcf.Library.AppValues.lockObj">
+            <summary>   The lock object. </summary>
+        </member>
+        <member name="P:ErrorLog.Wcf.Library.AppValues.ActivityId">
+             <summary>   Gets the activity ıd. </summary>
+            
+             <value> The activity Identifier. </value>
+        </member>
+        <member name="P:ErrorLog.Wcf.Library.AppValues.IsRavenDb">
+             <summary>   Gets a value indicating whether the is raven database. </summary>
+            
+             <value> True if ıs raven database, false if not. </value>
+        </member>
+        <member name="P:ErrorLog.Wcf.Library.AppValues.DbMode">
+             <summary>   Gets the database mode. </summary>
+            
+             <value> The database mode. </value>
+        </member>
+        <member name="T:ErrorLog.Wcf.Library.ErrorLogService">
+             <summary>   A service for accessing error logs information. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 9.05.2019. </remarks>
+        </member>
+        <member name="F:ErrorLog.Wcf.Library.ErrorLogService.logBusiness">
+            <summary>   The log business. </summary>
+        </member>
+        <member name="M:ErrorLog.Wcf.Library.ErrorLogService.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 9.05.2019. </remarks>
+        </member>
+        <member name="M:ErrorLog.Wcf.Library.ErrorLogService.Get(System.String)">
+             <summary>   Gets an error log model using the given oid. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 9.05.2019. </remarks>
+            
+             <param name="oid">  The oid to get. </param>
+            
+             <returns>   An ErrorLogModel. </returns>
+        </member>
+        <member name="M:ErrorLog.Wcf.Library.ErrorLogService.Save(ErrorLog.Models.ErrorLogModel)">
+             <summary>   Saves the given error log. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 9.05.2019. </remarks>
+            
+             <param name="errorLog"> The error log to save. </param>
+            
+             <returns>   A string. </returns>
+        </member>
+        <member name="M:ErrorLog.Wcf.Library.ErrorLogService.Search(System.Nullable{System.Int64},System.Nullable{System.Int64})">
+             <summary>   Enumerates the items in this collection that meet given criteria. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 9.05.2019. </remarks>
+            
+             <param name="startTimestamp">   The start timestamp. </param>
+             <param name="endTimestamp">     The end timestamp. </param>
+            
+             <returns>   An enumerator that allows foreach to be used to process the matched items. </returns>
+        </member>
+        <member name="T:ErrorLog.Wcf.Library.IErrorLogService">
+             <summary>   Interface for error log service. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 9.05.2019. </remarks>
+        </member>
+        <member name="M:ErrorLog.Wcf.Library.IErrorLogService.Save(ErrorLog.Models.ErrorLogModel)">
+             <summary>   Saves the given error log. </summary>
+            
+             <param name="errorLog"> The error log to save. </param>
+            
+             <returns>   A string. </returns>
+        </member>
+        <member name="M:ErrorLog.Wcf.Library.IErrorLogService.Get(System.String)">
+             <summary>   Gets an error log model using the given oid. </summary>
+            
+             <param name="oid">  The oid to get. </param>
+            
+             <returns>   An ErrorLogModel. </returns>
+        </member>
+        <member name="M:ErrorLog.Wcf.Library.IErrorLogService.Search(System.Nullable{System.Int64},System.Nullable{System.Int64})">
+             <summary>   Enumerates the items in this collection that meet given criteria. </summary>
+            
+             <param name="startTimestamp">   The start timestamp. </param>
+             <param name="endTimestamp">     The end timestamp. </param>
+            
+             <returns>   An enumerator that allows foreach to be used to process the matched items. </returns>
+        </member>
+        <member name="T:ErrorLog.Wcf.Library.WcfIoC">
+             <summary>   A WCF ıo c. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 9.05.2019. </remarks>
+        </member>
+        <member name="F:ErrorLog.Wcf.Library.WcfIoC.lockObj">
+            <summary>   The lock object. </summary>
+        </member>
+        <member name="F:ErrorLog.Wcf.Library.WcfIoC.container">
+            <summary>   The container. </summary>
+        </member>
+        <member name="F:ErrorLog.Wcf.Library.WcfIoC.instanceLazy">
+            <summary>   The instance lazy. </summary>
+        </member>
+        <member name="M:ErrorLog.Wcf.Library.WcfIoC.#ctor">
+             <summary>
+             Constructor that prevents a default instance of this class from being created.
+             </summary>
+            
+             <remarks>   Mustafa SAÇLI, 9.05.2019. </remarks>
+        </member>
+        <member name="P:ErrorLog.Wcf.Library.WcfIoC.Instance">
+             <summary>   Gets the ınstance. </summary>
+            
+             <value> The instance. </value>
+        </member>
+        <member name="P:ErrorLog.Wcf.Library.WcfIoC.Container">
+             <summary>   Gets the document store. </summary>
+            
+             <value> The document store. </value>
+        </member>
+        <member name="M:ErrorLog.Wcf.Library.WcfIoC.Bootstrap">
+             <summary>   Bootstraps this object. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 9.05.2019. </remarks>
+        </member>
+    </members>
+</doc>

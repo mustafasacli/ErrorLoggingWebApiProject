@@ -3,19 +3,18 @@
 //
 // summary:	Implements the error log SQL ce business class
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-using ErrorLog.Business.Core.Constants;
-using ErrorLog.Business.Core.Interfaces;
-using ErrorLog.Business.Sql.Core;
-using ErrorLog.Models;
-using Mst.Dexter.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-
 namespace ErrorLog.Business.SqlCE
 {
+    using ErrorLog.Business.Core.Constants;
+    using ErrorLog.Business.Core.Interfaces;
+    using ErrorLog.Business.Sql.Core;
+    using ErrorLog.Models;
+    using Mst.Dexter.Extensions;
+    using System;
+    using System.Collections.Generic;
+    using System.Configuration;
+    using System.Linq;
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   An error log SQL ce business. </summary>
     ///
