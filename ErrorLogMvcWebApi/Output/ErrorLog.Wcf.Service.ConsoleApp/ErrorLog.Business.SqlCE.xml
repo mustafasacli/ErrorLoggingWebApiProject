@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ErrorLog.Business.SqlCE</name>
+    </assembly>
+    <members>
+        <member name="T:ErrorLog.Business.SqlCE.ErrorLogSqlCeBusiness">
+             <summary>   An error log SQL ce business. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 26.04.2019. </remarks>
+        </member>
+        <member name="M:ErrorLog.Business.SqlCE.ErrorLogSqlCeBusiness.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 26.04.2019. </remarks>
+        </member>
+    </members>
+</doc>

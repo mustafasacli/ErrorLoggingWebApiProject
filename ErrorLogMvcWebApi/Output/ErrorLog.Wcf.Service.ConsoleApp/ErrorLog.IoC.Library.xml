@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ErrorLog.IoC.Library</name>
+    </assembly>
+    <members>
+        <member name="T:ErrorLog.IoC.Library.IocAppValues">
+             <summary>   An application values. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+        </member>
+        <member name="P:ErrorLog.IoC.Library.IocAppValues.DbMode">
+             <summary>   Gets the database mode. </summary>
+            
+             <value> The database mode. </value>
+        </member>
+        <member name="T:ErrorLog.IoC.Library.ErrorLogIoC">
+             <summary>   An error log IoC. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 9.05.2019. </remarks>
+        </member>
+        <member name="F:ErrorLog.IoC.Library.ErrorLogIoC.lockObj">
+            <summary>   The lock object. </summary>
+        </member>
+        <member name="F:ErrorLog.IoC.Library.ErrorLogIoC.container">
+            <summary>   The container. </summary>
+        </member>
+        <member name="F:ErrorLog.IoC.Library.ErrorLogIoC.instanceLazy">
+            <summary>   The instance lazy. </summary>
+        </member>
+        <member name="M:ErrorLog.IoC.Library.ErrorLogIoC.#ctor">
+             <summary>
+             Constructor that prevents a default instance of this class from being created.
+             </summary>
+            
+             <remarks>   Mustafa SAÇLI, 9.05.2019. </remarks>
+        </member>
+        <member name="P:ErrorLog.IoC.Library.ErrorLogIoC.Instance">
+             <summary>   Gets the ınstance. </summary>
+            
+             <value> The instance. </value>
+        </member>
+        <member name="P:ErrorLog.IoC.Library.ErrorLogIoC.Container">
+             <summary>   Gets the document store. </summary>
+            
+             <value> The document store. </value>
+        </member>
+        <member name="M:ErrorLog.IoC.Library.ErrorLogIoC.Bootstrap">
+             <summary>   Bootstraps this object. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 9.05.2019. </remarks>
+        </member>
+    </members>
+</doc>

@@ -22,7 +22,7 @@ namespace ErrorLog.Business.SqlCE
         /// <remarks>   Mustafa SAÇLI, 26.04.2019. </remarks>
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         public ErrorLogSqlCeBusiness()
-            : base("sqlite", ConfigurationManager.ConnectionStrings["sqlite"].ConnectionString)
+            : base("sqlce", ConfigurationManager.ConnectionStrings["sqlce"].ConnectionString)
         {
         }
     }

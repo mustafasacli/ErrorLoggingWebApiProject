@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLog.Business.VistaDb",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLog.Business.SqlDb", "ErrorLog.Business.SqlDb\ErrorLog.Business.SqlDb.csproj", "{1D38DC9A-6299-4237-827F-144CF6816C3F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLog.Wcf.Service.ConsoleApp", "ErrorLog.Wcf.Service.ConsoleApp\ErrorLog.Wcf.Service.ConsoleApp.csproj", "{A2F4066F-B565-47EF-8652-00A97EB76E24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLog.Wcf.Service.Consumer.ConsoleApp", "ErrorLog.Wcf.Service.Consumer.ConsoleApp\ErrorLog.Wcf.Service.Consumer.ConsoleApp.csproj", "{FC3AF6D0-32E4-4DEA-A340-A3D8995FDA36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +127,14 @@ Global
 		{1D38DC9A-6299-4237-827F-144CF6816C3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D38DC9A-6299-4237-827F-144CF6816C3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D38DC9A-6299-4237-827F-144CF6816C3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2F4066F-B565-47EF-8652-00A97EB76E24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2F4066F-B565-47EF-8652-00A97EB76E24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2F4066F-B565-47EF-8652-00A97EB76E24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2F4066F-B565-47EF-8652-00A97EB76E24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC3AF6D0-32E4-4DEA-A340-A3D8995FDA36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC3AF6D0-32E4-4DEA-A340-A3D8995FDA36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC3AF6D0-32E4-4DEA-A340-A3D8995FDA36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC3AF6D0-32E4-4DEA-A340-A3D8995FDA36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

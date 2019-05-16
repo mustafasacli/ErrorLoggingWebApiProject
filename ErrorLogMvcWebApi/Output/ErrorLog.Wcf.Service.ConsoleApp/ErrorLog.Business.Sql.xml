@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ErrorLog.Business.Sql</name>
+    </assembly>
+    <members>
+        <member name="T:ErrorLog.Business.Sql.ErrorLogSqlBusiness">
+             <summary>   An error log SQL business. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 26.04.2019. </remarks>
+        </member>
+        <member name="M:ErrorLog.Business.Sql.ErrorLogSqlBusiness.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 26.04.2019. </remarks>
+        </member>
+    </members>
+</doc>

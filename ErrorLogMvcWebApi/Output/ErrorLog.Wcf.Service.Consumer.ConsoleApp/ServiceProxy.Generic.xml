@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ServiceProxy.Generic</name>
+    </assembly>
+    <members>
+        <member name="T:ServiceProxy.Generic.GenericServiceProxy">
+            <summary>
+            Generic Service Proxy for consuming Services.
+            </summary>
+        </member>
+        <member name="F:ServiceProxy.Generic.GenericServiceProxy.channelFactoryCache">
+            <summary>
+            ChannelFactory Cache for storing ChannelFactory.
+            </summary>
+        </member>
+        <member name="F:ServiceProxy.Generic.GenericServiceProxy.syncObj">
+            <summary>
+            sync object
+            </summary>
+        </member>
+        <member name="M:ServiceProxy.Generic.GenericServiceProxy.#ctor(System.String,System.ServiceModel.Channels.Binding,System.Collections.Generic.IEnumerable{System.ServiceModel.Description.IEndpointBehavior},System.Nullable{System.Security.Principal.TokenImpersonationLevel})">
+            <summary>
+            Creates a GenericServiceProxy instance.
+            </summary>
+            <param name="binding">Service Binding. Like BasicHttpBinding, CustomBinding, etc</param>
+            <param name="remoteAddress">Service Remote Address</param>
+            <param name="loggingBehaviors">IEndpointBehavior interfaces for Logging</param>
+            <param name="allowedImpersonationLevel">Allowed Impersonation Level</param>
+        </member>
+        <member name="M:ServiceProxy.Generic.GenericServiceProxy.#ctor(System.String,System.String,System.ServiceModel.Channels.Binding,System.String,System.Collections.Generic.IEnumerable{System.ServiceModel.Description.IEndpointBehavior},System.Nullable{System.Security.Principal.TokenImpersonationLevel})">
+            <summary>
+            Creates a GenericServiceProxy instance.
+            </summary>
+            <param name="userName">Service User Name</param>
+            <param name="password">Service User Password</param>
+            <param name="binding">Service Binding. Like BasicHttpBinding, CustomBinding, etc</param>
+            <param name="remoteAddress">Service Remote Address</param>
+            <param name="loggingBehaviors">IEndpointBehavior interfaces for Logging</param>
+            <param name="allowedImpersonationLevel">Allowed Impersonation Level</param>
+        </member>
+        <member name="P:ServiceProxy.Generic.GenericServiceProxy.UserName">
+            <summary>
+            Service User Name
+            </summary>
+        </member>
+        <member name="P:ServiceProxy.Generic.GenericServiceProxy.Password">
+            <summary>
+            Service User Password
+            </summary>
+        </member>
+        <member name="P:ServiceProxy.Generic.GenericServiceProxy.RemoteAddress">
+            <summary>
+            Service Remote Address
+            </summary>
+        </member>
+        <member name="P:ServiceProxy.Generic.GenericServiceProxy.Binding">
+            <summary>
+            Service Binding. Like BasicHttpBinding, Web Service (WS) binding, etc
+            </summary>
+        </member>
+        <member name="P:ServiceProxy.Generic.GenericServiceProxy.EndpointBehaviors">
+            <summary>
+            IEndpointBehavior interfaces for EndpointBehaviors
+            </summary>
+        </member>
+        <member name="P:ServiceProxy.Generic.GenericServiceProxy.AllowedImpersonationLevel">
+            <summary>
+            Allowed Impersonation Level
+            </summary>
+        </member>
+        <member name="M:ServiceProxy.Generic.GenericServiceProxy.CreateChannelFactory``1(System.ServiceModel.Channels.Binding,System.String,System.Collections.Generic.IEnumerable{System.ServiceModel.Description.IEndpointBehavior})">
+            <summary>
+            Creates ChannelFactory with given parameters.
+            </summary>
+            <typeparam name="TService">Service Interface</typeparam>
+            <param name="binding">Binding (BasicHttpBinding, Web Service (WS) binding, etc)</param>
+            <param name="remoteAddress">Service Remote Address</param>
+            <param name="endpointBehaviors">IEndpointBehavior interfaces for EndpointBehaviors</param>
+            <returns>ChannelFactory object instance</returns>
+        </member>
+        <member name="M:ServiceProxy.Generic.GenericServiceProxy.CreateChannel``1(System.ServiceModel.ChannelFactory)">
+            <summary>
+            Creates Service Interface instance.
+            </summary>
+            <typeparam name="TService">Service Interface</typeparam>
+            <param name="channelFactory">Channel Factory</param>
+            <returns>Service Interface instance</returns>
+        </member>
+        <member name="M:ServiceProxy.Generic.GenericServiceProxy.CheckCredentials(System.ServiceModel.Description.ClientCredentials)">
+            <summary>
+            Sets User Name and Password of Cient Credentials.
+            </summary>
+            <param name="credential">Cient Credentials</param>
+        </member>
+        <member name="M:ServiceProxy.Generic.GenericServiceProxy.Dispatch``2(System.Func{``0,``1})">
+            <summary>
+            Calls Service method and returns TResult object.
+            </summary>
+            <typeparam name="TService">Service interface</typeparam>
+            <typeparam name="TResult">Return Type of Service method</typeparam>
+            <param name="getDispatcher">Method that will called by Service interface.</param>
+            <returns>TResult object returns.</returns>
+        </member>
+        <member name="M:ServiceProxy.Generic.GenericServiceProxy.Dispatch``1(System.Action{``0})">
+             <summary>   Calls Service method and returns TResult object. </summary>
+            
+             <remarks>   Msacli, 25.04.2019. </remarks>
+            
+             <typeparam name="TService"> Type of the service. </typeparam>
+             <param name="getDispatcher">    Method that will called by Service interface. </param>
+        </member>
+    </members>
+</doc>

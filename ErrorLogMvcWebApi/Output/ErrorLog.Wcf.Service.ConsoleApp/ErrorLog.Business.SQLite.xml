@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ErrorLog.Business.SQLite</name>
+    </assembly>
+    <members>
+        <member name="T:ErrorLog.Business.SQLite.ErrorLogSQLiteBusiness">
+             <summary>   An error log SQLite business. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 26.04.2019. </remarks>
+        </member>
+        <member name="M:ErrorLog.Business.SQLite.ErrorLogSQLiteBusiness.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 26.04.2019. </remarks>
+        </member>
+    </members>
+</doc>
