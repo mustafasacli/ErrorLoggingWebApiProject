@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ErrorLog.Context</name>
+    </assembly>
+    <members>
+        <member name="T:ErrorLog.Context.LogContext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ErrorLog.Context.LogContext.#ctor">
+            <summary>
+             constructor
+            </summary>
+        </member>
+        <member name="P:ErrorLog.Context.LogContext.ErrorLogList">
+            <summary>
+            
+            </summary>
+        </member>
+    </members>
+</doc>

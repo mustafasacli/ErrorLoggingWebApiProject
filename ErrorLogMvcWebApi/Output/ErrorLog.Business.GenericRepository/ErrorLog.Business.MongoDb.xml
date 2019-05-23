@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ErrorLog.Business.MongoDb</name>
+    </assembly>
+    <members>
+        <member name="T:ErrorLog.Business.MongoDb.ErrorLogMongoDbBusiness">
+             <summary>   An error log mongo database business. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+        </member>
+        <member name="M:ErrorLog.Business.MongoDb.ErrorLogMongoDbBusiness.Delete(ErrorLog.Models.ErrorLogModel)">
+             <summary>   Deletes the given log. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <param name="log">  The log to save. </param>
+            
+             <returns>   An int. </returns>
+        </member>
+        <member name="M:ErrorLog.Business.MongoDb.ErrorLogMongoDbBusiness.GetById(System.String)">
+             <summary>   Gets by id. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <param name="oid">  The oid. </param>
+            
+             <returns>   The by ıd. </returns>
+        </member>
+        <member name="M:ErrorLog.Business.MongoDb.ErrorLogMongoDbBusiness.GetLogs(System.Nullable{System.Int64},System.Nullable{System.Int64})">
+             <summary>   Gets the logs in this collection. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <param name="startTimestamp">   The start timestamp. </param>
+             <param name="endTimestamp">     The end timestamp. </param>
+            
+             <returns>
+             An enumerator that allows foreach to be used to process the logs in this collection.
+             </returns>
+        </member>
+        <member name="M:ErrorLog.Business.MongoDb.ErrorLogMongoDbBusiness.Save(ErrorLog.Models.ErrorLogModel)">
+             <summary>   Saves the given log. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <param name="log">  The log to save. </param>
+            
+             <returns>   A string. </returns>
+        </member>
+        <member name="M:ErrorLog.Business.MongoDb.ErrorLogMongoDbBusiness.Update(ErrorLog.Models.ErrorLogModel)">
+             <summary>   Updates the given log. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+            
+             <param name="log">  The log to save. </param>
+            
+             <returns>   An int. </returns>
+        </member>
+        <member name="T:ErrorLog.Business.MongoDb.ErrorLogRepository">
+             <summary>   An error log repository. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+        </member>
+        <member name="M:ErrorLog.Business.MongoDb.ErrorLogRepository.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Msacli, 24.04.2019. </remarks>
+        </member>
+    </members>
+</doc>

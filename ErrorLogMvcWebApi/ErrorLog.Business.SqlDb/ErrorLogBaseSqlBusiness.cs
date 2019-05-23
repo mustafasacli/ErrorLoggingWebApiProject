@@ -251,8 +251,6 @@ namespace ErrorLog.Business.SqlDb
             log.CreatedOn = DateTime.Now;
             log.CreatedOnUnixTimestamp = log.CreatedOn.Ticks;
 
-            /// Insert Logic here.
-
             var result = string.Empty;
 
             using (var connection = GetConnection())

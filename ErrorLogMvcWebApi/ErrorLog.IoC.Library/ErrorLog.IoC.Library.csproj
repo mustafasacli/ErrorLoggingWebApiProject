@@ -65,6 +65,10 @@
       <Project>{46307983-9208-4752-9946-9e87b97c8698}</Project>
       <Name>ErrorLog.Business.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.GenericRepository\ErrorLog.Business.GenericRepository.csproj">
+      <Project>{4C5382D5-7802-4197-AE77-9A6DA136AC67}</Project>
+      <Name>ErrorLog.Business.GenericRepository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ErrorLog.Business.LiteDb\ErrorLog.Business.LiteDb.csproj">
       <Project>{5D973B3D-858C-4AFA-8B6D-227935F24ED7}</Project>
       <Name>ErrorLog.Business.LiteDb</Name>
