@@ -41,6 +41,9 @@
       <HintPath>..\packages\Mst.Dexter.dll.1.0.0\lib\net451\Mst.Dexter.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Mst.DexterCfg, Version=1.1.0.0, Culture=neutral, PublicKeyToken=9884bbe0e72e13f7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mst.DexterCfg.dll.1.1.0\lib\net451\Mst.DexterCfg.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

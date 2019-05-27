@@ -292,6 +292,209 @@
             
              <returns>   The dynamic from data reader. </returns>
         </member>
+        <member name="T:Mst.Dexter.Extensions.Objects.MstDictionary">
+             <summary>   MstDictionary. This class cannot be inherited. </summary>
+            
+             <remarks>   Msacli, 7.05.2019. </remarks>
+        </member>
+        <member name="F:Mst.Dexter.Extensions.Objects.MstDictionary.dictionary">
+            <summary>
+            The dictionary.
+            </summary>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.Objects.MstDictionary.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Msacli, 7.05.2019. </remarks>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.Objects.MstDictionary.#ctor(System.Collections.Generic.Dictionary{System.String,System.Object})">
+             <summary>   Constructor. </summary>
+            
+             <remarks>   Msacli, 7.05.2019. </remarks>
+            
+             <param name="dict">   The dictionary. </param>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.Objects.MstDictionary.#ctor(System.Collections.Generic.IDictionary{System.String,System.Object})">
+             <summary>   Constructor. </summary>
+            
+             <remarks>   Msacli, 7.05.2019. </remarks>
+            
+             <param name="dict">   The dictionary. </param>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.Objects.MstDictionary.#ctor(System.Dynamic.ExpandoObject)">
+             <summary>   Constructor. </summary>
+            
+             <remarks>   Msacli, 7.05.2019. </remarks>
+            
+             <param name="expando">  The expando. </param>
+        </member>
+        <member name="P:Mst.Dexter.Extensions.Objects.MstDictionary.Item(System.String)">
+             <summary>   Gets or sets the element with the specified key. </summary>
+            
+             <param name="key">  The key of the element to get or set. </param>
+            
+             <returns>   The element with the specified key. </returns>
+        </member>
+        <member name="P:Mst.Dexter.Extensions.Objects.MstDictionary.Count">
+             <summary>   Gets the number of.  </summary>
+            
+             <value> The count. </value>
+        </member>
+        <member name="P:Mst.Dexter.Extensions.Objects.MstDictionary.IsReadOnly">
+             <summary>   Gets a value indicating whether the ıs read only. </summary>
+            
+             <value> True if ıs read only, false if not. </value>
+        </member>
+        <member name="P:Mst.Dexter.Extensions.Objects.MstDictionary.Keys">
+             <summary>
+             Gets an <see cref="T:System.Collections.Generic.ICollection`1" /> containing the keys of the
+             <see cref="T:System.Collections.Generic.IDictionary`2" />.
+             </summary>
+            
+             <value>
+             An <see cref="T:System.Collections.Generic.ICollection`1" /> containing the keys of the
+             object that implements <see cref="T:System.Collections.Generic.IDictionary`2" />.
+             </value>
+        </member>
+        <member name="P:Mst.Dexter.Extensions.Objects.MstDictionary.Values">
+             <summary>
+             Gets an <see cref="T:System.Collections.Generic.ICollection`1" /> containing the values in
+             the <see cref="T:System.Collections.Generic.IDictionary`2" />.
+             </summary>
+            
+             <value>
+             An <see cref="T:System.Collections.Generic.ICollection`1" /> containing the values in the
+             object that implements <see cref="T:System.Collections.Generic.IDictionary`2" />.
+             </value>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.Objects.MstDictionary.Add(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+             <summary>
+             Adds an element with the provided key and value to the
+             <see cref="T:System.Collections.Generic.IDictionary`2" />.
+             </summary>
+            
+             <remarks>   Msacli, 7.05.2019. </remarks>
+            
+             <param name="item"> The item to remove. </param>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.Objects.MstDictionary.Add(System.String,System.Object)">
+             <summary>
+             Adds an element with the provided key and value to the
+             <see cref="T:System.Collections.Generic.IDictionary`2" />.
+             </summary>
+            
+             <remarks>   Msacli, 7.05.2019. </remarks>
+            
+             <param name="key">      The object to use as the key of the element to add. </param>
+             <param name="value">    The object to use as the value of the element to add. </param>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.Objects.MstDictionary.Clear">
+             <summary>   Clears this object to its blank/initial state. </summary>
+            
+             <remarks>   Msacli, 7.05.2019. </remarks>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.Objects.MstDictionary.Contains(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+             <summary>   Query if this object contains the given item. </summary>
+            
+             <remarks>   Msacli, 7.05.2019. </remarks>
+            
+             <param name="item"> The item to remove. </param>
+            
+             <returns>   True if the object is in this collection, false if not. </returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.Objects.MstDictionary.ContainsKey(System.String)">
+             <summary>
+             Determines whether the <see cref="T:System.Collections.Generic.IDictionary`2" /> contains an
+             element with the specified key.
+             </summary>
+            
+             <remarks>   Msacli, 7.05.2019. </remarks>
+            
+             <param name="key">  The key to locate in the
+                                 <see cref="T:System.Collections.Generic.IDictionary`2" />. </param>
+            
+             <returns>
+             true if the <see cref="T:System.Collections.Generic.IDictionary`2" /> contains an element
+             with the key; otherwise, false.
+             </returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.Objects.MstDictionary.CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.Object}[],System.Int32)">
+             <summary>   Copies to. </summary>
+            
+             <remarks>   Msacli, 7.05.2019. </remarks>
+            
+             <param name="array">        The array. </param>
+             <param name="arrayIndex">   The array ındex. </param>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.Objects.MstDictionary.GetEnumerator">
+             <summary>   Gets the enumerator. </summary>
+            
+             <remarks>   Msacli, 7.05.2019. </remarks>
+            
+             <returns>   The enumerator. </returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.Objects.MstDictionary.Remove(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+             <summary>
+             Removes the element with the specified key from the
+             <see cref="T:System.Collections.Generic.IDictionary`2" />.
+             </summary>
+            
+             <remarks>   Msacli, 7.05.2019. </remarks>
+            
+             <param name="item"> The item to remove. </param>
+            
+             <returns>
+             true if the element is successfully removed; otherwise, false.  This method also returns
+             false if <paramref name="key" /> was not found in the original
+             <see cref="T:System.Collections.Generic.IDictionary`2" />.
+             </returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.Objects.MstDictionary.Remove(System.String)">
+             <summary>
+             Removes the element with the specified key from the
+             <see cref="T:System.Collections.Generic.IDictionary`2" />.
+             </summary>
+            
+             <remarks>   Msacli, 7.05.2019. </remarks>
+            
+             <param name="key">  The key of the element to remove. </param>
+            
+             <returns>
+             true if the element is successfully removed; otherwise, false.  This method also returns
+             false if <paramref name="key" /> was not found in the original
+             <see cref="T:System.Collections.Generic.IDictionary`2" />.
+             </returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.Objects.MstDictionary.TryGetValue(System.String,System.Object@)">
+             <summary>   Gets the value associated with the specified key. </summary>
+            
+             <remarks>   Msacli, 7.05.2019. </remarks>
+            
+             <param name="key">      The key whose value to get. </param>
+             <param name="value">    [out] When this method returns, the value associated with the
+                                     specified key, if the key is found; otherwise, the default value for the
+                                     type of the <paramref name="value" /> parameter. This parameter is passed
+                                     uninitialized. </param>
+            
+             <returns>
+             true if the object that implements <see cref="T:System.Collections.Generic.IDictionary`2" />
+             contains an element with the specified key; otherwise, false.
+             </returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.Objects.MstDictionary.System#Collections#IEnumerable#GetEnumerator">
+             <summary>   Gets the enumerator. </summary>
+            
+             <remarks>   Msacli, 7.05.2019. </remarks>
+            
+             <returns>   The enumerator. </returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.Objects.MstDictionary.AsDictionary">
+             <summary>   Gets the content. </summary>
+            
+             <remarks>   Msacli, 7.05.2019. </remarks>
+            
+             <returns>   The content. </returns>
+        </member>
         <member name="T:Mst.Dexter.Extensions.DictionaryExtensions">
              <summary>   A dictionary extensions. </summary>
             
@@ -930,7 +1133,7 @@
             
              <returns>   An int. </returns>
         </member>
-        <member name="M:Mst.Dexter.Extensions.DxConnectionOperationExtension.ExecuteReader(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Data.IDbTransaction,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object})">
+        <member name="M:Mst.Dexter.Extensions.DxConnectionOperationExtension.ExecuteReader(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Data.IDbTransaction,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object},System.Nullable{System.Data.CommandBehavior})">
              <summary>   An IDbConnection extension method that executes the reader operation. </summary>
             
              <remarks>   Msacli, 22.04.2019. </remarks>
@@ -1241,6 +1444,15 @@
             
              <returns>   A TDest. </returns>
         </member>
+        <member name="M:Mst.Dexter.Extensions.GeneralMapperExtensions.MapTo``2(``0,``1)">
+            <summary>
+            Map Property Values to another type instance.
+            </summary>
+            <typeparam name="TSource">Source Generic Type</typeparam>
+            <typeparam name="TDest">Destination Generic Type</typeparam>
+            <param name="source">Source generic type instance</param>
+            <param name="instance">Destination generic type instance</param>
+        </member>
         <member name="T:Mst.Dexter.Extensions.GenericExtensions">
              <summary>   A generic extensions. </summary>
             
@@ -1362,6 +1574,14 @@
              <param name="t">        The t to act on. </param>
              <param name="propName"> Name of the property. </param>
              <param name="value">    The value. </param>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.GenericExtensions.IsNotNullOrDefault``1(``0)">
+            <summary>
+            if instance is null or default returns false else returns true.
+            </summary>
+            <typeparam name="T">Generic Type</typeparam>
+            <param name="instance">Generic Type instance</param>
+            <returns>if instance is null or default returns false else returns true.</returns>
         </member>
         <member name="T:Mst.Dexter.Extensions.ObjectExtension">
              <summary>   An object extension. </summary>
@@ -1716,6 +1936,14 @@
              <param name="type"> The type to act on. </param>
             
              <returns>   The property types of type. </returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.TypeExtensions.GetSameProperties(System.Type,System.Type)">
+            <summary>
+            Gets common Properties of two types.
+            </summary>
+            <param name="type1">First type</param>
+            <param name="type2">Second type</param>
+            <returns>returns string list</returns>
         </member>
         <member name="T:Mst.Dexter.Extensions.TypeHelper">
              <summary>   A type helper. </summary>

@@ -1,0 +1,482 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimpleInfra.Data</name>
+    </assembly>
+    <members>
+        <member name="T:SimpleInfra.Data.ISimpleDataRepository`1">
+             <summary>   Interface for simple data repository. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+        </member>
+        <member name="P:SimpleInfra.Data.ISimpleDataRepository`1.SimpleRepoLogger">
+             <summary>   Gets the simple repo logger. </summary>
+            
+             <value> The simple repo logger. </value>
+        </member>
+        <member name="P:SimpleInfra.Data.ISimpleDataRepository`1.LogError">
+             <summary>   Gets or sets a value indicating whether the log error. </summary>
+            
+             <value> True if log error, false if not. </value>
+        </member>
+        <member name="P:SimpleInfra.Data.ISimpleDataRepository`1.LogDebug">
+             <summary>   Gets or sets a value indicating whether the log debug. </summary>
+            
+             <value> True if log debug, false if not. </value>
+        </member>
+        <member name="P:SimpleInfra.Data.ISimpleDataRepository`1.LogInfo">
+             <summary>   Gets or sets a value indicating whether the log info. </summary>
+            
+             <value> True if log info, false if not. </value>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.Include(System.String)">
+             <summary>   Includes the given property. </summary>
+            
+             <param name="path"> Full path name of the property. </param>
+            
+             <returns>   An IQueryable&lt;T&gt; </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.Include``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+             <summary>   Includes the given property. </summary>
+            
+             <typeparam name="TProperty">    Type of the property. </typeparam>
+             <param name="path"> Full path name of the property. </param>
+            
+             <returns>   An IQueryable&lt;T&gt; </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.GetAll(System.Boolean)">
+             <summary>   Gets all. </summary>
+            
+             <returns>   An IQueryable&lt;T&gt; </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.GetAll(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
+             <summary>   Gets all. </summary>
+            
+             <param name="predicate">    The predicate. </param>
+            
+             <returns>   An IQueryable&lt;T&gt; </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.GetWithPage``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean,System.UInt32,System.UInt32,System.Boolean)">
+             <summary>   Gets with page. </summary>
+            
+             <typeparam name="TKey"> Type of the key. </typeparam>
+             <param name="predicate">            The predicate. </param>
+             <param name="keySelectorForOrder">  (Optional) The key selector for order. </param>
+             <param name="isOrderByDesc">        (Optional) True if is order by description, false if not. </param>
+             <param name="pageNumber">           (Optional) The page number. </param>
+             <param name="pageItemCount">        (Optional) Number of page items. </param>
+            
+             <returns>   The with page. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.GetAllWithPage``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean,System.UInt32,System.UInt32,System.Boolean)">
+             <summary>   Gets all with page. </summary>
+            
+             <typeparam name="TKey"> Type of the key. </typeparam>
+             <param name="keySelectorForOrder">  (Optional) The key selector for order. </param>
+             <param name="isOrderByDesc">        (Optional) True if is order by description, false if not. </param>
+             <param name="pageNumber">           (Optional) The page number. </param>
+             <param name="pageItemCount">        (Optional) Number of page items. </param>
+            
+             <returns>   all with page. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
+             <summary>   Gets a t using the given predicate. </summary>
+            
+             <param name="predicate">    The predicate. </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.First(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
+             <summary>   Get First the given predicate. </summary>
+            
+             <param name="predicate">    The predicate. </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.FirstOrDefault(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
+             <summary>   Get First or default. </summary>
+            
+             <param name="predicate">    The predicate. </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+             <summary>   Counts the given predicate. </summary>
+            
+             <param name="predicate">    The predicate. </param>
+            
+             <returns>   An int. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.Any(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+             <summary>   check Any the given predicate. </summary>
+            
+             <param name="predicate">    The predicate. </param>
+            
+             <returns>   True if it succeeds, false if it fails. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.Add(`0)">
+             <summary>   Adds entity. </summary>
+            
+             <param name="entity">   The entity to delete. </param>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
+             <summary>   Adds a range. </summary>
+            
+             <param name="entities"> An IEnumerable&lt;T&gt; of items to append to this. </param>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.Update(`0)">
+             <summary>   Updates the given entity. </summary>
+            
+             <param name="entity">   The entity to delete. </param>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.Delete(`0)">
+             <summary>   Deletes the given oid. </summary>
+            
+             <param name="entity">   The entity to delete. </param>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.Delete(System.Object)">
+             <summary>   Deletes the given oid. </summary>
+            
+             <param name="oid">  The oid. </param>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.SqlSetQuery(System.String,System.Object[])">
+             <summary>   SQL set query. </summary>
+            
+             <param name="sql">          The SQL. </param>
+             <param name="parameters">   A variable-length parameters list containing parameters. </param>
+            
+             <returns>   A DbSqlQuery&lt;T&gt; </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.SqlQuery``1(System.String,System.Object[])">
+             <summary>   SQL query. </summary>
+            
+             <typeparam name="TElement"> Type of the element. </typeparam>
+             <param name="sql">          The SQL. </param>
+             <param name="parameters">   A variable-length parameters list containing parameters. </param>
+            
+             <returns>   A DbRawSqlQuery&lt;TElement&gt; </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.GetById(System.Object)">
+             <summary>   Gets by id. </summary>
+            
+             <param name="oid">  The oid. </param>
+            
+             <returns>   The by id. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleRepoLogger.Error(System.Exception,System.String[])">
+             <summary>   Log Errors. </summary>
+            
+             <param name="e">        An Exception to process. </param>
+             <param name="messages"> A variable-length parameters list containing messages. </param>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleRepoLogger.Error(System.String[])">
+             <summary>   Logs any error messages. </summary>
+            
+             <param name="messages"> A variable-length parameters list containing messages. </param>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleRepoLogger.Debug(System.String[])">
+             <summary>  Logs Debug the given dictionary. </summary>
+            
+             <param name="messages"> A variable-length parameters list containing messages. </param>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleRepoLogger.Debug(System.Collections.Generic.Dictionary{System.String,System.String})">
+             <summary>  Logs Debug the given dictionary. </summary>
+            
+             <param name="dictionary">   The dictionary. </param>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleRepoLogger.Info(System.String[])">
+             <summary>  Logs Info the given dictionary. </summary>
+            
+             <param name="messages"> A variable-length parameters list containing messages. </param>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleRepoLogger.Info(System.Collections.Generic.Dictionary{System.String,System.String})">
+             <summary>  Logs Info the given dictionary. </summary>
+            
+             <param name="dictionary">   The dictionary. </param>
+        </member>
+        <member name="T:SimpleInfra.Data.SimpleBaseDataRepository`1">
+             <summary>   A simple base data repository. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <typeparam name="T">    Generic type parameter. </typeparam>
+        </member>
+        <member name="F:SimpleInfra.Data.SimpleBaseDataRepository`1.dbContext">
+            <summary>
+            Context for the database.
+            </summary>
+        </member>
+        <member name="F:SimpleInfra.Data.SimpleBaseDataRepository`1.dbSet">
+            <summary>
+            Set the database belongs to.
+            </summary>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.#ctor(System.Data.Entity.DbContext,SimpleInfra.Data.ISimpleRepoLogger,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+             <summary>   Specialised constructor for use only by derived class. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 5.05.2019. </remarks>
+            
+             <param name="dbContext">        Context for the database. </param>
+             <param name="simpleRepoLogger"> (Optional) The simple repo logger. </param>
+             <param name="errorLogEnable">   (Optional) True if error log enable. </param>
+             <param name="lazyLoadingEnabled">   (Optional) True if Lazy Load enable. </param>
+             <param name="autoDetectChangesEnabled">   (Optional) True if Auto Detect Changes Enabled. </param>
+             <param name="proxyCreationEnabled">   (Optional) True if Proxy Creation Enabled. </param>
+        </member>
+        <member name="P:SimpleInfra.Data.SimpleBaseDataRepository`1.SimpleRepoLogger">
+             <summary>   Gets the simple repo logger. </summary>
+            
+             <value> The simple repo logger. </value>
+        </member>
+        <member name="P:SimpleInfra.Data.SimpleBaseDataRepository`1.LogError">
+             <summary>   Gets or sets a value indicating whether the log error. </summary>
+            
+             <value> True if logs error, false if not. </value>
+        </member>
+        <member name="P:SimpleInfra.Data.SimpleBaseDataRepository`1.LogInfo">
+             <summary>   Gets or sets a value indicating whether the log info. </summary>
+            
+             <value> True if logs info, false if not. </value>
+        </member>
+        <member name="P:SimpleInfra.Data.SimpleBaseDataRepository`1.LogDebug">
+             <summary>   Gets or sets a value indicating whether the log debug. </summary>
+            
+             <value> True if logs debug, false if not. </value>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.Include(System.String)">
+             <summary>   Includes the given entity type name. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="path"> Full path name of the entity type name. </param>
+            
+             <returns>   An IQueryable&lt;T&gt; </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.Include``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+             <summary>   Includes the given entity property. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <typeparam name="TProperty">    Type of the property. </typeparam>
+             <param name="path"> Full path name of the entity. </param>
+            
+             <returns>   An IQueryable&lt;T&gt; </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.GetAll(System.Boolean)">
+             <summary>   Gets all. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <returns>   all. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.GetAll(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
+             <summary>   Gets all. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="predicate">    The predicate. </param>
+            
+             <returns>   all. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.GetWithPage``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean,System.UInt32,System.UInt32,System.Boolean)">
+             <summary>   Gets with page. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <typeparam name="TKey"> Type of the key. </typeparam>
+             <param name="predicate">            The predicate. </param>
+             <param name="keySelectorForOrder">  (Optional) The key selector for order. </param>
+             <param name="isOrderByDesc">        (Optional) True if is order by description, false if not. </param>
+             <param name="pageNumber">           (Optional) The page number. </param>
+             <param name="pageItemCount">        (Optional) Number of page items. </param>
+            
+             <returns>   The with page. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.GetAllWithPage``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean,System.UInt32,System.UInt32,System.Boolean)">
+             <summary>   Gets all with page. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <typeparam name="TKey"> Type of the key. </typeparam>
+             <param name="keySelectorForOrder">  (Optional) The key selector for order. </param>
+             <param name="isOrderByDesc">        (Optional) True if is order by description, false if not. </param>
+             <param name="pageNumber">           (Optional) The page number. </param>
+             <param name="pageItemCount">        (Optional) Number of page items. </param>
+            
+             <returns>   all with page. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
+             <summary>   Gets a t using the given predicate. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="predicate">    The predicate. </param>
+            
+             <returns>   A T instance. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.GetById(System.Object)">
+             <summary>   Gets by id. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="oid">  The oid. </param>
+            
+             <returns>   The by id. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.CheckObjectIsNull(System.Object)">
+             <summary>   Check object is null. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="oid">  The oid. </param>
+            
+             <returns>   True if it succeeds, false if it fails. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.First(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
+             <summary>   Get First the given predicate. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="predicate">    The predicate. </param>
+            
+             <returns>   A T instance. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.FirstOrDefault(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
+             <summary>   Get First or default. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="predicate">    The predicate. </param>
+            
+             <returns>   A T instance. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+             <summary>   Counts the given predicate. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="predicate">    The predicate. </param>
+            
+             <returns>   An int. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.Any(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+             <summary>   Has any with the given predicate. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="predicate">    The predicate. </param>
+            
+             <returns>   True if it succeeds, false if it fails. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.Add(`0)">
+             <summary>   Adds entity. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="entity">   The entity to add. </param>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
+             <summary>   Adds an entity range. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="entities"> An IEnumerable&lt;T&gt; of items to append to this. </param>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.Create">
+             <summary>   Creates a new T. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.SqlQuery``1(System.String,System.Object[])">
+             <summary>   SQL query. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <typeparam name="TElement"> Type of the element. </typeparam>
+             <param name="sql">          The SQL. </param>
+             <param name="parameters">   A variable-length parameters list containing parameters. </param>
+            
+             <returns>   A DbRawSqlQuery&lt;TElement&gt; </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.SqlSetQuery(System.String,System.Object[])">
+             <summary>   SQL set query. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="sql">          The SQL. </param>
+             <param name="parameters">   A variable-length parameters list containing parameters. </param>
+            
+             <returns>   A DbSqlQuery&lt;T&gt; </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.Update(`0)">
+             <summary>   Updates the given entity. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="entity">   The entity to delete. </param>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.Delete(`0)">
+             <summary>   Deletes the given oid. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="entity">   The entity to delete. </param>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.Delete(System.Object)">
+             <summary> Deletes the given oid. if oid is null or DbNull, delete operation will be cancelled. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="oid">  The oid. </param>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.SaveChanges">
+             <summary>   Saves the changes. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <exception cref="T:System.Data.Entity.Validation.DbEntityValidationException">
+             Thrown when a Database Entity Validation error condition occurs.
+             </exception>
+            
+             <returns>   An int. </returns>
+        </member>
+        <member name="F:SimpleInfra.Data.SimpleBaseDataRepository`1.disposed">
+            <summary>
+            True if disposed.
+            </summary>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.Dispose(System.Boolean)">
+             <summary>
+             Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged
+             resources.
+             </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="disposing">
+             True to release both managed and unmanaged resources; false to release only unmanaged resources. 
+             </param>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.Dispose">
+             <summary>
+             Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged
+             resources.
+             </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.GetValidationErrors(System.Data.Entity.Validation.DbEntityValidationException)">
+             <summary>   Gets validation errors. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="ex">   Details of the exception. </param>
+            
+             <returns>   The validation errors. </returns>
+        </member>
+    </members>
+</doc>

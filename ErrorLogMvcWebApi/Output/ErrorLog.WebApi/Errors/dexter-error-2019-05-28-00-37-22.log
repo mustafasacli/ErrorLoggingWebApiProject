@@ -1,0 +1,60 @@
+Time : 2019-05-28, 00:37:22 790317
+Assembly : Mst.Dexter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f9aae15b29e538d7
+Class : DxConnectionFactory
+Method Name : AddTypes
+Line : 0
+Column : 0
+Message : 'VistaDB.4, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ca42a1ee8d2e42d3' dosyasını veya bütünleştirilmiş kodunu ya da bağımlılıklarından birini yükleyemedi. Sistem belirtilen dosyayı bulamıyor.
+Stack Trace :    konum: System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   konum: System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   konum: System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   konum: System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   konum: System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   konum: System.Reflection.Assembly.Load(String assemblyString)
+   konum: Mst.Dexter.Factory.DxConnectionFactory.AddTypes()
+----------------------------------
+Time : 2019-05-28, 00:37:22 826221
+Assembly : Mst.Dexter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f9aae15b29e538d7
+Class : DxConnectionFactory
+Method Name : AddTypes
+Line : 0
+Column : 0
+Message : 'VistaDB.5.NET40, Version=5.0.0.0, Culture=neutral, PublicKeyToken=dfc935afe2125461' dosyasını veya bütünleştirilmiş kodunu ya da bağımlılıklarından birini yükleyemedi. Sistem belirtilen dosyayı bulamıyor.
+Stack Trace :    konum: System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   konum: System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   konum: System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   konum: System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   konum: System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   konum: System.Reflection.Assembly.Load(String assemblyString)
+   konum: Mst.Dexter.Factory.DxConnectionFactory.AddTypes()
+----------------------------------
+Time : 2019-05-28, 00:37:22 850157
+Assembly : Mst.Dexter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f9aae15b29e538d7
+Class : DxConnectionFactory
+Method Name : AddTypes
+Line : 0
+Column : 0
+Message : 'MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d' dosyasını veya bütünleştirilmiş kodunu ya da bağımlılıklarından birini yükleyemedi. Sistem belirtilen dosyayı bulamıyor.
+Stack Trace :    konum: System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   konum: System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   konum: System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   konum: System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   konum: System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   konum: System.Reflection.Assembly.Load(String assemblyString)
+   konum: Mst.Dexter.Factory.DxConnectionFactory.AddTypes()
+----------------------------------
+Time : 2019-05-28, 00:37:22 875091
+Assembly : Mst.Dexter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f9aae15b29e538d7
+Class : DxConnectionFactory
+Method Name : AddTypes
+Line : 0
+Column : 0
+Message : 'MySql.Data, Version=6.10.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d' dosyasını veya bütünleştirilmiş kodunu ya da bağımlılıklarından birini yükleyemedi. Sistem belirtilen dosyayı bulamıyor.
+Stack Trace :    konum: System.Reflection.RuntimeAssembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   konum: System.Reflection.RuntimeAssembly.nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, RuntimeAssembly locationHint, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   konum: System.Reflection.RuntimeAssembly.InternalLoadAssemblyName(AssemblyName assemblyRef, Evidence assemblySecurity, RuntimeAssembly reqAssembly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean throwOnFileNotFound, Boolean forIntrospection, Boolean suppressSecurityChecks)
+   konum: System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)
+   konum: System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   konum: System.Reflection.Assembly.Load(String assemblyString)
+   konum: Mst.Dexter.Factory.DxConnectionFactory.AddTypes()
+----------------------------------

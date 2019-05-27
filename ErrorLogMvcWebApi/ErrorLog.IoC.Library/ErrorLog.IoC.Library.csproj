@@ -37,11 +37,21 @@
     <AssemblyOriginatorKeyFile>errorlog.ioc.library.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInfra.Data, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5dfe5d84c4d961bb, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInfra.Data.dll.1.4.0\lib\net452\SimpleInfra.Data.dll</HintPath>
+    </Reference>
     <Reference Include="SimpleInjector, Version=4.5.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.4.5.2\lib\net45\SimpleInjector.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -57,6 +67,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="errorlog.ioc.library.snk" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -109,6 +120,14 @@
       <Project>{0e8265c5-ad52-4f59-aad5-0e58c3bd9acf}</Project>
       <Name>ErrorLog.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Context\ErrorLog.Context.csproj">
+      <Project>{6dd7c087-22d0-4e77-9103-e65e96c05309}</Project>
+      <Name>ErrorLog.Context</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Entity\ErrorLog.Entity.csproj">
+      <Project>{45b71b71-d2ad-4354-9a31-06b69976f660}</Project>
+      <Name>ErrorLog.Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ErrorLog.Models\ErrorLog.Models.csproj">
       <Project>{09ad6782-8a5f-4d17-9e3f-41e8c6d57d18}</Project>
       <Name>ErrorLog.Models</Name>
@@ -116,6 +135,10 @@
     <ProjectReference Include="..\ErrorLog.Mongo.Models\ErrorLog.Mongo.Models.csproj">
       <Project>{e7c230d7-b6cd-423d-9d70-69821820e909}</Project>
       <Name>ErrorLog.Mongo.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Repository\ErrorLog.Repository.csproj">
+      <Project>{e7166d04-2b55-45fc-aa8b-8b283e362502}</Project>
+      <Name>ErrorLog.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\Mst.LiteDb.Core\Mst.LiteDb.Core.csproj">
       <Project>{8055E669-8AD5-4867-99E7-D9A95886BB68}</Project>

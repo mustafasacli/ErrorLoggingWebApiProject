@@ -52,6 +52,7 @@
                 if (entity != null && entity != default(ErrorLogEntity))
                 {
                     repo.Delete(entity);
+                    repo.SaveChanges();
                 }
             }
 
