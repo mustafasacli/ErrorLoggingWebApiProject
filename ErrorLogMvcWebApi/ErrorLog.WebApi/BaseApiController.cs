@@ -2,6 +2,7 @@
 {
     using Microsoft.Owin;
     using SimpleFileLogging;
+    using SimpleFileLogging.Interfaces;
     using System;
     using System.Collections.Generic;
     using System.Net;
@@ -19,6 +20,17 @@
         private static Guid gd = Guid.Empty;
 
         private static object lockObj = new object();
+
+        protected BaseApiController()
+        {
+            this.Logger = SimpleFileLogger.Instance;
+        }
+
+        /// <summary>
+        /// Logger Instance
+        /// </summary>
+        protected ISimpleLogger Logger
+        { get; private set; }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Gets the activity ıd. </summary>

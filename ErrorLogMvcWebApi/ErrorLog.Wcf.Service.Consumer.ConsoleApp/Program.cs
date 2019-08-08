@@ -40,6 +40,9 @@ namespace ErrorLog.Wcf.Service.Consumer.ConsoleApp
                 Console.WriteLine(errorModel.UserId);
             }
 
+            var result =
+                proxy.Dispatch<IErrorLogService, string>(q => q.Save(new ErrorLogModel { }));
+
             Console.ReadKey();
         }
     }

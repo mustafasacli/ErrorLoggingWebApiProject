@@ -31,7 +31,7 @@
             }
             catch (Exception e)
             {
-                SimpleFileLogger.Instance.LogError(e);
+                this.Logger?.LogError(e);
                 result = "err";
             }
 
@@ -50,7 +50,7 @@
             }
             catch (Exception e)
             {
-                SimpleFileLogger.Instance.LogError(e);
+                this.Logger?.LogError(e);
             }
 
             result = result ?? new ErrorLogModel { };
@@ -70,7 +70,7 @@
             }
             catch (Exception e)
             {
-                SimpleFileLogger.Instance.LogError(e);
+                this.Logger?.LogError(e);
             }
 
             result = result ?? new ErrorLogModel[] { }.AsEnumerable();
