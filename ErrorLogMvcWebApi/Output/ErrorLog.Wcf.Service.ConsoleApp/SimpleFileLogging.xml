@@ -53,10 +53,41 @@
             
              <value> The pathname of the assembly directory. </value>
         </member>
+        <member name="T:SimpleFileLogging.Enums.SimpleLogDateFormats">
+             <summary>   Values that represent simple log date format types. </summary>
+            
+             <remarks>   Msacli, 17.05.2019. </remarks>
+        </member>
+        <member name="F:SimpleFileLogging.Enums.SimpleLogDateFormats.None">
+            <summary>   An enum constant representing the none option. </summary>
+        </member>
+        <member name="F:SimpleFileLogging.Enums.SimpleLogDateFormats.Second">
+            <summary>   An enum constant representing the second option. </summary>
+        </member>
+        <member name="F:SimpleFileLogging.Enums.SimpleLogDateFormats.Minute">
+            <summary>   An enum constant representing the minute option. </summary>
+        </member>
+        <member name="F:SimpleFileLogging.Enums.SimpleLogDateFormats.Hour">
+            <summary>   An enum constant representing the hour option. </summary>
+        </member>
+        <member name="F:SimpleFileLogging.Enums.SimpleLogDateFormats.Day">
+            <summary>   An enum constant representing the day option. </summary>
+        </member>
+        <member name="F:SimpleFileLogging.Enums.SimpleLogDateFormats.Month">
+            <summary>   An enum constant representing the month option. </summary>
+        </member>
+        <member name="F:SimpleFileLogging.Enums.SimpleLogDateFormats.Year">
+            <summary>   An enum constant representing the year option. </summary>
+        </member>
         <member name="T:SimpleFileLogging.Interfaces.ISimpleLogger">
              <summary>   Interface for simple logger. </summary>
             
              <remarks>   Msacli, 29.04.2019. </remarks>
+        </member>
+        <member name="P:SimpleFileLogging.Interfaces.ISimpleLogger.LogDateFormatType">
+             <summary>   Gets or sets the type of the simple log date format. </summary>
+            
+             <value> The type of the simple log date format. </value>
         </member>
         <member name="P:SimpleFileLogging.Interfaces.ISimpleLogger.EnableMethodGrouping">
             <summary>
@@ -174,6 +205,15 @@
             
              <returns>   returns Log File Name. </returns>
         </member>
+        <member name="M:SimpleFileLogging.SimpleFileLogger.GetFileDateFormat(SimpleFileLogging.Enums.SimpleLogDateFormats)">
+             <summary>   Gets file date format. </summary>
+            
+             <remarks>   Msacli, 17.05.2019. </remarks>
+            
+             <param name="simpleLogDateFormatType">  Type of the simple log date format. </param>
+            
+             <returns>   The file date format. </returns>
+        </member>
         <member name="M:SimpleFileLogging.SimpleFileLogger.BuildLogFolderName(SimpleFileLogging.SimpleLogType,System.String,System.String,System.String)">
              <summary>   Builds log folder name. </summary>
             
@@ -208,6 +248,11 @@
              <summary>   Gets the instance. </summary>
             
              <value> The instance. </value>
+        </member>
+        <member name="P:SimpleFileLogging.SimpleFileLogger.LogDateFormatType">
+             <summary>   Gets or sets the type of the simple log date format. </summary>
+            
+             <value> The type of the simple log date format. </value>
         </member>
         <member name="P:SimpleFileLogging.SimpleFileLogger.EnableMethodGrouping">
             <summary>

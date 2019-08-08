@@ -14,6 +14,7 @@ namespace ErrorLog.IoC.Library
     using Business.SqlCE;
     using Business.SQLite;
     using Business.VistaDb;
+    using ErrorLog.Business.GenericRepository;
     using SimpleInjector;
     using System;
 
@@ -117,6 +118,10 @@ namespace ErrorLog.IoC.Library
 
                 case 7:
                     container.Register<IErrorLogBusiness, ErrorLogLiteDbBusiness>(Lifestyle.Singleton);
+                    break;
+
+                case 8:
+                    container.Register<IErrorLogBusiness, ErrorLogGenericBusiness>(Lifestyle.Singleton);
                     break;
 
                 default:

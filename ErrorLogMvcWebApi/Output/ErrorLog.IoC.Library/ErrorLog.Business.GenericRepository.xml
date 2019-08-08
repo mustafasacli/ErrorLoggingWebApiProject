@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ErrorLog.Business.GenericRepository</name>
+    </assembly>
+    <members>
+        <member name="T:ErrorLog.Business.GenericRepository.ErrorLogGenericBusiness">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ErrorLog.Business.GenericRepository.ErrorLogGenericBusiness.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ErrorLog.Business.GenericRepository.ErrorLogGenericBusiness.Delete(ErrorLog.Models.ErrorLogModel)">
+            <summary>
+            
+            </summary>
+            <param name="log"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ErrorLog.Business.GenericRepository.ErrorLogGenericBusiness.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ErrorLog.Business.GenericRepository.ErrorLogGenericBusiness.GetById(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="oid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ErrorLog.Business.GenericRepository.ErrorLogGenericBusiness.GetLogs(System.Nullable{System.Int64},System.Nullable{System.Int64})">
+            <summary>
+            
+            </summary>
+            <param name="startTimestamp"></param>
+            <param name="endTimestamp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ErrorLog.Business.GenericRepository.ErrorLogGenericBusiness.Save(ErrorLog.Models.ErrorLogModel)">
+            <summary>
+            
+            </summary>
+            <param name="log"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ErrorLog.Business.GenericRepository.ErrorLogGenericBusiness.Update(ErrorLog.Models.ErrorLogModel)">
+            <summary>
+            
+            </summary>
+            <param name="log"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

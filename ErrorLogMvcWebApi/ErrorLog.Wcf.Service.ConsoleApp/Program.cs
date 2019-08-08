@@ -11,7 +11,7 @@ namespace ErrorLog.Wcf.Service.ConsoleApp
             Uri uri = new Uri("http://127.0.0.1:1010/ErrorLogService");
             ServiceHost serviceHost = new ServiceHost(typeof(ErrorLogService));
 
-            /// serviceHost.AddServiceEndpoint(typeof(IErrorLogService), new BasicHttpBinding(), uri.AbsoluteUri);
+            // serviceHost.AddServiceEndpoint(typeof(IErrorLogService), new BasicHttpBinding(), uri.AbsoluteUri);
             WriteLine("Service is being worked.");
             serviceHost.Open();
             WriteLine("Service is working.");

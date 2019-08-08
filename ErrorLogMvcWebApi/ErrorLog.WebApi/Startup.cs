@@ -18,8 +18,9 @@
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-
+            config.MessageHandlers.Add(new LoggingHandler());
             appBuilder.UseWebApi(config);
+            // GlobalConfiguration.Configuration.MessageHandlers.Add(New LoggingHandler())
         }
     }
 }
