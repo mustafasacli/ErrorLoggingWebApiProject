@@ -5,6 +5,7 @@
     using ErrorLog.Entity;
     using ErrorLog.Models;
     using ErrorLog.Repository;
+    using SimpleInfra.Mapping;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -82,29 +83,15 @@
                 return result;
             }
 
+            ErrorLogEntity entity = null;
             using (var repo = new ErrorLogRepository<ErrorLogEntity>())
             {
-                result = repo
-                    .GetAll(q => q.Id == oid, asNoTracking: true)
-                    .Select(q => new ErrorLogModel
-                    {
-                        ClassName = q.ClassName,
-                        CreatedOn = q.CreatedOn,
-                        CreatedOnUnixTimestamp = q.CreatedOnUnixTimestamp,
-                        ExceptionData = q.ExceptionData,
-                        Id = q.Id,
-                        LogTime = q.LogTime,
-                        LogTimeUnixTimestamp = q.LogTimeUnixTimestamp,
-                        Message = q.Message,
-                        MethodName = q.MethodName,
-                        RequestAddres = q.RequestAddres,
-                        ResponseAddress = q.ResponseAddress,
-                        ResponseMachineName = q.ResponseMachineName,
-                        StackTrace = q.StackTrace,
-                        UserId = q.UserId
-                    }).FirstOrDefault();
+
+                entity = repo
+                    .FirstOrDefault(q => q.Id == oid, asNoTracking: true);
             }
 
+            result = SimpleMapper.Map<ErrorLogEntity, ErrorLogModel>(entity);
             return result;
         }
 
@@ -120,30 +107,16 @@
 
             var start = startTimestamp.GetValueOrDefault();
             var end = endTimestamp.GetValueOrDefault();
-
+            List<ErrorLogEntity> entities;
             using (var repo = new ErrorLogRepository<ErrorLogEntity>())
             {
-                results = repo
+                entities = repo
                     .GetAll(q =>
             ((q.LogTimeUnixTimestamp >= start || start == 0) && (q.LogTimeUnixTimestamp <= end || end == 0)), asNoTracking: true)
-                    .Select(q => new ErrorLogModel
-                    {
-                        ClassName = q.ClassName,
-                        CreatedOn = q.CreatedOn,
-                        CreatedOnUnixTimestamp = q.CreatedOnUnixTimestamp,
-                        ExceptionData = q.ExceptionData,
-                        Id = q.Id,
-                        LogTime = q.LogTime,
-                        LogTimeUnixTimestamp = q.LogTimeUnixTimestamp,
-                        Message = q.Message,
-                        MethodName = q.MethodName,
-                        RequestAddres = q.RequestAddres,
-                        ResponseAddress = q.ResponseAddress,
-                        ResponseMachineName = q.ResponseMachineName,
-                        StackTrace = q.StackTrace,
-                        UserId = q.UserId
-                    }).AsEnumerable();
+            .ToList() ?? new List<ErrorLogEntity>();
             }
+
+            results = SimpleMapper.MapList<ErrorLogEntity, ErrorLogModel>(entities).AsEnumerable();
 
             return results;
         }
@@ -182,23 +155,7 @@
 
             log.CreatedOn = DateTime.Now;
             log.CreatedOnUnixTimestamp = log.CreatedOn.Ticks;
-            var entity = new ErrorLogEntity
-            {
-                Id = log.Id,
-                RequestAddres = log.RequestAddres,
-                ResponseAddress = log.ResponseAddress,
-                ResponseMachineName = log.ResponseMachineName,
-                UserId = log.UserId,
-                ClassName = log.ClassName,
-                MethodName = log.MethodName,
-                Message = log.Message,
-                StackTrace = log.StackTrace,
-                ExceptionData = log.ExceptionData,
-                LogTime = log.LogTime,
-                LogTimeUnixTimestamp = log.LogTimeUnixTimestamp,
-                CreatedOn = log.CreatedOn,
-                CreatedOnUnixTimestamp = log.CreatedOnUnixTimestamp
-            };
+            var entity = SimpleMapper.Map<ErrorLogModel, ErrorLogEntity>(log);
 
             using (var repo = new ErrorLogRepository<ErrorLogEntity>())
             {
@@ -241,23 +198,7 @@
                 entity = repo.FirstOrDefault(q => q.Id == log.Id);
                 if (entity != null && entity != default(ErrorLogEntity))
                 {
-                    entity = new ErrorLogEntity
-                    {
-                        Id = log.Id,
-                        RequestAddres = log.RequestAddres,
-                        ResponseAddress = log.ResponseAddress,
-                        ResponseMachineName = log.ResponseMachineName,
-                        UserId = log.UserId,
-                        ClassName = log.ClassName,
-                        MethodName = log.MethodName,
-                        Message = log.Message,
-                        StackTrace = log.StackTrace,
-                        ExceptionData = log.ExceptionData,
-                        LogTime = log.LogTime,
-                        LogTimeUnixTimestamp = log.LogTimeUnixTimestamp,
-                        CreatedOn = log.CreatedOn,
-                        CreatedOnUnixTimestamp = log.CreatedOnUnixTimestamp
-                    };
+                    SimpleMapper.MapTo(log, entity);
                     repo.Update(entity);
                     result = repo.SaveChanges();
                 }

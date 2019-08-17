@@ -44,8 +44,11 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="SimpleInfra.Data, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5dfe5d84c4d961bb, processorArchitecture=MSIL">
-      <HintPath>..\packages\SimpleInfra.Data.dll.1.4.0\lib\net452\SimpleInfra.Data.dll</HintPath>
+    <Reference Include="SimpleInfra.Data, Version=1.7.0.0, Culture=neutral, PublicKeyToken=5dfe5d84c4d961bb, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInfra.Data.dll.1.7.0\lib\net45\SimpleInfra.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInfra.Mapping, Version=2.3.0.0, Culture=neutral, PublicKeyToken=7c9186d61a57495d, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInfra.Mapping.2.3.0\lib\net45\SimpleInfra.Mapping.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
