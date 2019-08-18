@@ -43,8 +43,8 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="SimpleInfra.Data, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5dfe5d84c4d961bb, processorArchitecture=MSIL">
-      <HintPath>..\packages\SimpleInfra.Data.dll.1.4.0\lib\net452\SimpleInfra.Data.dll</HintPath>
+    <Reference Include="SimpleInfra.Data, Version=1.7.0.0, Culture=neutral, PublicKeyToken=5dfe5d84c4d961bb, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInfra.Data.dll.1.7.0\lib\net45\SimpleInfra.Data.dll</HintPath>
     </Reference>
     <Reference Include="SimpleInjector, Version=4.5.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.4.5.2\lib\net45\SimpleInjector.dll</HintPath>
@@ -87,6 +87,14 @@
     <ProjectReference Include="..\ErrorLog.Business.MongoDb\ErrorLog.Business.MongoDb.csproj">
       <Project>{d2580c38-af18-4919-90d1-0d3c60e9b4a7}</Project>
       <Name>ErrorLog.Business.MongoDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.PostgreSqlDb\ErrorLog.Business.PostgreSqlDb.csproj">
+      <Project>{71FCB0E1-F22F-48BA-AD7B-428F25EC7628}</Project>
+      <Name>ErrorLog.Business.PostgreSqlDb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ErrorLog.Business.PostgreSql\ErrorLog.Business.PostgreSql.csproj">
+      <Project>{185FFF3B-EA6D-4CAF-B3C0-73A352D76A21}</Project>
+      <Name>ErrorLog.Business.PostgreSql</Name>
     </ProjectReference>
     <ProjectReference Include="..\ErrorLog.Business.RavenDb\ErrorLog.Business.RavenDb.csproj">
       <Project>{75de0407-c9d7-4180-af41-761d4187a8a1}</Project>

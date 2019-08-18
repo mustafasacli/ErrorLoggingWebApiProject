@@ -55,6 +55,7 @@
              <summary>   Gets all. </summary>
             
              <param name="predicate">    The predicate. </param>
+             <param name="asNoTracking"> asNoTracking parameter. </param>
             
              <returns>   An IQueryable&lt;T&gt; </returns>
         </member>
@@ -67,6 +68,22 @@
              <param name="isOrderByDesc">        (Optional) True if is order by description, false if not. </param>
              <param name="pageNumber">           (Optional) The page number. </param>
              <param name="pageItemCount">        (Optional) Number of page items. </param>
+             <param name="asNoTracking"> asNoTracking parameter. </param>
+            
+             <returns>   The with page. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.GetWithSkipAndTake``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean,System.UInt32,System.UInt32,System.Boolean)">
+             <summary>   Gets with skip and take. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <typeparam name="TKey"> Type of the key. </typeparam>
+             <param name="predicate">            The predicate. </param>
+             <param name="keySelectorForOrder">  (Optional) The key selector for order. </param>
+             <param name="isOrderByDesc">        (Optional) True if is order by description, false if not. </param>
+             <param name="skip">           (Optional) Item count for skip. </param>
+             <param name="take">        (Optional) Item count for take. </param>
+             <param name="asNoTracking"> asNoTracking parameter. </param>
             
              <returns>   The with page. </returns>
         </member>
@@ -78,6 +95,7 @@
              <param name="isOrderByDesc">        (Optional) True if is order by description, false if not. </param>
              <param name="pageNumber">           (Optional) The page number. </param>
              <param name="pageItemCount">        (Optional) Number of page items. </param>
+             <param name="asNoTracking"> asNoTracking parameter. </param>
             
              <returns>   all with page. </returns>
         </member>
@@ -85,13 +103,33 @@
              <summary>   Gets a t using the given predicate. </summary>
             
              <param name="predicate">    The predicate. </param>
+             <param name="asNoTracking"> asNoTracking parameter. </param>
             
              <returns>   A T. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.Single(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
+             <summary>   Gets a t using the given predicate. </summary>
+            
+             <param name="predicate">    The predicate. </param>
+             <param name="asNoTracking"> asNoTracking parameter. </param>
+            
+             <returns>   A T. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.SingleOrDefault(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
+             <summary>   Gets a t using the given predicate. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="predicate">    The predicate. </param>
+             <param name="asNoTracking"> asNoTracking parameter. </param>
+            
+             <returns>   A T instance. </returns>
         </member>
         <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.First(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
              <summary>   Get First the given predicate. </summary>
             
              <param name="predicate">    The predicate. </param>
+             <param name="asNoTracking"> asNoTracking parameter. </param>
             
              <returns>   A T. </returns>
         </member>
@@ -99,6 +137,7 @@
              <summary>   Get First or default. </summary>
             
              <param name="predicate">    The predicate. </param>
+             <param name="asNoTracking"> asNoTracking parameter. </param>
             
              <returns>   A T. </returns>
         </member>
@@ -131,6 +170,12 @@
             
              <param name="entity">   The entity to delete. </param>
         </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.UpdateRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Update entity array.
+            </summary>
+            <param name="entities">entity array</param>
+        </member>
         <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.Delete(`0)">
              <summary>   Deletes the given oid. </summary>
             
@@ -141,6 +186,12 @@
             
              <param name="oid">  The oid. </param>
         </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.DeleteRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Delete entity array.
+            </summary>
+            <param name="entities"> entity array</param>
+        </member>
         <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.SqlSetQuery(System.String,System.Object[])">
              <summary>   SQL set query. </summary>
             
@@ -148,6 +199,31 @@
              <param name="parameters">   A variable-length parameters list containing parameters. </param>
             
              <returns>   A DbSqlQuery&lt;T&gt; </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.ExecuteSqlCommand(System.String,System.Object[])">
+            <summary>
+                Executes the given DDL/DML command against the database. As with any API that
+                accepts SQL it is important to parameterize any user input to protect against
+                a SQL injection attack. You can include parameter place holders in the SQL query
+                string and then supply parameter values as additional arguments. Any parameter
+                values you supply will automatically be converted to a DbParameter.
+            </summary>
+            <param name="sql">The command string.</param>
+            <param name="parameters">The parameters to apply to the command string.</param>
+            <returns> The result returned by the database after executing the command.</returns>
+        </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.ExecuteSqlCommand(System.Data.Entity.TransactionalBehavior,System.String,System.Object[])">
+            <summary>
+                Executes the given DDL/DML command against the database. As with any API that
+                accepts SQL it is important to parameterize any user input to protect against
+                a SQL injection attack. You can include parameter place holders in the SQL query
+                string and then supply parameter values as additional arguments. Any parameter
+                values you supply will automatically be converted to a DbParameter.
+            </summary>
+            <param name="transactionalBehavior"> TransactionalBehavior parameter. </param>
+            <param name="sql">The command string.</param>
+            <param name="parameters">The parameters to apply to the command string.</param>
+            <returns> The result returned by the database after executing the command.</returns>
         </member>
         <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.SqlQuery``1(System.String,System.Object[])">
              <summary>   SQL query. </summary>
@@ -158,12 +234,26 @@
             
              <returns>   A DbRawSqlQuery&lt;TElement&gt; </returns>
         </member>
+        <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.SqlQuery(System.Type,System.String,System.Object[])">
+             <summary>   SQL query. </summary>
+            
+             <param name="elementType">          The Element Type. </param>
+             <param name="sql">          The SQL. </param>
+             <param name="parameters">   A variable-length parameters list containing parameters. </param>
+            
+             <returns>   A DbRawSqlQuery </returns>
+        </member>
         <member name="M:SimpleInfra.Data.ISimpleDataRepository`1.GetById(System.Object)">
              <summary>   Gets by id. </summary>
             
              <param name="oid">  The oid. </param>
             
              <returns>   The by id. </returns>
+        </member>
+        <member name="T:SimpleInfra.Data.ISimpleRepoLogger">
+            <summary>
+            Interface for logging operations.
+            </summary>
         </member>
         <member name="M:SimpleInfra.Data.ISimpleRepoLogger.Error(System.Exception,System.String[])">
              <summary>   Log Errors. </summary>
@@ -245,6 +335,16 @@
             
              <value> True if logs debug, false if not. </value>
         </member>
+        <member name="P:SimpleInfra.Data.SimpleBaseDataRepository`1.Context">
+            <summary>
+            Database Context.
+            </summary>
+        </member>
+        <member name="P:SimpleInfra.Data.SimpleBaseDataRepository`1.Connection">
+            <summary>
+            Database Connection.
+            </summary>
+        </member>
         <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.Include(System.String)">
              <summary>   Includes the given entity type name. </summary>
             
@@ -277,6 +377,7 @@
              <remarks>   Msacli, 30.04.2019. </remarks>
             
              <param name="predicate">    The predicate. </param>
+             <param name="asNoTracking"> asNoTracking parameter. </param>
             
              <returns>   all. </returns>
         </member>
@@ -291,6 +392,22 @@
              <param name="isOrderByDesc">        (Optional) True if is order by description, false if not. </param>
              <param name="pageNumber">           (Optional) The page number. </param>
              <param name="pageItemCount">        (Optional) Number of page items. </param>
+             <param name="asNoTracking"> asNoTracking parameter. </param>
+            
+             <returns>   The with page. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.GetWithSkipAndTake``1(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Boolean,System.UInt32,System.UInt32,System.Boolean)">
+             <summary>   Gets with skip and take. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <typeparam name="TKey"> Type of the key. </typeparam>
+             <param name="predicate">            The predicate. </param>
+             <param name="keySelectorForOrder">  (Optional) The key selector for order. </param>
+             <param name="isOrderByDesc">        (Optional) True if is order by description, false if not. </param>
+             <param name="skip">           (Optional) Item count for skip. </param>
+             <param name="take">        (Optional) Item count for take. </param>
+             <param name="asNoTracking"> asNoTracking parameter. </param>
             
              <returns>   The with page. </returns>
         </member>
@@ -304,6 +421,7 @@
              <param name="isOrderByDesc">        (Optional) True if is order by description, false if not. </param>
              <param name="pageNumber">           (Optional) The page number. </param>
              <param name="pageItemCount">        (Optional) Number of page items. </param>
+             <param name="asNoTracking"> asNoTracking parameter. </param>
             
              <returns>   all with page. </returns>
         </member>
@@ -313,6 +431,27 @@
              <remarks>   Msacli, 30.04.2019. </remarks>
             
              <param name="predicate">    The predicate. </param>
+             <param name="asNoTracking"> asNoTracking parameter. </param>
+            
+             <returns>   A T instance. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.Single(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
+             <summary>   Gets a t using the given predicate. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="predicate">    The predicate. </param>
+             <param name="asNoTracking"> asNoTracking parameter. </param>
+            
+             <returns>   A T instance. </returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.SingleOrDefault(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
+             <summary>   Gets a t using the given predicate. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="predicate">    The predicate. </param>
+             <param name="asNoTracking"> asNoTracking parameter. </param>
             
              <returns>   A T instance. </returns>
         </member>
@@ -334,12 +473,43 @@
             
              <returns>   True if it succeeds, false if it fails. </returns>
         </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.Find(System.Object[])">
+            <summary>
+             Finds an entity with the given primary key values. If an entity with the given
+                primary key values exists in the context, then it is returned immediately without
+                making a request to the store. Otherwise, a request is made to the store for
+                an entity with the given primary key values and this entity, if found, is attached
+                to the context and returned. If no entity is found in the context or the store,
+                then null is returned.
+            </summary>
+            <remarks> 
+            The ordering of composite key values is as defined in the EDM, which is in turn
+                as defined in the designer, by the Code First fluent API, or by the DataMember
+                attribute.
+            </remarks>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if multiple entities exist in the context with the primary key values given.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the type of entity is not part of the data model for this context.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+             Thrown if the types of the key values do not match the types of the key values
+                for the entity type to be found.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+             Thrown if the context has been disposed.
+            </exception>
+            <param name="keyValues">The values of the primary key for the entity to be found.</param>
+            <returns>The entity found, or null.</returns>
+        </member>
         <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.First(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Boolean)">
              <summary>   Get First the given predicate. </summary>
             
              <remarks>   Msacli, 30.04.2019. </remarks>
             
              <param name="predicate">    The predicate. </param>
+             <param name="asNoTracking"> asNoTracking parameter. </param>
             
              <returns>   A T instance. </returns>
         </member>
@@ -349,6 +519,7 @@
              <remarks>   Msacli, 30.04.2019. </remarks>
             
              <param name="predicate">    The predicate. </param>
+             <param name="asNoTracking"> asNoTracking parameter. </param>
             
              <returns>   A T instance. </returns>
         </member>
@@ -378,11 +549,11 @@
              <param name="entity">   The entity to add. </param>
         </member>
         <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
-             <summary>   Adds an entity range. </summary>
+             <summary>   Adds entity. </summary>
             
              <remarks>   Msacli, 30.04.2019. </remarks>
             
-             <param name="entities"> An IEnumerable&lt;T&gt; of items to append to this. </param>
+             <param name="entities">   The entity to add. </param>
         </member>
         <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.Create">
              <summary>   Creates a new T. </summary>
@@ -402,6 +573,17 @@
             
              <returns>   A DbRawSqlQuery&lt;TElement&gt; </returns>
         </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.SqlQuery(System.Type,System.String,System.Object[])">
+             <summary>   SQL query. </summary>
+            
+             <remarks>   Msacli, 30.04.2019. </remarks>
+            
+             <param name="elementType"> Type of the element. </param>
+             <param name="sql">          The SQL. </param>
+             <param name="parameters">   A variable-length parameters list containing parameters. </param>
+            
+             <returns>   A DbRawSqlQuery </returns>
+        </member>
         <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.SqlSetQuery(System.String,System.Object[])">
              <summary>   SQL set query. </summary>
             
@@ -412,6 +594,31 @@
             
              <returns>   A DbSqlQuery&lt;T&gt; </returns>
         </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.ExecuteSqlCommand(System.String,System.Object[])">
+            <summary>
+                Executes the given DDL/DML command against the database. As with any API that
+                accepts SQL it is important to parameterize any user input to protect against
+                a SQL injection attack. You can include parameter place holders in the SQL query
+                string and then supply parameter values as additional arguments. Any parameter
+                values you supply will automatically be converted to a DbParameter.
+            </summary>
+            <param name="sql">The command string.</param>
+            <param name="parameters">The parameters to apply to the command string.</param>
+            <returns> The result returned by the database after executing the command.</returns>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.ExecuteSqlCommand(System.Data.Entity.TransactionalBehavior,System.String,System.Object[])">
+            <summary>
+                Executes the given DDL/DML command against the database. As with any API that
+                accepts SQL it is important to parameterize any user input to protect against
+                a SQL injection attack. You can include parameter place holders in the SQL query
+                string and then supply parameter values as additional arguments. Any parameter
+                values you supply will automatically be converted to a DbParameter.
+            </summary>
+            <param name="transactionalBehavior"> TransactionalBehavior parameter. </param>
+            <param name="sql">The command string.</param>
+            <param name="parameters">The parameters to apply to the command string.</param>
+            <returns> The result returned by the database after executing the command.</returns>
+        </member>
         <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.Update(`0)">
              <summary>   Updates the given entity. </summary>
             
@@ -419,12 +626,25 @@
             
              <param name="entity">   The entity to delete. </param>
         </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.UpdateRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Delete entity array.
+            </summary>
+            <param name="entities"> entity array</param>
+            <returns>IEnumrable entity</returns>
+        </member>
         <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.Delete(`0)">
              <summary>   Deletes the given oid. </summary>
             
              <remarks>   Msacli, 30.04.2019. </remarks>
             
              <param name="entity">   The entity to delete. </param>
+        </member>
+        <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.DeleteRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Delete entity array.
+            </summary>
+            <param name="entities"> entity array</param>
         </member>
         <member name="M:SimpleInfra.Data.SimpleBaseDataRepository`1.Delete(System.Object)">
              <summary> Deletes the given oid. if oid is null or DbNull, delete operation will be cancelled. </summary>

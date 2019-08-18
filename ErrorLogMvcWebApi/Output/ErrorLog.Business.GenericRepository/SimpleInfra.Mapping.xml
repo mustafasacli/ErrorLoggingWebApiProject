@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimpleInfra.Mapping</name>
+    </assembly>
+    <members>
+        <member name="T:SimpleInfra.Mapping.SimpleMapper">
+             <summary>   A general simple mapper class. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+        </member>
+        <member name="M:SimpleInfra.Mapping.SimpleMapper.Map``2(``0,System.Boolean)">
+             <summary>   A TSource extension method that maps the given source. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+            
+             <typeparam name="TSource">  Type of the source. </typeparam>
+             <typeparam name="TDest">    Type of the destination. </typeparam>
+             <param name="source">   The source to act on. </param>
+             <param name="notUseCache">if true will be used Cache</param>
+            
+             <returns>   A TDest. </returns>
+        </member>
+        <member name="M:SimpleInfra.Mapping.SimpleMapper.MapList``2(System.Collections.Generic.List{``0},System.Boolean)">
+             <summary>   A TSource extension method that maps the given source. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+            
+             <typeparam name="TSource">  Type of the source. </typeparam>
+             <typeparam name="TDest">    Type of the destination. </typeparam>
+             <param name="sourceList">   The source List. </param>
+             <param name="notUseCache"></param>
+            
+             <returns>   A TDest. </returns>
+        </member>
+        <member name="M:SimpleInfra.Mapping.SimpleMapper.Map``2(``0,System.String)">
+             <summary>   A TSource extension method that maps the given source. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+            
+             <typeparam name="TSource">  Type of the source. </typeparam>
+             <typeparam name="TDest">    Type of the destination. </typeparam>
+             <param name="propertyMap">   Property Map string, like SourceProp1:DestProp1;SourceProp2:DestProp2;SourceProp3:DestProp3. </param>
+             <param name="source">   The source to act on. </param>
+            
+             <returns>   A TDest. </returns>
+        </member>
+        <member name="M:SimpleInfra.Mapping.SimpleMapper.Map``2(System.Collections.Generic.List{``0},System.String)">
+             <summary>   A TSource extension method that maps the given source. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+            
+             <typeparam name="TSource">  Type of the source. </typeparam>
+             <typeparam name="TDest">    Type of the destination. </typeparam>
+             <param name="propertyMap">   Property Map string, like SourceProp1:DestProp1;SourceProp2:DestProp2;SourceProp3:DestProp3. </param>
+             <param name="sourceList">   The source List. </param>
+            
+             <returns>   A TDest. </returns>
+        </member>
+        <member name="M:SimpleInfra.Mapping.SimpleMapper.MapTo``2(``0,``1,System.Boolean)">
+            <summary>
+            Map Property Values to another type instance.
+            </summary>
+            <typeparam name="TSource">Source Generic Type</typeparam>
+            <typeparam name="TDest">Destination Generic Type</typeparam>
+            <param name="source">Source generic type instance</param>
+            <param name="instance">Destination generic type instance</param>
+            <param name="notUseCache"></param>
+        </member>
+        <member name="M:SimpleInfra.Mapping.SimpleTypeHelper.GetSamePropertiesFromDict(System.Type,System.Type)">
+            <summary>
+            Gets common Properties of two types.
+            </summary>
+            <param name="type1">First type</param>
+            <param name="type2">Second type</param>
+            <returns>returns string list</returns>
+        </member>
+        <member name="M:SimpleInfra.Mapping.SimpleTypeHelper.GetSameProperties(System.Type,System.Type)">
+            <summary>
+            Gets common Properties of two types.
+            </summary>
+            <param name="type1">First type</param>
+            <param name="type2">Second type</param>
+            <returns>returns string list</returns>
+        </member>
+    </members>
+</doc>

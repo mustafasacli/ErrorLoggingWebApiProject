@@ -55,9 +55,8 @@
     <AssemblyOriginatorKeyFile>errorlog.wcf.service.consumer.consoleapp.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ServiceProxy.Generic, Version=1.1.0.0, Culture=neutral, PublicKeyToken=49c2426518844669, processorArchitecture=MSIL">
-      <HintPath>..\packages\ServiceProxy.Generic.dll.1.1.0\lib\net452\ServiceProxy.Generic.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="ServiceProxy.Generic, Version=1.2.0.0, Culture=neutral, PublicKeyToken=49c2426518844669, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceProxy.Generic.dll.1.2.0\lib\net45\ServiceProxy.Generic.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

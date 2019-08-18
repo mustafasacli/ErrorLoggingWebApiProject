@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mst.Dexter</name>
+    </assembly>
+    <members>
+        <member name="M:Mst.Dexter.Configuraton.DxConfiguratonHelper.GetMainNode">
+            <summary>
+            Get Connection Main Node.
+            </summary>
+            <returns>Returns XmlNode object.</returns>
+        </member>
+        <member name="M:Mst.Dexter.Configuraton.DxConfiguratonHelper.GetConnectionNodeList">
+            <summary>
+            Get Connection List as XmlNodeList.
+            </summary>
+            <returns>Returns XmlNodeList object</returns>
+        </member>
+        <member name="P:Mst.Dexter.Configuraton.DxConfiguratonHelper.IsWriteEventLog">
+            <summary>
+            Checks events will be logged.
+            </summary>
+        </member>
+        <member name="P:Mst.Dexter.Configuraton.DxConfiguratonHelper.IsWriteErrorLog">
+            <summary>
+            Checks erors will be logged.
+            </summary>
+        </member>
+        <member name="T:Mst.Dexter.Factory.DxConnectionFactory">
+            <summary>
+            Dexter Connection Factory class. Generates IDbConnection object with given connection name.
+            </summary>
+        </member>
+        <member name="M:Mst.Dexter.Factory.DxConnectionFactory.#ctor">
+            <summary>
+            private DxConnectionFactory Ctor.
+            </summary>
+        </member>
+        <member name="P:Mst.Dexter.Factory.DxConnectionFactory.Instance">
+            <summary>
+            Gets DxConnectionFactory instance for IDbConnection object list.
+            </summary>
+        </member>
+        <member name="P:Mst.Dexter.Factory.DxConnectionFactory.Errors">
+            <summary>
+            Error List.
+            </summary>
+        </member>
+        <member name="M:Mst.Dexter.Factory.DxConnectionFactory.GetConnection(System.String)">
+            <summary>
+            Get IDbConnection from configuration file for given conection name.
+            </summary>
+            <param name="connName">Connection name</param>
+            <returns>Returns IDbConnection instance for given name.</returns>
+        </member>
+        <member name="P:Mst.Dexter.Factory.DxConnectionFactory.ConnectionKeys">
+            <summary>
+            Connection Name List in configuration file.
+            </summary>
+        </member>
+    </members>
+</doc>

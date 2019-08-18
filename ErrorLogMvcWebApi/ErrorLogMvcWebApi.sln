@@ -53,6 +53,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLog.Repository", "Erro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLog.Business.GenericRepository", "ErrorLog.Business.GenericRepository\ErrorLog.Business.GenericRepository.csproj", "{4C5382D5-7802-4197-AE77-9A6DA136AC67}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLog.Business.PostgreSqlDb", "ErrorLog.Business.PostgreSqlDb\ErrorLog.Business.PostgreSqlDb.csproj", "{71FCB0E1-F22F-48BA-AD7B-428F25EC7628}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLog.Business.PostgreSql", "ErrorLog.Business.PostgreSql\ErrorLog.Business.PostgreSql.csproj", "{185FFF3B-EA6D-4CAF-B3C0-73A352D76A21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -159,6 +163,14 @@ Global
 		{4C5382D5-7802-4197-AE77-9A6DA136AC67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C5382D5-7802-4197-AE77-9A6DA136AC67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C5382D5-7802-4197-AE77-9A6DA136AC67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71FCB0E1-F22F-48BA-AD7B-428F25EC7628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71FCB0E1-F22F-48BA-AD7B-428F25EC7628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71FCB0E1-F22F-48BA-AD7B-428F25EC7628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71FCB0E1-F22F-48BA-AD7B-428F25EC7628}.Release|Any CPU.Build.0 = Release|Any CPU
+		{185FFF3B-EA6D-4CAF-B3C0-73A352D76A21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{185FFF3B-EA6D-4CAF-B3C0-73A352D76A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{185FFF3B-EA6D-4CAF-B3C0-73A352D76A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{185FFF3B-EA6D-4CAF-B3C0-73A352D76A21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
