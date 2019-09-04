@@ -40,7 +40,7 @@
             if (log.Id == emptystring)
                 return CoreConstants.EmptyGuidLogIdResponse;
 
-            emptystring = emptystring.Replace('-', '\0');
+            emptystring = emptystring.Replace("-", string.Empty);
 
             if (log.Id == emptystring)
                 return CoreConstants.EmptyGuidLogIdResponse;
@@ -49,11 +49,11 @@
 
             using (var repo = new ErrorLogRepository<ErrorLogEntity>())
             {
-                var entity = repo.FirstOrDefault(q => q.Id == log.Id, asNoTracking: true);
+                var entity = repo.FirstOrDefault(q => q.Id == log.Id);
                 if (entity != null && entity != default(ErrorLogEntity))
                 {
                     repo.Delete(entity);
-                    repo.SaveChanges();
+                    result = repo.SaveChanges();
                 }
             }
 
@@ -78,7 +78,7 @@
 
             if (string.IsNullOrWhiteSpace(oid)
                 || oid == Guid.Empty.ToString()
-                || oid == Guid.Empty.ToString().Replace('-', '\0'))
+                || oid == Guid.Empty.ToString().Replace("-", string.Empty))
             {
                 return result;
             }
@@ -142,7 +142,7 @@
 
             if (string.IsNullOrWhiteSpace(logId)
                 || logId == emptyGuid
-                || logId == emptyGuid.Replace('-', '\0'))
+                || logId == emptyGuid.Replace("-", string.Empty))
             {
                 log.Id = Guid.NewGuid().ToString();
             }
@@ -184,7 +184,7 @@
             if (log.Id == emptystring)
                 return CoreConstants.EmptyGuidLogIdResponse;
 
-            emptystring = emptystring.Replace('-', '\0');
+            emptystring = emptystring.Replace("-", string.Empty);
 
             if (log.Id == emptystring)
                 return CoreConstants.EmptyGuidLogIdResponse;
