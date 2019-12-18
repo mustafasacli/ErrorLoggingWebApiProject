@@ -41,8 +41,21 @@ namespace ErrorLog.Wcf.Service.Consumer.ConsoleApp
             }
 
             var result =
-                proxy.Dispatch<IErrorLogService, string>(q => q.Save(new ErrorLogModel { }));
-
+                proxy.Dispatch<IErrorLogService, string>(q => q.Save(new ErrorLogModel
+                {
+                    ClassName = nameof(Program),
+                    LogTimeUnixTimestamp = (long)(DateTime.Now - new DateTime(1970, 1, 1)).TotalSeconds,
+                    CreatedOnUnixTimestamp = (long)(DateTime.Now - new DateTime(1970, 1, 1)).TotalSeconds,
+                    Message = "msg",
+                    RequestAddres = "req address",
+                    ResponseAddress = "resp addres",
+                    ResponseMachineName = "mach name",
+                    UserId = "usr12",
+                    ExceptionData = "data",
+                    StackTrace = "trace",
+                    MethodName = nameof(Main)
+                }));
+            Console.WriteLine("Result: {0}", result);
             Console.ReadKey();
         }
     }

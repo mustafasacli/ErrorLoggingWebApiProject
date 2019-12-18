@@ -93,7 +93,7 @@
       <Name>ErrorLog.Business.PostgreSqlDb</Name>
     </ProjectReference>
     <ProjectReference Include="..\ErrorLog.Business.PostgreSql\ErrorLog.Business.PostgreSql.csproj">
-      <Project>{185FFF3B-EA6D-4CAF-B3C0-73A352D76A21}</Project>
+      <Project>{185fff3b-ea6d-4caf-b3c0-73a352d76a21}</Project>
       <Name>ErrorLog.Business.PostgreSql</Name>
     </ProjectReference>
     <ProjectReference Include="..\ErrorLog.Business.RavenDb\ErrorLog.Business.RavenDb.csproj">

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ErrorLog.Business.PostgreSql</name>
+    </assembly>
+    <members>
+        <member name="T:ErrorLog.Business.PostgreSql.ErrorLogPosgtreSqlBusiness">
+             <summary>   An error log SQL business. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 26.04.2019. </remarks>
+        </member>
+        <member name="M:ErrorLog.Business.PostgreSql.ErrorLogPosgtreSqlBusiness.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Mustafa SAÇLI, 26.04.2019. </remarks>
+        </member>
+    </members>
+</doc>
