@@ -292,6 +292,26 @@
             
              <returns>   The dynamic from data reader. </returns>
         </member>
+        <member name="T:Mst.Dexter.Extensions.ObjectExtensions.EnumExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.ObjectExtensions.EnumExtensions.GetDayName(System.DayOfWeek)">
+            <summary>
+            Gets Day Name of CurrentCulture.
+            </summary>
+            <param name="dayOfWeek"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.ObjectExtensions.EnumExtensions.GetDayName(System.DayOfWeek,System.String)">
+            <summary>
+            Gets Day Name of given CurrentCulture.
+            </summary>
+            <param name="dayOfWeek"></param>
+            <param name="culture">culture name</param>
+            <returns></returns>
+        </member>
         <member name="T:Mst.Dexter.Extensions.Objects.MstDictionary">
              <summary>   MstDictionary. This class cannot be inherited. </summary>
             
@@ -691,10 +711,21 @@
             
              <returns>   An asynchronous result that yields a T. </returns>
         </member>
-        <member name="T:Mst.Dexter.Extensions.DxConnectionAsyncOperationExtension">
-             <summary>   A Dx connection asynchronous operation extension. </summary>
+        <member name="M:Mst.Dexter.Extensions.DxConnectionAsyncOperationExtensionV2.GetListAsync``1(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Data.IDbTransaction,System.Object[])">
+            <summary>
             
-             <remarks>   Msacli, 22.04.2019. </remarks>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="connection"></param>
+            <param name="sqlText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Mst.Dexter.Extensions.DxConnectionAsyncOperationExtension">
+            <summary>   A Dx connection asynchronous operation extension. </summary>
+            <remarks>   Msacli, 22.04.2019. </remarks>
         </member>
         <member name="M:Mst.Dexter.Extensions.DxConnectionAsyncOperationExtension.ExecuteAsync(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Data.IDbTransaction,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object})">
              <summary>
@@ -865,6 +896,19 @@
              <param name="outputParameters"> (Optional) Options for controlling the output. </param>
             
              <returns>   An asynchronous result that yields a T. </returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.DxConnectionAsyncOperationExtension.GetListAsync``1(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Data.IDbTransaction,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="connection"></param>
+            <param name="sqlText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <param name="inputParameters"></param>
+            <param name="outputParameters"></param>
+            <returns></returns>
         </member>
         <member name="T:Mst.Dexter.Extensions.DxConnectionExtension">
              <summary>   A dx connection extension. </summary>
@@ -1114,6 +1158,17 @@
             
              <returns>   A T. </returns>
         </member>
+        <member name="M:Mst.Dexter.Extensions.DxConnectionOperationExtensionV2.GetList``1(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Data.IDbTransaction,System.Object[])">
+            <summary>
+            Get List of model
+            </summary>
+            <param name="connection"></param>
+            <param name="sqlText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <param name="parameters">DbParameter List</param>
+            <returns></returns>
+        </member>
         <member name="T:Mst.Dexter.Extensions.DxConnectionOperationExtension">
              <summary>   A dx connection operation extension. </summary>
             
@@ -1144,6 +1199,7 @@
              <param name="transaction">      (Optional) The transaction. </param>
              <param name="inputParameters">  (Optional) Options for controlling the input. </param>
              <param name="outputParameters"> (Optional) Options for controlling the output. </param>
+             <param name="commandBehavior">CommandBehaviour for DataReader</param>
             
              <returns>   An IDataReader. </returns>
         </member>
@@ -1324,6 +1380,18 @@
             
              <returns>   A T. </returns>
         </member>
+        <member name="M:Mst.Dexter.Extensions.DxConnectionOperationExtension.GetList``1(System.Data.IDbConnection,System.String,System.Data.CommandType,System.Data.IDbTransaction,System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            
+            </summary>
+            <param name="connection"></param>
+            <param name="sqlText"></param>
+            <param name="commandType"></param>
+            <param name="transaction"></param>
+            <param name="inputParameters"></param>
+            <param name="outputParameters"></param>
+            <returns></returns>
+        </member>
         <member name="T:Mst.Dexter.Extensions.DxDbCommandHelper">
              <summary>   A dx database command helper. </summary>
             
@@ -1427,6 +1495,11 @@
              <param name="value">        The value. </param>
             
              <returns>   True if it succeeds, false if it fails. </returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.DynamicExtensions.ToExpando(System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Extension method that turns a dictionary of string and object to an ExpandoObject
+            </summary>
         </member>
         <member name="T:Mst.Dexter.Extensions.GeneralMapperExtensions">
              <summary>   A general mapper extensions. </summary>
@@ -1626,6 +1699,24 @@
             
              <returns>   Obj as an int. </returns>
         </member>
+        <member name="M:Mst.Dexter.Extensions.ObjectExtension.ToByteNullable(System.Object)">
+             <summary>   An object extension method that converts an obj to a byte nullable. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+            
+             <param name="obj">  The obj to act on. </param>
+            
+             <returns>   Obj as an byte? </returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.ObjectExtension.ToShortNullable(System.Object)">
+             <summary>   An object extension method that converts an obj to a short nullable. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+            
+             <param name="obj">  The obj to act on. </param>
+            
+             <returns>   Obj as an short? </returns>
+        </member>
         <member name="M:Mst.Dexter.Extensions.ObjectExtension.ToIntNullable(System.Object)">
              <summary>   An object extension method that converts an obj to a int nullable. </summary>
             
@@ -1634,6 +1725,42 @@
              <param name="obj">  The obj to act on. </param>
             
              <returns>   Obj as an int? </returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.ObjectExtension.ToLongNullable(System.Object)">
+             <summary>   An object extension method that converts an obj to a long nullable. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+            
+             <param name="obj">  The obj to act on. </param>
+            
+             <returns>   Obj as an long? </returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.ObjectExtension.ToDecimalNullable(System.Object)">
+             <summary>   An object extension method that converts an obj to a decimal nullable. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+            
+             <param name="obj">  The obj to act on. </param>
+            
+             <returns>   Obj as an decimal? </returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.ObjectExtension.ToDoubleNullable(System.Object)">
+             <summary>   An object extension method that converts an obj to a double nullable. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+            
+             <param name="obj">  The obj to act on. </param>
+            
+             <returns>   Obj as an double? </returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.ObjectExtension.ToFloatNullable(System.Object)">
+             <summary>   An object extension method that converts an obj to a float nullable. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+            
+             <param name="obj">  The obj to act on. </param>
+            
+             <returns>   Obj as an float? </returns>
         </member>
         <member name="M:Mst.Dexter.Extensions.ObjectExtension.ToDecimal(System.Object)">
              <summary>   An object extension method that converts an obj to a decimal. </summary>
@@ -1670,6 +1797,20 @@
              <param name="str">  The str to act on. </param>
             
              <returns>   True if it succeeds, false if it fails. </returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.ObjectExtension.GetValueWithCheckDbNull(System.Object)">
+            <summary>
+            if value is DbNulll.Value returns null, else return object value.
+            </summary>
+            <param name="obj"></param>
+            <returns>Returns object</returns>
+        </member>
+        <member name="M:Mst.Dexter.Extensions.ObjectExtension.ToDateTimeNullable(System.Object)">
+            <summary>
+            Convert object to DateTime nullable.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
         </member>
         <member name="T:Mst.Dexter.Extensions.StringExtension">
              <summary>   A string extension. </summary>
@@ -1716,7 +1857,7 @@
         <member name="M:Mst.Dexter.Extensions.StringExtension.RemoveUnderLineAndCapitalizeString(System.String)">
              <summary>
              A string extension method that removes the under line and capitalize string described by
-             str.
+             str removes underline and point.
              </summary>
             
              <remarks>   Msacli, 22.04.2019. </remarks>
@@ -1892,12 +2033,13 @@
             
              <returns>   The schema name of type. </returns>
         </member>
-        <member name="M:Mst.Dexter.Extensions.TypeExtensions.GetColumnsOfType(System.Type)">
+        <member name="M:Mst.Dexter.Extensions.TypeExtensions.GetColumnsOfType(System.Type,System.Boolean)">
              <summary>   A Type extension method that gets columns of type. </summary>
             
              <remarks>   Msacli, 22.04.2019. </remarks>
             
              <param name="type"> The type to act on. </param>
+             <param name="includeNotMappedProperties">if true NotMapped Properties are included, else not.</param>
             
              <returns>   The columns of type. </returns>
         </member>
@@ -1919,12 +2061,13 @@
             
              <returns>   True if it succeeds, false if it fails. </returns>
         </member>
-        <member name="M:Mst.Dexter.Extensions.TypeExtensions.GetValidPropertiesOfType(System.Type)">
+        <member name="M:Mst.Dexter.Extensions.TypeExtensions.GetValidPropertiesOfType(System.Type,System.Boolean)">
              <summary>   A Type extension method that gets valid properties of type. </summary>
             
              <remarks>   Msacli, 22.04.2019. </remarks>
             
              <param name="type"> The type to act on. </param>
+             <param name="includeNotMappedProperties">if true NotMapped Properties are included, else not.</param>
             
              <returns>   An array of property İnformation. </returns>
         </member>

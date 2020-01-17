@@ -4,6 +4,16 @@
         <name>Mst.Dexter</name>
     </assembly>
     <members>
+        <member name="T:Mst.Dexter.AppValues">
+             <summary>   An application values. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+        </member>
+        <member name="T:Mst.Dexter.Configuraton.DxConfiguratonHelper">
+             <summary>   A dx configuraton helper. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+        </member>
         <member name="M:Mst.Dexter.Configuraton.DxConfiguratonHelper.GetMainNode">
             <summary>
             Get Connection Main Node.
@@ -26,6 +36,27 @@
             Checks erors will be logged.
             </summary>
         </member>
+        <member name="T:Mst.Dexter.Configuraton.DxExternalConfigurationSectionHandler">
+             <summary>   A dx external configuration section handler. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+        </member>
+        <member name="M:Mst.Dexter.Configuraton.DxExternalConfigurationSectionHandler.#ctor">
+             <summary>   Default constructor. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+        </member>
+        <member name="M:Mst.Dexter.Configuraton.DxExternalConfigurationSectionHandler.Create(System.Object,System.Object,System.Xml.XmlNode)">
+             <summary>   Creates a configuration section handler. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+            
+             <param name="parent">           Parent object. </param>
+             <param name="configContext">    Configuration context object. </param>
+             <param name="section">          Section XML node. </param>
+            
+             <returns>   The created section handler object. </returns>
+        </member>
         <member name="T:Mst.Dexter.Factory.DxConnectionFactory">
             <summary>
             Dexter Connection Factory class. Generates IDbConnection object with given connection name.
@@ -46,6 +77,21 @@
             Error List.
             </summary>
         </member>
+        <member name="P:Mst.Dexter.Factory.DxConnectionFactory.ErrorFileName">
+             <summary>   Gets the filename of the error file. </summary>
+            
+             <value> The filename of the error file. </value>
+        </member>
+        <member name="P:Mst.Dexter.Factory.DxConnectionFactory.EventFileName">
+             <summary>   Gets the filename of the event file. </summary>
+            
+             <value> The filename of the event file. </value>
+        </member>
+        <member name="M:Mst.Dexter.Factory.DxConnectionFactory.AddTypes">
+             <summary>   Adds types. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+        </member>
         <member name="M:Mst.Dexter.Factory.DxConnectionFactory.GetConnection(System.String)">
             <summary>
             Get IDbConnection from configuration file for given conection name.
@@ -57,6 +103,51 @@
             <summary>
             Connection Name List in configuration file.
             </summary>
+        </member>
+        <member name="M:Mst.Dexter.Factory.DxConnectionFactory.LogError(System.Exception)">
+             <summary>   Logs an error. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+            
+             <param name="e">    An Exception to process. </param>
+        </member>
+        <member name="M:Mst.Dexter.Factory.DxConnectionFactory.LogEvent(System.String[])">
+             <summary>   Logs an event. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+            
+             <param name="messages"> A variable-length parameters list containing messages. </param>
+        </member>
+        <member name="P:Mst.Dexter.Factory.DxConnectionFactory.AssemblyDirectory">
+             <summary>   Gets the pathname of the assembly directory. </summary>
+            
+             <value> The pathname of the assembly directory. </value>
+        </member>
+        <member name="T:Mst.Dexter.Factory.FileOperator">
+             <summary>   A file operator. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+        </member>
+        <member name="M:Mst.Dexter.Factory.FileOperator.#ctor">
+             <summary>
+             Constructor that prevents a default instance of this class from being created.
+             </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+        </member>
+        <member name="P:Mst.Dexter.Factory.FileOperator.Instance">
+             <summary>   Gets the instance. </summary>
+            
+             <value> The instance. </value>
+        </member>
+        <member name="M:Mst.Dexter.Factory.FileOperator.Write(System.String,System.Collections.Generic.List{System.String},System.Boolean)">
+             <summary>   Writes the given file. </summary>
+            
+             <remarks>   Msacli, 22.04.2019. </remarks>
+            
+             <param name="filePath">     Full pathname of the file. </param>
+             <param name="rows">         The rows. </param>
+             <param name="writeLine">    (Optional) True to write line. </param>
         </member>
     </members>
 </doc>

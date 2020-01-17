@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ErrorLog.Business.ElasticSearch.Core</name>
+    </assembly>
+    <members>
+        <member name="M:ErrorLog.Business.ElasticSearch.Core.BaseESBusiness`1.CheckIndex">
+            <summary>
+            Checks Index, if not exist create.
+            </summary>
+        </member>
+        <member name="M:ErrorLog.Business.ElasticSearch.Core.BaseESBusiness`1.CheckExistsAndInsert(`0)">
+            <summary>
+            Insert and return id of model.
+            </summary>
+            <param name="log"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ErrorLog.Business.ElasticSearch.Core.BaseESBusiness`1.Get(System.String)">
+            <summary>
+            Gets model by with given id.
+            </summary>
+            <param name="oid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ErrorLog.Business.ElasticSearch.Core.BaseESBusiness`1.Delete(System.String)">
+            <summary>
+            Error = 0, Created = 1, Updated = 2, Deleted = 3, NotFound = 4, Noop = 5 
+            </summary>
+            <param name="oid"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
