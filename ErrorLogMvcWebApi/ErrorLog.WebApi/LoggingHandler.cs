@@ -42,6 +42,7 @@ namespace ErrorLog.WebApi
             logMetadata.ResponseTimestamp = DateTime.Now;
             return logMetadata;
         }
+
         private async Task<bool> SendToLog(LogMetadata logMetadata)
         {
             // TODO: Write code here to store the logMetadata instance to a pre-configured log store...

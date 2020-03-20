@@ -2,6 +2,7 @@
 {
     using Microsoft.Owin;
     using SimpleFileLogging;
+    using SimpleFileLogging.Enums;
     using SimpleFileLogging.Interfaces;
     using System;
     using System.Collections.Generic;
@@ -24,6 +25,7 @@
         protected BaseApiController()
         {
             this.Logger = SimpleFileLogger.Instance;
+            this.Logger.LogDateFormatType = SimpleLogDateFormats.Day;
         }
 
         /// <summary>
