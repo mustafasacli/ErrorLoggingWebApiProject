@@ -1,8 +1,7 @@
-﻿namespace ErrorLog.IoC.Library
-{
-    using System;
-    using System.Configuration;
+﻿using System.Configuration;
 
+namespace ErrorLog.IoC.Library
+{
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   An application values. </summary>
     ///
@@ -19,7 +18,7 @@
         {
             get
             {
-                var dbMode = ConfigurationManager.AppSettings["dbMode"] ?? string.Empty;
+                string dbMode = ConfigurationManager.AppSettings["dbMode"] ?? string.Empty;
                 dbMode = dbMode.Trim();
                 dbMode = dbMode.Replace(" ", string.Empty);
                 int say;

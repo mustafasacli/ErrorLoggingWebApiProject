@@ -1,8 +1,8 @@
-﻿namespace ErrorLog.Models
-{
-    using System;
-    using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 
+namespace ErrorLog.Models
+{
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     /// <summary>   A data Model for the error log. </summary>
     ///

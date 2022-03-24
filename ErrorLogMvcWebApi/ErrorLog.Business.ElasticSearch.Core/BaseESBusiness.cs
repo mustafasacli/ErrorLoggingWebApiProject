@@ -1,20 +1,36 @@
-﻿namespace ErrorLog.Business.ElasticSearch.Core
-{
-    using Nest;
-    using System;
+﻿using Nest;
+using System;
 
+namespace ErrorLog.Business.ElasticSearch.Core
+{
+    /// <summary>
+    /// Base Elastic Search Business.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public abstract class BaseESBusiness<T> where T : class, new()
     {
+        /// <summary>
+        /// Gets, sets ElasticClient.
+        /// </summary>
         protected ElasticClient Client { get; set; }
 
+        /// <summary>
+        /// Gets uri.
+        /// </summary>
         public string Uri
         { get; protected set; }
 
+        /// <summary>
+        /// Gets index name.
+        /// </summary>
         public string IndexName
         { get; protected set; }
 
-
-
+        /// <summary>
+        /// protected base elastic search business ctor.
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <param name="indexName"></param>
         protected BaseESBusiness(string uri, string indexName)
         {
             if (string.IsNullOrWhiteSpace(uri))
@@ -25,8 +41,8 @@
 
             this.Uri = uri;
             this.IndexName = indexName;
-            var node = new Uri(this.Uri);
-            var settings = new ConnectionSettings(node);
+            Uri node = new Uri(this.Uri);
+            ConnectionSettings settings = new ConnectionSettings(node);
             this.Client = new ElasticClient(settings);
         }
 
@@ -49,9 +65,9 @@
         public string CheckExistsAndInsert(T log)
         {
             CheckIndex();
-            /// TODO : Elastic Search Result nesnesi için uygun geri dönüş modeli, oluşturulacak.
-            var response = this.Client.Index(log, idx => idx.Index(this.IndexName));
-            var result = response.Id;
+            // TODO : Elastic Search Result nesnesi için uygun geri dönüş modeli, oluşturulacak.
+            IndexResponse response = this.Client.Index(log, idx => idx.Index(this.IndexName));
+            string result = response.Id;
             return result;
         }
 
@@ -63,11 +79,11 @@
         public T Get(string oid)
         {
             CheckIndex();
-            var model = new T();
+            T model = new T();
 
             if (!string.IsNullOrWhiteSpace(oid))
             {
-                var response = this.Client.Get<T>(oid, idx => idx.Index(this.IndexName));
+                GetResponse<T> response = this.Client.Get<T>(oid, idx => idx.Index(this.IndexName));
                 model = response.Source;
             }
 
@@ -75,7 +91,7 @@
         }
 
         /// <summary>
-        /// Error = 0, Created = 1, Updated = 2, Deleted = 3, NotFound = 4, Noop = 5 
+        /// Error = 0, Created = 1, Updated = 2, Deleted = 3, NotFound = 4, Noop = 5
         /// </summary>
         /// <param name="oid"></param>
         /// <returns></returns>
