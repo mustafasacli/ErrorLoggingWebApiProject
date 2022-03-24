@@ -4,6 +4,34 @@
         <name>ErrorLog.Business.ElasticSearch.Core</name>
     </assembly>
     <members>
+        <member name="T:ErrorLog.Business.ElasticSearch.Core.BaseESBusiness`1">
+            <summary>
+            Base Elastic Search Business.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:ErrorLog.Business.ElasticSearch.Core.BaseESBusiness`1.Client">
+            <summary>
+            Gets, sets ElasticClient.
+            </summary>
+        </member>
+        <member name="P:ErrorLog.Business.ElasticSearch.Core.BaseESBusiness`1.Uri">
+            <summary>
+            Gets uri.
+            </summary>
+        </member>
+        <member name="P:ErrorLog.Business.ElasticSearch.Core.BaseESBusiness`1.IndexName">
+            <summary>
+            Gets index name.
+            </summary>
+        </member>
+        <member name="M:ErrorLog.Business.ElasticSearch.Core.BaseESBusiness`1.#ctor(System.String,System.String)">
+            <summary>
+            protected base elastic search business ctor.
+            </summary>
+            <param name="uri"></param>
+            <param name="indexName"></param>
+        </member>
         <member name="M:ErrorLog.Business.ElasticSearch.Core.BaseESBusiness`1.CheckIndex">
             <summary>
             Checks Index, if not exist create.
@@ -25,7 +53,7 @@
         </member>
         <member name="M:ErrorLog.Business.ElasticSearch.Core.BaseESBusiness`1.Delete(System.String)">
             <summary>
-            Error = 0, Created = 1, Updated = 2, Deleted = 3, NotFound = 4, Noop = 5 
+            Error = 0, Created = 1, Updated = 2, Deleted = 3, NotFound = 4, Noop = 5
             </summary>
             <param name="oid"></param>
             <returns></returns>

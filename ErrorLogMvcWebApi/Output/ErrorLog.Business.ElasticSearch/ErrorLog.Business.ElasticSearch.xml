@@ -4,5 +4,56 @@
         <name>ErrorLog.Business.ElasticSearch</name>
     </assembly>
     <members>
+        <member name="T:ErrorLog.Business.ElasticSearch.ElasticSearchBusiness">
+            <summary>
+            ElasticSearchBusiness instance.
+            </summary>
+        </member>
+        <member name="M:ErrorLog.Business.ElasticSearch.ElasticSearchBusiness.#ctor">
+            <summary>
+            ElasticSearchBusiness ctor.
+            </summary>
+        </member>
+        <member name="M:ErrorLog.Business.ElasticSearch.ElasticSearchBusiness.Delete(ErrorLog.Models.ErrorLogModel)">
+            <summary>
+            Deletes log model.
+            </summary>
+            <param name="log">log model.</param>
+            <returns>returns delete result.</returns>
+        </member>
+        <member name="M:ErrorLog.Business.ElasticSearch.ElasticSearchBusiness.Dispose">
+            <summary>
+            Disposes  elastic search client.
+            </summary>
+        </member>
+        <member name="M:ErrorLog.Business.ElasticSearch.ElasticSearchBusiness.GetById(System.String)">
+            <summary>
+            Gets ErrorLogModel model by id.
+            </summary>
+            <param name="oid">error log oid</param>
+            <returns>ErrorLogModel instance</returns>
+        </member>
+        <member name="M:ErrorLog.Business.ElasticSearch.ElasticSearchBusiness.GetLogs(System.Nullable{System.Int64},System.Nullable{System.Int64})">
+            <summary>
+            Gets error logs between given timestamp values.
+            </summary>
+            <param name="startTimestamp">The start timestamp. </param>
+            <param name="endTimestamp">The end timestamp. </param>
+            <returns>Returns enumarble ErrorLogModel objects.</returns>
+        </member>
+        <member name="M:ErrorLog.Business.ElasticSearch.ElasticSearchBusiness.Save(ErrorLog.Models.ErrorLogModel)">
+            <summary>
+            saves error log model.
+            </summary>
+            <param name="log">log model.</param>
+            <returns>Returns result as string.</returns>
+        </member>
+        <member name="M:ErrorLog.Business.ElasticSearch.ElasticSearchBusiness.Update(ErrorLog.Models.ErrorLogModel)">
+             <summary>
+            
+             </summary>
+             <param name="log"></param>
+             <returns>returns -100 value.</returns>
+        </member>
     </members>
 </doc>
