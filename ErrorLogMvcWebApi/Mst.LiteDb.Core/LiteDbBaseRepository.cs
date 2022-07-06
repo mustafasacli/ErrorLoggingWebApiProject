@@ -17,7 +17,7 @@ namespace Mst.LiteDb.Core
     public abstract class LiteDbBaseRepository<T> : IDisposable where T : class
     {
         private LiteDatabase database = null;
-
+        private readonly LiteCollection<T> liteCollection;
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         /// <summary>   Specialised constructor for use only by derived class. </summary>
         ///
@@ -29,6 +29,7 @@ namespace Mst.LiteDb.Core
         {
             database = new LiteDatabase(connectionString, mapper, log);
             Collection = database.GetCollection<T>(typeof(T).Name.ToLowerInvariant());
+            liteCollection = database.GetCollection<T>(typeof(T).Name.ToLowerInvariant());
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
