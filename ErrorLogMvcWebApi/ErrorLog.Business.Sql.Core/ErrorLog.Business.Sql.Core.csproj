@@ -40,8 +40,8 @@
     <Reference Include="Mst.Dexter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f9aae15b29e538d7, processorArchitecture=MSIL">
       <HintPath>..\packages\Mst.Dexter.dll.1.2.0\lib\net45\Mst.Dexter.dll</HintPath>
     </Reference>
-    <Reference Include="Mst.DexterCfg, Version=1.1.0.0, Culture=neutral, PublicKeyToken=9884bbe0e72e13f7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Mst.DexterCfg.dll.1.2.0\lib\net45\Mst.DexterCfg.dll</HintPath>
+    <Reference Include="Mst.DexterCfg, Version=1.3.0.0, Culture=neutral, PublicKeyToken=9884bbe0e72e13f7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mst.DexterCfg.dll.1.3.0\lib\net45\Mst.DexterCfg.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
