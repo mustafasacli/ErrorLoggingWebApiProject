@@ -26,6 +26,7 @@ namespace Mst.RavenDb.Core
         /// <summary>   The logger. </summary>
         private static readonly ILog logger =
             LogManager.GetLogger(typeof(RavenDbBaseRepository<TObject>));
+        private static readonly object lockObject = new object();
 
         /// <summary>   The session. </summary>
         private IDocumentSession session;
@@ -61,7 +62,11 @@ namespace Mst.RavenDb.Core
             {
                 if (session == null)
                 {
-                    session = DocumentStore.OpenSession();
+                    lock (lockObject)
+                    {
+                        if (session == null)
+                            session = DocumentStore.OpenSession();
+                    }
                 }
 
                 return session;
@@ -211,8 +216,14 @@ namespace Mst.RavenDb.Core
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         public void Dispose()
         {
-            Session.SaveChanges();
-            Session.Dispose();
+            try
+            {
+                Session.SaveChanges();
+            }
+            finally
+            {
+                Session.Dispose();
+            }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
